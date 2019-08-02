@@ -1,0 +1,14 @@
+2019-08-02 09:07:30,405 INFO 37009 [egg:logger] init all loggers with options: {"dir":"/Users/yanguangjie/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-02 09:07:30,431 INFO 37009 [egg-multipart] stream mode enable
+2019-08-02 09:07:32,139 INFO 37009 [egg-static] starting static serve /public/ -> /Users/yanguangjie/Desktop/enow-new-cloud/public
+2019-08-02 09:07:32,141 INFO 37009 [egg-security] use csrf middleware
+2019-08-02 09:07:32,143 INFO 37009 [egg-security] use methodnoallow middleware
+2019-08-02 09:07:32,144 INFO 37009 [egg-security] use noopen middleware
+2019-08-02 09:07:32,145 INFO 37009 [egg-security] use nosniff middleware
+2019-08-02 09:07:32,146 INFO 37009 [egg-security] use xssProtection middleware
+2019-08-02 09:07:32,147 INFO 37009 [egg-security] use xframe middleware
+2019-08-02 09:07:32,147 INFO 37009 [egg-security] use dta middleware
+2019-08-02 09:07:32,148 INFO 37009 [egg-security] compose 7 middlewares into one security middleware
+2019-08-02 09:07:32,178 INFO 37009 [egg:core] dump config after load, 4ms
+2019-08-02 09:07:32,261 INFO 37009 [egg-watcher:application] watcher start success
+2019-08-02 09:07:32,268 INFO 37009 [egg:core] dump config after ready, 5ms
