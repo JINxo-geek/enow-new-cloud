@@ -1,0 +1,12 @@
+2019-08-02 09:07:28,701 INFO 37006 [egg:logger] init all loggers with options: {"dir":"/Users/yanguangjie/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-08-02 09:07:28,709 INFO 37006 [egg:core] dump config after load, 3ms
+2019-08-02 09:07:28,753 INFO 37006 [egg-watcher] Start watching: ["/Users/yanguangjie/Desktop/enow-new-cloud/app","/Users/yanguangjie/Desktop/enow-new-cloud/config","/Users/yanguangjie/Desktop/enow-new-cloud/mocks","/Users/yanguangjie/Desktop/enow-new-cloud/mocks_proxy","/Users/yanguangjie/Desktop/enow-new-cloud/app.js","/Users/yanguangjie/Desktop/enow-new-cloud/build"]
+2019-08-02 09:07:28,753 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/app"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/config"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/mocks"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/mocks_proxy"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/app.js"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher] Start watching: "/Users/yanguangjie/Desktop/enow-new-cloud/build"
+2019-08-02 09:07:28,754 INFO 37006 [egg-watcher:agent] watcher start success
+2019-08-02 09:07:28,779 INFO 37006 [egg:core] dump config after ready, 7ms
+2019-08-02 09:07:43,553 INFO 37006 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/yanguangjie/Desktop/enow-new-cloud/config/manifest.json","stat":{"dev":16777220,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":45474629,"size":400,"blocks":8,"atimeMs":1564708063489.153,"mtimeMs":1564708063489.3113,"ctimeMs":1564708063489.3113,"birthtimeMs":1564708063489.153,"atime":"2019-08-02T01:07:43.489Z","mtime":"2019-08-02T01:07:43.489Z","ctime":"2019-08-02T01:07:43.489Z","birthtime":"2019-08-02T01:07:43.489Z"},"remove":false,"isDirectory":false,"isFile":true}

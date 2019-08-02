@@ -1,0 +1,6 @@
+2019-08-02 09:07:30,430 INFO 37009 [egg-schedule]: register schedule /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-02 09:07:30,430 INFO 37009 [egg-schedule]: register schedule /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-02 09:07:30,430 INFO 37009 [egg-schedule]: register schedule /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-02 09:07:32,274 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 69747729ms at 2019-08-03 04:30:00.003
+2019-08-02 09:07:32,274 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 53547726ms at 2019-08-03 00:00:00.000
+2019-08-02 09:07:32,275 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 53548726ms at 2019-08-03 00:00:01.001
