@@ -1,0 +1,361 @@
+2019-08-02 16:38:17,587 ERROR 987 [-/127.0.0.1/-/77ms GET /] nodejs.ReferenceError: window is not defined
+    at bootstrap (webpack:///./app/web/page/home/index.tsx?:33:17)
+    at eval (webpack:///./app/web/page/home/index.tsx?:45:64)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:155:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+    at evalmachine.<anonymous>:87:10
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:26:37
+    at Generator.next (<anonymous>)
+    at onFulfilled (/Users/cvter/Desktop/enow-new-cloud/node_modules/co/index.js:65:19)
+    at processTicksAndRejections (internal/process/task_queues.js:82:5)
+
+pid: 987
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 09:57:08,392 ERROR 987 [-/127.0.0.1/-/41ms GET /] nodejs.ReferenceError: React is not defined
+    at LayoutSider.render (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:9)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2959:18)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 987
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 09:57:09,912 ERROR 987 [-/127.0.0.1/-/17ms GET /] nodejs.ReferenceError: React is not defined
+    at LayoutSider.render (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:9)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2959:18)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 987
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 09:57:43,137 ERROR 987 [-/127.0.0.1/-/21ms GET /] nodejs.ReferenceError: React is not defined
+    at LayoutSider.render (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:9)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2959:18)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 987
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 09:58:01,148 ERROR 987 [-/127.0.0.1/-/19ms GET /] nodejs.ReferenceError: React is not defined
+    at LayoutSider.render (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:9)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2959:18)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 987
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 11:18:04,631 ERROR 7547 [-/172.18.92.56/-/46ms GET /] nodejs.ReferenceError: absolute is not defined
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:15)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:120:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:143:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:155:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+
+pid: 7547
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 11:18:06,992 ERROR 7547 [-/172.18.92.56/-/44ms GET /] nodejs.ReferenceError: absolute is not defined
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:19:15)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:120:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:143:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:155:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+
+pid: 7547
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 14:55:45,045 ERROR 9919 [-/127.0.0.1/-/55ms GET /] nodejs.Invariant Violation: Objects are not valid as a React child (found: object with keys {text}). If you meant to render a collection of children, use an array instead.
+    in div
+    in td
+    in TableCell
+    in tr
+    in BodyRow
+    in TableRow
+    in Connect(TableRow)
+    in ExpandableRow
+    in Connect(ExpandableRow)
+    in tbody
+    in table
+    in BaseTable
+    in Connect(BaseTable)
+    in div
+    in BodyTable
+    in div
+    in div
+    in ExpandableTable
+    in Connect(ExpandableTable)
+    in Provider
+    in Table
+    in LocaleReceiver
+    in div
+    in div
+    in Context.Consumer
+    in Spin
+    in div
+    in Context.Consumer
+    in Table
+    in div
+    in LayoutContent
+    in main
+    in Basic
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in div
+    in Tab
+    in div
+    in body
+    in html
+    in Layout
+    in App
+    in div
+    in td
+    in TableCell
+    in tr
+    in BodyRow
+    in TableRow
+    in Connect(TableRow)
+    in ExpandableRow
+    in Connect(ExpandableRow)
+    in tbody
+    in table
+    in BaseTable
+    in Connect(BaseTable)
+    in div
+    in BodyTable
+    in div
+    in div
+    in ExpandableTable
+    in Connect(ExpandableTable)
+    in Provider
+    in Table
+    in LocaleReceiver
+    in div
+    in div
+    in Context.Consumer
+    in Spin
+    in div
+    in Context.Consumer
+    in Table
+    in div
+    in LayoutContent
+    in main
+    in Basic
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in div
+    in Tab
+    in div
+    in body
+    in html
+    in Layout
+    in App
+    at invariant (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:88:15)
+    at traverseAllChildrenImpl (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1060:7)
+    at traverseAllChildrenImpl (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1033:23)
+    at traverseAllChildren (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1088:10)
+    at mapIntoWithKeyPrefixInternal (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1166:3)
+    at toArray (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1215:3)
+    at ReactDOMServerRenderer.renderDOM (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3617:18)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3237:21)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+name: "Invariant Violation"
+framesToPop: 1
+pid: 9919
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 14:55:48,093 ERROR 9919 [-/127.0.0.1/-/43ms GET /] nodejs.Invariant Violation: Objects are not valid as a React child (found: object with keys {text}). If you meant to render a collection of children, use an array instead.
+    in div
+    in td
+    in TableCell
+    in tr
+    in BodyRow
+    in TableRow
+    in Connect(TableRow)
+    in ExpandableRow
+    in Connect(ExpandableRow)
+    in tbody
+    in table
+    in BaseTable
+    in Connect(BaseTable)
+    in div
+    in BodyTable
+    in div
+    in div
+    in ExpandableTable
+    in Connect(ExpandableTable)
+    in Provider
+    in Table
+    in LocaleReceiver
+    in div
+    in div
+    in Context.Consumer
+    in Spin
+    in div
+    in Context.Consumer
+    in Table
+    in div
+    in LayoutContent
+    in main
+    in Basic
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in div
+    in Tab
+    in div
+    in body
+    in html
+    in Layout
+    in App
+    in div
+    in td
+    in TableCell
+    in tr
+    in BodyRow
+    in TableRow
+    in Connect(TableRow)
+    in ExpandableRow
+    in Connect(ExpandableRow)
+    in tbody
+    in table
+    in BaseTable
+    in Connect(BaseTable)
+    in div
+    in BodyTable
+    in div
+    in div
+    in ExpandableTable
+    in Connect(ExpandableTable)
+    in Provider
+    in Table
+    in LocaleReceiver
+    in div
+    in div
+    in Context.Consumer
+    in Spin
+    in div
+    in Context.Consumer
+    in Table
+    in div
+    in LayoutContent
+    in main
+    in Basic
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in section
+    in Context.Provider
+    in BasicLayout
+    in Context.Consumer
+    in Adapter
+    in div
+    in Tab
+    in div
+    in body
+    in html
+    in Layout
+    in App
+    at invariant (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:88:15)
+    at traverseAllChildrenImpl (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1060:7)
+    at traverseAllChildrenImpl (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1033:23)
+    at traverseAllChildren (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1088:10)
+    at mapIntoWithKeyPrefixInternal (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1166:3)
+    at toArray (/Users/cvter/Desktop/enow-new-cloud/node_modules/react/cjs/react.development.js:1215:3)
+    at ReactDOMServerRenderer.renderDOM (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3617:18)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3237:21)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+name: "Invariant Violation"
+framesToPop: 1
+pid: 9919
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-05 17:38:35,542 ERROR 14851 [-/127.0.0.1/-/39ms GET /] nodejs.MODULE_NOT_FOUNDError: Cannot find module '../LayoutContent/indexclass'
+    at webpackMissingModule (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:10:45)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:10:147)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:166:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:189:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:201:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+code: "MODULE_NOT_FOUND"
+name: "MODULE_NOT_FOUNDError"
+pid: 14851
+hostname: cvterdeMacBook-Pro.local
+
