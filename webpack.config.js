@@ -3,6 +3,11 @@
 const path = require('path');
 const resolve = (filepath) => path.resolve(__dirname, filepath);
 module.exports = {
+  resolve: {
+    alias: {
+      '@images': resolve(`app/web/asset/images`)
+    }
+  },
   devtool: 'eval',
   entry: {
     home: 'app/web/page/home/index.tsx'
@@ -17,8 +22,8 @@ module.exports = {
       options: {
         javascriptEnabled: true,
         modifyVars: {
-          'primary-color': 'red',
-          'link-color': '#1DA57A',
+          // 'primary-color': 'rgba(241,241,241,1)',
+          // 'link-color': 'rgba(241,241,241,1)',
           'border-radius-base': '2px'
         }
       }
@@ -28,7 +33,7 @@ module.exports = {
   plugins: {
     imagemini: false
   },
-  done() {
+  done () {
     console.log('---webpack compile finish---');
   }
 };

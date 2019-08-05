@@ -2,6 +2,7 @@
   "home.css": "/public/css/home.css",
   "home.js": "/public/js/chunk/home.js",
   "runtime.js": "/public/js/runtime.js",
+  "img/logo.png": "/public/img/logo.png",
   "deps": {
     "home.js": {
       "js": [

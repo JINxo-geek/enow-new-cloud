@@ -8,6 +8,7 @@ import { Tab } from './component/tab';
 import { TabProps } from '../../framework/type';
 
 class App extends Component<TabProps, any> {
+
   render() {
     return <Layout {...this.props}><Tab {...this.props} /></Layout>;
   }

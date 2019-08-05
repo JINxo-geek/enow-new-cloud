@@ -4,3 +4,75 @@
 2019-08-02 09:07:32,274 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 69747729ms at 2019-08-03 04:30:00.003
 2019-08-02 09:07:32,274 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 53547726ms at 2019-08-03 00:00:00.000
 2019-08-02 09:07:32,275 INFO 37006 [Timer] /Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 53548726ms at 2019-08-03 00:00:01.001
+2019-08-02 10:09:48,617 INFO 987 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-02 10:09:48,617 INFO 987 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-02 10:09:48,617 INFO 987 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-02 10:09:52,430 INFO 979 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 66007573ms at 2019-08-03 04:30:00.003
+2019-08-02 10:09:52,430 INFO 979 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 49807570ms at 2019-08-03 00:00:00.000
+2019-08-02 10:09:52,430 INFO 979 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 49808570ms at 2019-08-03 00:00:01.000
+2019-08-05 11:02:46,066 INFO 7322 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:02:46,066 INFO 7322 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:02:46,066 INFO 7322 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:02:46,193 INFO 7314 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 62833810ms at 2019-08-06 04:30:00.003
+2019-08-05 11:02:46,194 INFO 7314 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 46633807ms at 2019-08-06 00:00:00.001
+2019-08-05 11:02:46,194 INFO 7314 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 46634806ms at 2019-08-06 00:00:01.000
+2019-08-05 11:04:27,776 INFO 7373 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 62732227ms at 2019-08-06 04:30:00.003
+2019-08-05 11:04:27,776 INFO 7373 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 46532224ms at 2019-08-06 00:00:00.000
+2019-08-05 11:04:27,777 INFO 7373 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 46533223ms at 2019-08-06 00:00:01.000
+2019-08-05 11:04:27,639 INFO 7381 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:04:27,639 INFO 7381 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:04:27,639 INFO 7381 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:04:42,112 INFO 7421 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:04:42,112 INFO 7421 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:04:42,112 INFO 7421 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:04:42,194 INFO 7413 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 62717809ms at 2019-08-06 04:30:00.003
+2019-08-05 11:04:42,194 INFO 7413 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 46517806ms at 2019-08-06 00:00:00.000
+2019-08-05 11:04:42,195 INFO 7413 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 46518806ms at 2019-08-06 00:00:01.001
+2019-08-05 11:07:01,219 INFO 7546 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 62578783ms at 2019-08-06 04:30:00.002
+2019-08-05 11:07:01,220 INFO 7546 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 46378781ms at 2019-08-06 00:00:00.001
+2019-08-05 11:07:01,220 INFO 7546 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 46379780ms at 2019-08-06 00:00:01.000
+2019-08-05 11:07:01,110 INFO 7547 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:07:01,110 INFO 7547 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:07:01,110 INFO 7547 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:54:41,555 INFO 8226 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:54:41,555 INFO 8226 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:54:41,555 INFO 8226 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:54:41,677 INFO 8218 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 59718326ms at 2019-08-06 04:30:00.003
+2019-08-05 11:54:41,677 INFO 8218 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 43518323ms at 2019-08-06 00:00:00.000
+2019-08-05 11:54:41,678 INFO 8218 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 43519323ms at 2019-08-06 00:00:01.001
+2019-08-05 11:55:52,751 INFO 8504 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:55:52,751 INFO 8504 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:55:52,751 INFO 8504 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:55:52,873 INFO 8502 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 59647129ms at 2019-08-06 04:30:00.002
+2019-08-05 11:55:52,874 INFO 8502 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 43447127ms at 2019-08-06 00:00:00.001
+2019-08-05 11:55:52,874 INFO 8502 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 43448126ms at 2019-08-06 00:00:01.000
+2019-08-05 11:56:54,147 INFO 8575 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:56:54,147 INFO 8575 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:56:54,147 INFO 8575 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:56:54,262 INFO 8574 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 59585741ms at 2019-08-06 04:30:00.003
+2019-08-05 11:56:54,262 INFO 8574 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 43385738ms at 2019-08-06 00:00:00.000
+2019-08-05 11:56:54,263 INFO 8574 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 43386738ms at 2019-08-06 00:00:01.001
+2019-08-05 11:58:45,433 INFO 8638 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 11:58:45,433 INFO 8638 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 11:58:45,433 INFO 8638 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 11:58:45,580 INFO 8637 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 59474423ms at 2019-08-06 04:30:00.003
+2019-08-05 11:58:45,581 INFO 8637 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 43274420ms at 2019-08-06 00:00:00.001
+2019-08-05 11:58:45,581 INFO 8637 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 43275419ms at 2019-08-06 00:00:01.000
+2019-08-05 12:57:20,464 INFO 9905 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 55959539ms at 2019-08-06 04:30:00.003
+2019-08-05 12:57:20,465 INFO 9905 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 39759536ms at 2019-08-06 00:00:00.001
+2019-08-05 12:57:20,465 INFO 9905 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 39760535ms at 2019-08-06 00:00:01.000
+2019-08-05 12:57:20,321 INFO 9919 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 12:57:20,321 INFO 9919 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 12:57:20,321 INFO 9919 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 16:31:30,094 INFO 13615 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 16:31:30,094 INFO 13615 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 16:31:30,094 INFO 13615 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-08-05 16:31:30,206 INFO 13612 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 43109796ms at 2019-08-06 04:30:00.002
+2019-08-05 16:31:30,207 INFO 13612 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 26909793ms at 2019-08-06 00:00:00.000
+2019-08-05 16:31:30,207 INFO 13612 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 26910793ms at 2019-08-06 00:00:01.000
+2019-08-05 17:23:09,819 INFO 14838 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 40010184ms at 2019-08-06 04:30:00.003
+2019-08-05 17:23:09,820 INFO 14838 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 23810181ms at 2019-08-06 00:00:00.001
+2019-08-05 17:23:09,820 INFO 14838 [Timer] /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 23811180ms at 2019-08-06 00:00:01.000
+2019-08-05 17:23:09,674 INFO 14851 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-08-05 17:23:09,674 INFO 14851 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-08-05 17:23:09,674 INFO 14851 [egg-schedule]: register schedule /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
