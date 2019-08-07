@@ -463,3 +463,454 @@ name: "MODULE_NOT_FOUNDError"
 pid: 14851
 hostname: cvterdeMacBook-Pro.local
 
+2019-08-06 16:42:15,157 ERROR 4604 [-/127.0.0.1/-/2427ms GET /] nodejs.TypeError: Cannot read property 'pros' of undefined
+    at eval (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:15:29)
+    at Module../app/web/page/home/component/LayoutHeader/index.tsx (evalmachine.<anonymous>:154:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:12:71)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:189:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:201:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-06 16:42:15,509 ERROR 4604 [-/127.0.0.1/-/66ms GET /] nodejs.TypeError: Cannot read property 'pros' of undefined
+    at eval (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:15:29)
+    at Module../app/web/page/home/component/LayoutHeader/index.tsx (evalmachine.<anonymous>:154:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:12:71)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:189:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:201:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-06 16:42:53,422 ERROR 4604 [-/127.0.0.1/-/42ms GET /] nodejs.TypeError: Cannot read property 'props' of undefined
+    at eval (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:15:29)
+    at Module../app/web/page/home/component/LayoutHeader/index.tsx (evalmachine.<anonymous>:154:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:12:71)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:189:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:201:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at evalmachine.<anonymous>:84:18
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-06 16:58:21,583 ERROR 4604 [-/127.0.0.1/-/92ms GET /] nodejs.TypeError: Cannot read property 'accountMsg' of undefined
+    at new LayoutHeader (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:38:29)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2846:14)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-06 16:59:54,871 ERROR 4604 [-/127.0.0.1/-/52ms GET /] nodejs.TypeError: Cannot read property 'accountMsg' of undefined
+    at new LayoutHeader (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:38:29)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2846:14)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-06 17:00:01,965 ERROR 4604 [-/127.0.0.1/-/70ms GET /] nodejs.TypeError: Cannot read property 'accountMsg' of undefined
+    at new LayoutHeader (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:38:29)
+    at processChild (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2846:14)
+    at resolve (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:2812:5)
+    at ReactDOMServerRenderer.render (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3202:22)
+    at ReactDOMServerRenderer.read (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3161:29)
+    at Object.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/react-dom/cjs/react-dom-server.node.development.js:3646:27)
+    at Engine.renderToString (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:136:27)
+    at Engine.renderElement (/Users/cvter/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/lib/engine.js:106:35)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/egg-webpack-react/app.js:31:26
+    at Generator.next (<anonymous>)
+
+pid: 4604
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:43:16,546 ERROR 10730 [-/127.0.0.1/-/1657ms GET /] nodejs.MODULE_NOT_FOUNDError: Cannot find module '@util/util'
+    at webpackMissingModule (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:45)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:130)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:225:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+code: "MODULE_NOT_FOUND"
+name: "MODULE_NOT_FOUNDError"
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:43:51,521 ERROR 10730 [-/127.0.0.1/-/50ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 3)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+Thread Loader (Worker 3)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:44:42,414 ERROR 10730 [-/127.0.0.1/-/95ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 7)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+Thread Loader (Worker 7)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:44:45,477 ERROR 10730 [-/127.0.0.1/-/17ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 7)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+Thread Loader (Worker 7)
+ENOENT: no such file or directory, open '/Users/cvter/Desktop/enow-new-cloud/app/web/util/Util.js'
+
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:45:05,028 ERROR 10730 [-/127.0.0.1/-/75ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:45:20,435 ERROR 10730 [-/127.0.0.1/-/42ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:45:32,656 ERROR 10730 [-/127.0.0.1/-/82ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+Thread Loader (Worker 9)
+SyntaxError: Unexpected token (4:18)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  static [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m                  [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:49:20,050 ERROR 10730 [-/127.0.0.1/-/124ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 16)
+SyntaxError: Unexpected token (4:11)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m           [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+Thread Loader (Worker 16)
+SyntaxError: Unexpected token (4:11)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m           [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 10:49:29,217 ERROR 10730 [-/127.0.0.1/-/35ms GET /] nodejs.Error: Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
+Thread Loader (Worker 16)
+SyntaxError: Unexpected token (4:11)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m           [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+Thread Loader (Worker 16)
+SyntaxError: Unexpected token (4:11)
+
+[0m [90m 2 | [39m
+ [90m 3 | [39m[36mexport[39m [36mdefault[39m [36mclass[39m [33mUtil[39m {
+[31m[1m>[22m[39m[90m 4 | [39m  [33mList2Map[39m [33m=[39m (list[33m,[39m label [33m=[39m [32m"label"[39m[33m,[39m value [33m=[39m [32m"value"[39m) [33m=>[39m {
+ [90m   | [39m           [31m[1m^[22m[39m
+ [90m 5 | [39m    list [33m=[39m _[33m.[39mcloneDeep(list)[33m;[39m
+ [90m 6 | [39m    let map [33m=[39m {}[33m;[39m
+ [90m 7 | [39m    list[33m.[39mforEach(item [33m=>[39m {[0m
+
+
+    at transpile (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/index.js:65:13)
+    at /Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:118:18
+    at ReadFileContext.callback (/Users/cvter/Desktop/enow-new-cloud/node_modules/babel-loader/lib/fs-cache.js:31:21)
+    at FSReqCallback.readFileAfterOpen [as oncomplete] (fs.js:246:13)
+    at eval (webpack:///./app/web/util/Util.js?:1:7)
+    at Object../app/web/util/Util.js (evalmachine.<anonymous>:236:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutSider/index.tsx?:11:68)
+    at Module../app/web/page/home/component/LayoutSider/index.tsx (evalmachine.<anonymous>:190:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:11:70)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:213:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 10730
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 12:39:28,280 ERROR 11276 nodejs.ClusterClientNoResponseError: client no response in 1454383ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/cvter/Desktop/enow-new-cloud/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+name: "ClusterClientNoResponseError"
+pid: 11276
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 13:00:36,351 ERROR 11276 nodejs.ClusterClientNoResponseError: client no response in 1168035ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/cvter/Desktop/enow-new-cloud/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+name: "ClusterClientNoResponseError"
+pid: 11276
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 16:30:06,833 ERROR 13270 [-/127.0.0.1/-/78ms GET /] nodejs.ReferenceError: React is not defined
+    at eval (webpack:///./app/web/page/home/component/LayoutContent/dataSource.tsx?:157:15)
+    at Module../app/web/page/home/component/LayoutContent/dataSource.tsx (evalmachine.<anonymous>:142:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/LayoutContent/index.tsx?:10:73)
+    at Module../app/web/page/home/component/LayoutContent/index.tsx (evalmachine.<anonymous>:154:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:13:72)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:235:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+
+pid: 13270
+hostname: cvterdeMacBook-Pro.local
+
+2019-08-07 16:50:59,312 ERROR 16786 [-/127.0.0.1/-/2262ms GET /] nodejs.MODULE_NOT_FOUNDError: Cannot find module './LayoutHeadercss.less'
+    at webpackMissingModule (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:8:45)
+    at eval (webpack:///./app/web/page/home/component/LayoutHeader/index.tsx?:8:142)
+    at Module../app/web/page/home/component/LayoutHeader/index.tsx (evalmachine.<anonymous>:177:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/component/tab.tsx?:12:71)
+    at Module../app/web/page/home/component/tab.tsx (evalmachine.<anonymous>:235:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+    at eval (webpack:///./app/web/page/home/index.tsx?:11:72)
+    at Module../app/web/page/home/index.tsx (evalmachine.<anonymous>:247:1)
+    at __webpack_require__ (evalmachine.<anonymous>:20:30)
+code: "MODULE_NOT_FOUND"
+name: "MODULE_NOT_FOUNDError"
+pid: 16786
+hostname: cvterdeMacBook-Pro.local
+

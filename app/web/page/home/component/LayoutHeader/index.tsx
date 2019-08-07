@@ -1,40 +1,50 @@
-import React, { Component } from 'react';
-import { Avatar, Badge, Input, Icon, Row, Col } from 'antd';
-import logo from '@images/logo.png'
+import React, { Component } from "react";
+import { Avatar, Badge, Input, Row, Col, Popover, Button } from "antd";
 const { Search } = Input;
-const logobg = {
-    backgroundImage: `url(${logo})`,
-    width: 120, height: 32, marginLeft: 30, marginTop: 23,
+import "./LayoutHeadercss.less";
+interface LayoutHeaderState {
+  accountMsg: any;
 }
-const bttonclass = {
-    width: 204, height: 40, marginLeft: 30, marginTop: 23,
-    backgroundColor: 'rgba(101,173,89,1)',
-    color: 'rgba(255,255,255,1)',
-    borderRadius: '2px 2px 2px 2px',
-    fontSize: 14, fontFamily: 'Roboto',
-    boxShadow: '0px 3px 3px 0px',
-}
-class LayoutHeader extends Component {
+class LayoutHeader extends Component<LayoutHeaderState> {
+  private content: any;
+  constructor(props: any) {
+    super(props);
+    this.content = null;
+  }
 
-    render() {
-        return <div style={{ marginTop: 23 }}>
-            <Row>
-                <Col span={21} offset={1}> <Search
-                    placeholder="搜索文档"
-                    onSearch={value => console.log(value)}
-                    style={{ width: 552, height: 40 }}
-                /></Col>
-                <Col span={1}>
-                    <Badge count={1} offset={[0, 30]}>
-                        <Avatar shape="circle" icon="user" />
-                    </Badge>
-                </Col>
-                <Col span={1}>
-
-                </Col>
-            </Row>
-        </div>
+  state: LayoutHeaderState = {
+    accountMsg: {
+      name: "凌轩",
+      level: "15",
+      msg: "小学英语老师",
+      photoUrl: "http://thumb10.jfcdns.com/2018-06/bce5b10ae530f530.png"
     }
+  };
+
+  render() {
+    return (
+      <div className="headerframe">
+        <Row>
+          <Col span={21} offset={1}>
+            {" "}
+            <Search
+              placeholder="搜索文档"
+              onSearch={value => console.log(value)}
+              className="search"
+            />
+          </Col>
+          <Col span={1}>
+            <Popover placement="bottom" content={this.content} trigger="click">
+              <Badge count={1} offset={[0, 30]}>
+                <Avatar shape="circle" icon="user" />
+              </Badge>
+            </Popover>
+          </Col>
+          <Col span={1} />
+        </Row>
+      </div>
+    );
+  }
 }
 
 export default LayoutHeader;

@@ -2,24 +2,15 @@
   "extends": "../../config/tsconfig.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "target": "es5",      
+    "target": "es5",
     "module": "esnext",
     "sourceMap": true,
-    "lib": [
-      "es6",
-      "dom",
-      "es2017",
-      "esnext"
-    ]
+    "lib": ["es6", "dom", "es2017", "esnext"]
   },
-  "files": [
-    "./typings/global.d.ts"
-  ],
+  "files": ["./typings/global.d.ts"],
   "include": [
     "./page/**/**.tsx",
+    "page/home/component/LayoutContent/dataSource.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
