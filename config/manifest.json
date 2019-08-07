@@ -3,6 +3,7 @@
   "home.js": "/public/js/chunk/home.js",
   "runtime.js": "/public/js/runtime.js",
   "img/logo.png": "/public/img/logo.png",
+  "img/timecapsule.png": "/public/img/timecapsule.png",
   "deps": {
     "home.js": {
       "js": [

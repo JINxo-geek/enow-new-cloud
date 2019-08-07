@@ -197,3 +197,103 @@
 2019-08-05 17:23:09,780 INFO 14851 [egg:core] dump config after load, 5ms
 2019-08-05 17:23:09,796 INFO 14851 [egg-watcher:application] watcher start success
 2019-08-05 17:23:09,807 INFO 14851 [egg:core] dump config after ready, 8ms
+2019-08-06 16:07:43,282 INFO 3857 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-06 16:07:43,311 INFO 3857 [egg-multipart] stream mode enable
+2019-08-06 16:07:46,355 INFO 3857 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-06 16:07:46,360 INFO 3857 [egg-security] use csrf middleware
+2019-08-06 16:07:46,361 INFO 3857 [egg-security] use methodnoallow middleware
+2019-08-06 16:07:46,361 INFO 3857 [egg-security] use noopen middleware
+2019-08-06 16:07:46,363 INFO 3857 [egg-security] use nosniff middleware
+2019-08-06 16:07:46,363 INFO 3857 [egg-security] use xssProtection middleware
+2019-08-06 16:07:46,364 INFO 3857 [egg-security] use xframe middleware
+2019-08-06 16:07:46,365 INFO 3857 [egg-security] use dta middleware
+2019-08-06 16:07:46,365 INFO 3857 [egg-security] compose 7 middlewares into one security middleware
+2019-08-06 16:07:46,427 INFO 3857 [egg:core] dump config after load, 5ms
+2019-08-06 16:07:46,446 INFO 3857 [egg-watcher:application] watcher start success
+2019-08-06 16:07:46,455 INFO 3857 [egg:core] dump config after ready, 6ms
+2019-08-06 16:41:44,492 INFO 4604 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-06 16:41:44,549 INFO 4604 [egg-multipart] stream mode enable
+2019-08-06 16:41:44,678 INFO 4604 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-06 16:41:44,683 INFO 4604 [egg-security] use csrf middleware
+2019-08-06 16:41:44,685 INFO 4604 [egg-security] use methodnoallow middleware
+2019-08-06 16:41:44,685 INFO 4604 [egg-security] use noopen middleware
+2019-08-06 16:41:44,688 INFO 4604 [egg-security] use nosniff middleware
+2019-08-06 16:41:44,689 INFO 4604 [egg-security] use xssProtection middleware
+2019-08-06 16:41:44,690 INFO 4604 [egg-security] use xframe middleware
+2019-08-06 16:41:44,692 INFO 4604 [egg-security] use dta middleware
+2019-08-06 16:41:44,693 INFO 4604 [egg-security] compose 7 middlewares into one security middleware
+2019-08-06 16:41:44,711 INFO 4604 [egg:core] dump config after load, 8ms
+2019-08-06 16:41:44,741 INFO 4604 [egg-watcher:application] watcher start success
+2019-08-06 16:41:44,767 INFO 4604 [egg:core] dump config after ready, 22ms
+2019-08-07 09:05:19,382 INFO 8305 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-07 09:05:19,422 INFO 8305 [egg-multipart] stream mode enable
+2019-08-07 09:05:19,525 INFO 8305 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-07 09:05:19,529 INFO 8305 [egg-security] use csrf middleware
+2019-08-07 09:05:19,530 INFO 8305 [egg-security] use methodnoallow middleware
+2019-08-07 09:05:19,531 INFO 8305 [egg-security] use noopen middleware
+2019-08-07 09:05:19,532 INFO 8305 [egg-security] use nosniff middleware
+2019-08-07 09:05:19,534 INFO 8305 [egg-security] use xssProtection middleware
+2019-08-07 09:05:19,536 INFO 8305 [egg-security] use xframe middleware
+2019-08-07 09:05:19,537 INFO 8305 [egg-security] use dta middleware
+2019-08-07 09:05:19,537 INFO 8305 [egg-security] compose 7 middlewares into one security middleware
+2019-08-07 09:05:19,550 INFO 8305 [egg:core] dump config after load, 7ms
+2019-08-07 09:05:19,588 INFO 8305 [egg-watcher:application] watcher start success
+2019-08-07 09:05:19,609 INFO 8305 [egg:core] dump config after ready, 14ms
+2019-08-07 10:42:58,841 INFO 10730 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-07 10:42:58,869 INFO 10730 [egg-multipart] stream mode enable
+2019-08-07 10:42:58,944 INFO 10730 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-07 10:42:58,946 INFO 10730 [egg-security] use csrf middleware
+2019-08-07 10:42:58,947 INFO 10730 [egg-security] use methodnoallow middleware
+2019-08-07 10:42:58,948 INFO 10730 [egg-security] use noopen middleware
+2019-08-07 10:42:58,948 INFO 10730 [egg-security] use nosniff middleware
+2019-08-07 10:42:58,949 INFO 10730 [egg-security] use xssProtection middleware
+2019-08-07 10:42:58,949 INFO 10730 [egg-security] use xframe middleware
+2019-08-07 10:42:58,950 INFO 10730 [egg-security] use dta middleware
+2019-08-07 10:42:58,950 INFO 10730 [egg-security] compose 7 middlewares into one security middleware
+2019-08-07 10:42:58,960 INFO 10730 [egg:core] dump config after load, 5ms
+2019-08-07 10:42:58,975 INFO 10730 [egg-watcher:application] watcher start success
+2019-08-07 10:42:58,984 INFO 10730 [egg:core] dump config after ready, 7ms
+2019-08-07 10:54:52,634 INFO 11288 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-07 10:54:52,666 INFO 11288 [egg-multipart] stream mode enable
+2019-08-07 10:54:52,975 INFO 11288 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-07 10:54:52,984 INFO 11288 [egg-security] use csrf middleware
+2019-08-07 10:54:52,986 INFO 11288 [egg-security] use methodnoallow middleware
+2019-08-07 10:54:52,987 INFO 11288 [egg-security] use noopen middleware
+2019-08-07 10:54:52,988 INFO 11288 [egg-security] use nosniff middleware
+2019-08-07 10:54:52,988 INFO 11288 [egg-security] use xssProtection middleware
+2019-08-07 10:54:52,989 INFO 11288 [egg-security] use xframe middleware
+2019-08-07 10:54:52,989 INFO 11288 [egg-security] use dta middleware
+2019-08-07 10:54:52,989 INFO 11288 [egg-security] compose 7 middlewares into one security middleware
+2019-08-07 10:54:53,001 INFO 11288 [egg:core] dump config after load, 7ms
+2019-08-07 10:54:53,017 INFO 11288 [egg-watcher:application] watcher start success
+2019-08-07 10:54:53,026 INFO 11288 [egg:core] dump config after ready, 7ms
+2019-08-07 12:39:28,277 WARN 11288 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-08-07 13:00:36,353 WARN 11288 [ClusterClient:Watcher] follower closed, and try to init it again
+2019-08-07 13:28:46,726 INFO 13270 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-07 13:28:46,815 INFO 13270 [egg-multipart] stream mode enable
+2019-08-07 13:28:46,934 INFO 13270 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-07 13:28:46,945 INFO 13270 [egg-security] use csrf middleware
+2019-08-07 13:28:46,946 INFO 13270 [egg-security] use methodnoallow middleware
+2019-08-07 13:28:46,946 INFO 13270 [egg-security] use noopen middleware
+2019-08-07 13:28:46,948 INFO 13270 [egg-security] use nosniff middleware
+2019-08-07 13:28:46,949 INFO 13270 [egg-security] use xssProtection middleware
+2019-08-07 13:28:46,949 INFO 13270 [egg-security] use xframe middleware
+2019-08-07 13:28:46,950 INFO 13270 [egg-security] use dta middleware
+2019-08-07 13:28:46,950 INFO 13270 [egg-security] compose 7 middlewares into one security middleware
+2019-08-07 13:28:46,965 INFO 13270 [egg:core] dump config after load, 6ms
+2019-08-07 13:28:46,986 INFO 13270 [egg-watcher:application] watcher start success
+2019-08-07 13:28:46,995 INFO 13270 [egg:core] dump config after ready, 7ms
+2019-08-07 16:50:37,896 INFO 16786 [egg:logger] init all loggers with options: {"dir":"/Users/cvter/Desktop/enow-new-cloud/logs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"DEBUG","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"enow-new-cloud-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2019-08-07 16:50:37,927 INFO 16786 [egg-multipart] stream mode enable
+2019-08-07 16:50:38,008 INFO 16786 [egg-static] starting static serve /public/ -> /Users/cvter/Desktop/enow-new-cloud/public
+2019-08-07 16:50:38,011 INFO 16786 [egg-security] use csrf middleware
+2019-08-07 16:50:38,012 INFO 16786 [egg-security] use methodnoallow middleware
+2019-08-07 16:50:38,012 INFO 16786 [egg-security] use noopen middleware
+2019-08-07 16:50:38,014 INFO 16786 [egg-security] use nosniff middleware
+2019-08-07 16:50:38,015 INFO 16786 [egg-security] use xssProtection middleware
+2019-08-07 16:50:38,015 INFO 16786 [egg-security] use xframe middleware
+2019-08-07 16:50:38,016 INFO 16786 [egg-security] use dta middleware
+2019-08-07 16:50:38,016 INFO 16786 [egg-security] compose 7 middlewares into one security middleware
+2019-08-07 16:50:38,026 INFO 16786 [egg:core] dump config after load, 5ms
+2019-08-07 16:50:38,040 INFO 16786 [egg-watcher:application] watcher start success
+2019-08-07 16:50:38,051 INFO 16786 [egg:core] dump config after ready, 9ms
