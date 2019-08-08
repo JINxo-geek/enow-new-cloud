@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Avatar, Badge, Input, Row, Col, Popover, Button } from "antd";
+import { Avatar, Badge, Input, Row, Col, Popover, Button, Divider } from "antd";
 const { Search } = Input;
 import "./LayoutHeadercss.less";
 interface LayoutHeaderState {
@@ -21,6 +21,30 @@ class LayoutHeader extends Component<LayoutHeaderState> {
     }
   };
 
+  componentDidMount() {
+    this.content = (
+      <div className="headerpopover">
+        {/* <p> {this.state.accountMsg.name}</p> */}
+        <Divider />
+        <p>
+          <Button type="link" className="btncolor">
+            我的特权
+          </Button>
+        </p>
+        <p>
+          <Button type="link" className="btncolor">
+            账号设置
+          </Button>
+        </p>
+        <Divider />
+        <p>
+          <Button type="link" className="btncolor">
+            退出账号
+          </Button>
+        </p>
+      </div>
+    );
+  }
   render() {
     return (
       <div className="headerframe">

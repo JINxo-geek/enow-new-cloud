@@ -2,6 +2,7 @@ import React from "react";
 import { Popover, Icon, Button, Divider } from "antd";
 import "./indexclass.less";
 import file from "@images/file.png";
+import showModal from "./index";
 
 const tableTitle = "我的文档";
 
@@ -162,6 +163,7 @@ const renderFileType = (text, record) => {
     </div>
   );
 };
+
 const content = (
   <div className="popover">
     {contentMsg.map(item => {
@@ -183,15 +185,8 @@ const renderAction = (text, record) => {
   if (record.showSate && record.type == "file") {
     return (
       <div>
-        <Popover placement="bottom">
-          <Icon
-            type="share-alt"
-            onClick={() => {
-              console.log("点击");
-            }}
-          />
-          &emsp;&thinsp;
-        </Popover>
+        <Icon type="share-alt" onClick={showModal.showModal} />
+        &emsp;&thinsp;
         <Popover placement="bottom" content={content} trigger="click">
           <Icon type="align-center" />
         </Popover>

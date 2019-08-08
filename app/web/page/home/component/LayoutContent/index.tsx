@@ -1,33 +1,35 @@
 import React, { Component } from "react";
-import { Row, Col, Table } from "antd";
+import { Row, Col, Table, Modal } from "antd";
 import "./indexclass.less";
-import { dataSource, columns, tableTitle } from "./dataSource.tsx";
+import ContentTable from "./ContentTable";
+
 import { TableListItem } from "./tableData";
 
 class LayoutContent extends Component {
+  state = { visible: false };
+  handleCancel = e => {
+    console.log(e);
+    this.setState({
+      visible: false
+    });
+  };
+  handleOk = e => {
+    console.log(e);
+    this.setState({
+      visible: false
+    });
+  };
+  public showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
   render() {
     return (
       <Row>
         <Col span={22} offset={1}>
-          <Table
-            dataSource={dataSource}
-            columns={columns}
-            title={() => {
-              return tableTitle;
-            }}
-            onRow={record => {
-              return {
-                onMouseEnter: event => {
-                  record.showSate = true;
-                  this.forceUpdate();
-                },
-                onMouseLeave: event => {
-                  record.showSate = false;
-                  this.forceUpdate();
-                }
-              };
-            }}
-          />
+          <ContentTable />
         </Col>
       </Row>
     );
