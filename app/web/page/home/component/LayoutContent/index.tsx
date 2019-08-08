@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Row, Col, Table, Modal } from "antd";
+import { Row, Col, Table, Modal, Icon, Popover, Button } from "antd";
 import "./indexclass.less";
 import ContentTable from "./ContentTable";
-
 import { TableListItem } from "./tableData";
 
 class LayoutContent extends Component {
@@ -37,3 +36,4 @@ class LayoutContent extends Component {
 }
 
 export default LayoutContent;
+// export { renderAction, renderFileType };

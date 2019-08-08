@@ -14,6 +14,7 @@ class ContentTable extends Component {
           return {
             onMouseEnter: event => {
               record.showSate = true;
+              console.log("移入");
               this.forceUpdate();
             },
             onMouseLeave: event => {
