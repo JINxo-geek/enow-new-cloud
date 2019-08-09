@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import { Table } from "antd";
-import { dataSource, columns, tableTitle } from "../dataSource";
-class ContentTable extends Component {
+import { dataSource, tableTitle } from "../dataSource";
+
+export interface ContentTableProps {
+  columns: any;
+}
+class ContentTable extends Component<ContentTableProps> {
+  columns: any;
+  constructor(props: ContentTableProps) {
+    super(props);
+    this.columns = props.columns;
+    this.state = {};
+  }
+
   render() {
     return (
       <Table
         dataSource={dataSource}
-        columns={columns}
+        columns={this.columns}
         title={() => {
           return tableTitle;
         }}

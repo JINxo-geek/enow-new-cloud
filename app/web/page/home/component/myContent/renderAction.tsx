@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon, Popover } from "antd";
 import content from "./content";
-
 export default (text, record) => {
   if (record.showSate && record.type == "file") {
     return (
