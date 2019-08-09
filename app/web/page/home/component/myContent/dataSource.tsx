@@ -4,7 +4,16 @@ import renderFileType from "./renderFileType";
 
 const tableTitle = "我的文档";
 
-let dataSource = [
+interface dataSourceType {
+  key: string;
+  name: string;
+  date: string;
+  size: string;
+  type: string;
+  showSate?: boolean;
+}
+
+let dataSource: Array<dataSourceType> = [
   {
     key: "1",
     name: "文件夹",
@@ -83,30 +92,4 @@ const bttonclass = {
   boxShadow: "0px 3px 3px 0px"
 };
 
-const columns = [
-  {
-    title: "名称",
-    dataIndex: "name",
-    key: "name",
-    render: renderFileType
-  },
-  {
-    title: "更新时间",
-    dataIndex: "date",
-    key: "date"
-  },
-  {
-    title: "大小",
-    dataIndex: "size",
-    key: "size"
-  },
-  {
-    title: "",
-    width: 120,
-    dataIndex: "key",
-    key: "key",
-    render: renderAction
-  }
-];
-
-export { dataSource, bttonclass, renderFileType, columns, tableTitle };
+export { dataSource, bttonclass, renderFileType, tableTitle };

@@ -3,6 +3,7 @@ import { Layout, Menu, Icon, Button, Row, Col, Divider, Popover } from "antd";
 import "./LayoutSider.less";
 import { logobg, contentMsg, timecapsule } from "./LayoutSiderConfig";
 import Util from "../../../../util/Util";
+import { Link, withRouter } from "react-router-dom";
 
 const content = (
   <div className="newpopover">
@@ -43,22 +44,28 @@ class LayoutSider extends Component {
           <Col>
             <Menu className="menu">
               <Menu.Item key="1">
-                <img className="iconsize" src={timecapsule} />
-                &thinsp;&thinsp;
-                <span>我的文档</span>
+                <Link to={`/project/table`}>
+                  <img className="iconsize" src={timecapsule} />
+                  &thinsp;&thinsp;
+                  <span>我的文档</span>
+                </Link>
               </Menu.Item>
               <Menu.Item key="2">
-                <img className="iconsize" src={timecapsule} />
-                &thinsp;&thinsp;
-                <span>时间胶囊</span>
+                <Link to={`/project/timecapsule`}>
+                  <img className="iconsize" src={timecapsule} />
+                  &thinsp;&thinsp;
+                  <span>时间胶囊</span>
+                </Link>
               </Menu.Item>
               <div>
                 <Divider />
               </div>
               <Menu.Item key="3">
-                <img className="iconsize" src={timecapsule} />
-                &thinsp;&thinsp;
-                <span>回收站</span>
+                <Link to={`/project/recyclebin`}>
+                  <img className="iconsize" src={timecapsule} />
+                  &thinsp;&thinsp;
+                  <span>回收站</span>
+                </Link>
               </Menu.Item>
             </Menu>
           </Col>

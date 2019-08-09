@@ -2,16 +2,18 @@ import React, { Component, ReactElement } from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import Layout from "../../framework/layout";
-import Tab from "./component/tab";
+// https://github.com/gaearon/react-hot-loader/issues/525
+import Login from "./Login";
 import { TabProps } from "../../framework/type";
-import Router from "./router";
-import { BrowserRouter } from "react-router-dom";
+import { hashHistory } from "react-router";
+import { ServerRouter } from "react-router-dom";
+import { BrowserRouter, StaticRouter } from "react-router-dom";
 class App extends Component<TabProps, any> {
   render() {
     return (
       <Layout {...this.props}>
         <BrowserRouter>
-          <Router />
+          <Login />
         </BrowserRouter>
       </Layout>
     );
