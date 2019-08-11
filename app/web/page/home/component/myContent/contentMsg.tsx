@@ -1,6 +1,3 @@
-import React from "react";
-import { Divider, Button } from "antd";
-
 const contentMsg = [
   {
     text: "分享",
@@ -58,19 +55,4 @@ const contentMsg = [
   }
 ];
 
-export default (
-  <div className="popover">
-    {contentMsg.map(item => {
-      if (item.text == "Divider") {
-        return <Divider className="btnframe" />;
-      }
-      return (
-        <p className="btnframe">
-          <Button type="link" className="btncolor">
-            {item.text}
-          </Button>
-        </p>
-      );
-    })}
-  </div>
-);
+export default contentMsg;

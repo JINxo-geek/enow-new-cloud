@@ -238,7 +238,9 @@
       "react-router-config": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-dom": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-redux": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
-      "redux": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js"
+      "redux": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "qrcode.react": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "copy-to-clipboard": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "@types/react": "/Users/cvter/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",

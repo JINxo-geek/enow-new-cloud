@@ -10,13 +10,13 @@
       "domainWhiteList": [
         "http://localhost:7001",
         "http://127.0.0.1:7001",
-        "http://172.18.144.14:7001",
+        "http://192.168.205.235:7001",
         "http://localhost:9000",
         "http://127.0.0.1:9000",
-        "http://172.18.144.14:9000",
+        "http://192.168.205.235:9000",
         "http://localhost:9001",
         "http://127.0.0.1:9001",
-        "http://172.18.144.14:9001"
+        "http://192.168.205.235:9001"
       ],
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
@@ -234,7 +234,9 @@
         "react-router-config": "^1.0.0-beta.4",
         "react-router-dom": "^5.0.1",
         "react-router-redux": "^4.0.8",
-        "redux": "^3.7.2"
+        "redux": "^3.7.2",
+        "qrcode.react": "^0.9.3",
+        "copy-to-clipboard": "^3.2.0"
       },
       "devDependencies": {
         "@types/react": "^16.0.34",

@@ -6,6 +6,7 @@ import Tab from "./component/tab";
 import { TabProps } from "../../framework/type";
 import Router from "./router";
 import { BrowserRouter } from "react-router-dom";
+import "../../asset/css/global.css";
 class App extends Component<TabProps, any> {
   render() {
     return (
@@ -19,6 +20,10 @@ class App extends Component<TabProps, any> {
 }
 
 function bootstrap() {
+  if (module.hot) {
+    console.log("启动热重载");
+    module.hot.accept();
+  }
   if (EASY_ENV_IS_NODE) {
     return App;
   }
@@ -31,9 +36,6 @@ function bootstrap() {
       </AppContainer>,
       root
     );
-    if (module.hot) {
-      module.hot.accept();
-    }
   }
   ReactDOM.hydrate(<App {...state} />, root);
 }

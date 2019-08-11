@@ -1,46 +1,99 @@
 import React, { Component } from "react";
-import { Row, Col, Table, Modal, Icon, Popover, Button } from "antd";
+import { Row, Col, Table, Divider, Icon, Popover, Button } from "antd";
 import "./indexclass.less";
 import ContentTable from "./ContentTable";
 import ShareModal from "./ShareModal";
-import { TableListItem } from "./tableData";
+import contentMsg from "./contentMsg";
 //@ts-ignore
 import file from "@images/file.png";
-import content from "./content";
+import { curry } from "../../../../util/Util";
+
 class myContent extends Component {
-  state = { visible: false };
+  ShareModalContent: any = {};
+  state = { modalVisible: false, currentRow: {}, popoverVisible: false };
+
   constructor(props: any) {
     super(props);
     this.columns;
     this.renderFileType;
     this.renderAction;
   }
+  content2 = <div>ssss</div>;
+  content = (
+    <div>
+      {contentMsg.map(item => {
+        if (item.text == "Divider") {
+          return <Divider className="btnframe" />;
+        }
+        return (
+          <p className="btnframe">
+            <Button
+              type="link"
+              className="btncolor"
+              onClick={() => {
+                this.setState({ popoverVisible: false });
+                this.selectFunc(item.text);
+              }}
+            >
+              {item.text}
+            </Button>
+          </p>
+        );
+      })}
+    </div>
+  );
+  changeCurrentRow = record => {
+    this.setState({ currentRow: record });
+  };
+
+  selectFunc = e => {
+    switch (e) {
+      case "分享":
+        this.showModal(this.state.currentRow);
+        break;
+    }
+  };
+  handleVisibleChange = popoverVisible => {
+    this.setState({ popoverVisible });
+  };
   handleCancel = e => {
     console.log(e);
     this.setState({
-      visible: false
+      modalVisible: false
     });
   };
   handleOk = e => {
     console.log(e);
     this.setState({
-      visible: false
+      modalVisible: false
     });
   };
 
-  showModal = () => {
-    console.log("被调用");
+  showModal = e => {
+    this.ShareModalContent.name = e.name;
+    this.ShareModalContent.key = e.key;
     this.setState({
-      visible: true
+      modalVisible: true
     });
   };
   renderAction = (text, record) => {
     if (record.showSate && record.type == "file") {
       return (
         <div>
-          <Icon type="share-alt" onClick={this.showModal} />
+          <Icon
+            type="share-alt"
+            onClick={() => {
+              this.showModal(record);
+            }}
+          />
           &emsp;&thinsp;
-          <Popover placement="bottom" content={content} trigger="click">
+          <Popover
+            visible={this.state.popoverVisible}
+            placement="bottom"
+            content={this.content}
+            trigger="click"
+            onVisibleChange={this.handleVisibleChange}
+          >
             <Icon type="align-center" />
           </Popover>
         </div>
@@ -100,15 +153,18 @@ class myContent extends Component {
   ];
 
   render() {
+    console.log("触发render");
     return (
       <Row>
         <Col span={22} offset={1}>
-          <ContentTable columns={this.columns} />
+          <ContentTable
+            columns={this.columns}
+            changeCurrentRow={this.changeCurrentRow}
+          />
           <ShareModal
-            showModal={this.showModal}
+            ShareModalContent={this.ShareModalContent}
             handleCancel={this.handleCancel}
-            handleOk={this.handleOk}
-            onVisibleChange={this.state.visible}
+            onVisibleChange={this.state.modalVisible}
           />
         </Col>
       </Row>
