@@ -4,6 +4,7 @@ import "./indexclass.less";
 import ContentTable from "./ContentTable";
 import ShareModal from "./ShareModal";
 import HistoryModal from "./HistoryModal";
+import MoveFileModal from "../MoveFileModal";
 import contentMsg from "./contentMsg";
 //@ts-ignore
 import file from "@images/file.png";
@@ -13,6 +14,7 @@ class MyContent extends Component {
   state = {
     shareModalVisible: false,
     historyModalVisible: false,
+    moveFileModalVisible: false,
     currentRow: {},
     popoverVisible: false
   };
@@ -56,13 +58,17 @@ class MyContent extends Component {
         this.showShareModal(this.state.currentRow);
         break;
       case "历史版本":
-        this.showhistoryModal(this.state.currentRow);
+        this.showHistoryModal(this.state.currentRow);
+        break;
+      case "移动到":
+        this.showMoveFileModal(this.state.currentRow);
         break;
     }
   };
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
   };
+  //分享
   shareCancel = e => {
     console.log(e);
     this.setState({
@@ -83,6 +89,7 @@ class MyContent extends Component {
       shareModalVisible: true
     });
   };
+  //历史
   historyCancel = e => {
     console.log(e);
     this.setState({
@@ -95,11 +102,32 @@ class MyContent extends Component {
       historyModalVisible: false
     });
   };
-  showhistoryModal = e => {
+  showHistoryModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
     this.setState({
       historyModalVisible: true
+    });
+  };
+  //移动
+  moveFileCancel = e => {
+    console.log(e);
+    this.setState({
+      moveFileModalVisible: false
+    });
+  };
+  moveFileOk = e => {
+    console.log(e);
+    this.setState({
+      moveFileModalVisible: false
+    });
+  };
+  showMoveFileModal = e => {
+    this.modalContent.name = e.name;
+    this.modalContent.key = e.key;
+    console.log("showMoveFileModal");
+    this.setState({
+      moveFileModalVisible: true
     });
   };
   renderAction = (text, record) => {
@@ -187,15 +215,20 @@ class MyContent extends Component {
             changeCurrentRow={this.changeCurrentRow}
           />
           <ShareModal
-            ShareModalContent={this.modalContent}
+            modalContent={this.modalContent}
             handleCancel={this.shareCancel}
             handleOk={this.shareOk}
             onVisibleChange={this.state.shareModalVisible}
           />
           <HistoryModal
-            historyModalContent={this.modalContent}
+            modalContent={this.modalContent}
             handleCancel={this.historyCancel}
             onVisibleChange={this.state.historyModalVisible}
+          />
+          <MoveFileModal
+            modalContent={this.modalContent}
+            handleCancel={this.moveFileCancel}
+            onVisibleChange={this.state.moveFileModalVisible}
           />
         </Col>
       </Row>

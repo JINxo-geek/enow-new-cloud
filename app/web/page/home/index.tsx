@@ -19,10 +19,6 @@ class App extends Component<TabProps, any> {
 }
 
 function bootstrap() {
-  if (module.hot) {
-    console.log("启动热重载");
-    module.hot.accept();
-  }
   if (EASY_ENV_IS_NODE) {
     return App;
   }
@@ -35,6 +31,10 @@ function bootstrap() {
       </AppContainer>,
       root
     );
+  }
+  if (module.hot) {
+    console.log("启动热重载");
+    module.hot.accept();
   }
   ReactDOM.hydrate(<App {...state} />, root);
 }

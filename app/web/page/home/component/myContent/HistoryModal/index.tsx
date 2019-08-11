@@ -31,7 +31,7 @@ function HistoryModal(props) {
       title={
         <div>
           <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
-          {props.historyModalContent.name}
+          {props.modalContent.name}
         </div>
       }
       visible={props.onVisibleChange}
