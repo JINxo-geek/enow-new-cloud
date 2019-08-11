@@ -71,3 +71,21 @@
 .icon-folder {
   color: rgb(224, 152, 101);
 }
+
+.btngreen {
+  background-color: rgba(101, 173, 89, 1);
+  color: white;
+}
+
+.btngreen:hover {
+  background-color: rgba(101, 173, 89, 1.4);
+  color: rgba(255, 255, 255, 1);
+}
+.btngreen:active {
+  background-color: rgba(101, 173, 89, 1.4);
+  color: rgba(255, 255, 255, 1);
+}
+.btngreen:focus {
+  background-color: rgba(101, 173, 89, 1.4);
+  color: rgba(255, 255, 255, 1);
+}

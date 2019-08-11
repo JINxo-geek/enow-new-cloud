@@ -28,7 +28,7 @@ function ShareModal(props) {
       // title={}
       title={
         <div>
-          <i className="demo-icon icon-ok-squared">&#xf15c;</i>
+          <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
           {props.ShareModalContent.name}
         </div>
       }
