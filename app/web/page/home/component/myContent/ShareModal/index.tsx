@@ -29,7 +29,7 @@ function ShareModal(props) {
       title={
         <div>
           <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
-          {props.ShareModalContent.name}
+          {props.modalContent.name}
         </div>
       }
       visible={props.onVisibleChange}
@@ -83,7 +83,7 @@ function ShareModal(props) {
             <div className="text">
               【希沃白板5】课件分享:
               <br />
-              {`《${props.ShareModalContent.name}》`}
+              {`《${props.modalContent.name}》`}
               <br />
               {shareUrl}
               <br />

@@ -1,6 +1,4 @@
 import "./indexclass.less";
-import renderAction from "./renderAction";
-import renderFileType from "./renderFileType";
 
 const tableTitle = "我的文档";
 
@@ -92,4 +90,4 @@ const bttonclass = {
   boxShadow: "0px 3px 3px 0px"
 };
 
-export { dataSource, bttonclass, renderFileType, tableTitle };
+export { dataSource, bttonclass, tableTitle };
