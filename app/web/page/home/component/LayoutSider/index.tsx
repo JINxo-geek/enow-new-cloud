@@ -2,15 +2,29 @@ import React, { Component } from "react";
 import { Layout, Menu, Icon, Button, Row, Col, Divider, Popover } from "antd";
 import "./LayoutSider.less";
 import { logobg, btnContentMsg, timecapsule } from "./LayoutSiderConfig";
-import Util from "../../../../util/Util";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const content = (
   <div className="newpopover">
     {btnContentMsg.map(item => {
+      var icon = <i />;
+      switch (item.imgType) {
+        case "brush":
+          icon = <i className="demo-icon icon-ok-squared">&#xf1fc;</i>;
+          break;
+        case "folder":
+          icon = <i className="demo-icon icon-ok-squared">&#xf14a;</i>;
+          break;
+        case "upload":
+          icon = <i className="demo-icon icon-ok-squared">&#xe801;</i>;
+          break;
+        case "timecapsule":
+          icon = <img className="iconsize" src={timecapsule} />;
+          break;
+      }
       return (
         <p>
-          <img className="iconsize" src={item.imgType} />
+          {icon}
           <Button type="link" className="btncolor">
             {item.text}
           </Button>

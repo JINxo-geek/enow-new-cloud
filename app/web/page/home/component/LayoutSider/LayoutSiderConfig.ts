@@ -1,5 +1,6 @@
 import logo from "@images/logo.png";
 import timecapsule from "@images/timecapsule.png";
+import { Upload } from "antd";
 const logobg = {
   backgroundImage: `url(${logo})`,
   width: 120,
@@ -9,28 +10,28 @@ const logobg = {
 };
 const btnContentMsg = [
   {
-    imgType: timecapsule,
+    imgType: "brush",
     text: "在线白板",
     func: () => {
       console.log("被点击");
     }
   },
   {
-    imgType: timecapsule,
+    imgType: "timecapsule",
     text: "时间胶囊",
     func: () => {
       console.log("被点击");
     }
   },
   {
-    imgType: timecapsule,
+    imgType: "folder",
     text: "新建文件夹",
     func: () => {
       console.log("被点击");
     }
   },
   {
-    imgType: timecapsule,
+    imgType: "upload",
     text: "导入PPT文档",
     func: () => {
       console.log("被点击");
