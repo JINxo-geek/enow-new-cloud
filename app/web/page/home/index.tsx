@@ -2,7 +2,6 @@ import React, { Component, ReactElement } from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import Layout from "../../framework/layout";
-import Tab from "./component/tab";
 import { TabProps } from "../../framework/type";
 import Router from "./router";
 import { BrowserRouter } from "react-router-dom";

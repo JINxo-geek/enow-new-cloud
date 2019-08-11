@@ -3,14 +3,19 @@ import { Row, Col, Table, Divider, Icon, Popover, Button } from "antd";
 import "./indexclass.less";
 import ContentTable from "./ContentTable";
 import ShareModal from "./ShareModal";
+import HistoryModal from "./HistoryModal";
 import contentMsg from "./contentMsg";
 //@ts-ignore
 import file from "@images/file.png";
-import { curry } from "../../../../util/Util";
 
-class myContent extends Component {
-  ShareModalContent: any = {};
-  state = { modalVisible: false, currentRow: {}, popoverVisible: false };
+class MyContent extends Component {
+  modalContent: any = {};
+  state = {
+    shareModalVisible: false,
+    historyModalVisible: false,
+    currentRow: {},
+    popoverVisible: false
+  };
 
   constructor(props: any) {
     super(props);
@@ -48,31 +53,53 @@ class myContent extends Component {
   selectFunc = e => {
     switch (e) {
       case "分享":
-        this.showModal(this.state.currentRow);
+        this.showShareModal(this.state.currentRow);
+        break;
+      case "历史版本":
+        this.showhistoryModal(this.state.currentRow);
         break;
     }
   };
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
   };
-  handleCancel = e => {
+  shareCancel = e => {
     console.log(e);
     this.setState({
-      modalVisible: false
+      shareModalVisible: false
     });
   };
-  handleOk = e => {
+  shareOk = e => {
     console.log(e);
     this.setState({
-      modalVisible: false
+      shareModalVisible: false
     });
   };
 
-  showModal = e => {
-    this.ShareModalContent.name = e.name;
-    this.ShareModalContent.key = e.key;
+  showShareModal = e => {
+    this.modalContent.name = e.name;
+    this.modalContent.key = e.key;
     this.setState({
-      modalVisible: true
+      shareModalVisible: true
+    });
+  };
+  historyCancel = e => {
+    console.log(e);
+    this.setState({
+      historyModalVisible: false
+    });
+  };
+  historyOk = e => {
+    console.log(e);
+    this.setState({
+      historyModalVisible: false
+    });
+  };
+  showhistoryModal = e => {
+    this.modalContent.name = e.name;
+    this.modalContent.key = e.key;
+    this.setState({
+      historyModalVisible: true
     });
   };
   renderAction = (text, record) => {
@@ -82,7 +109,7 @@ class myContent extends Component {
           <Icon
             type="share-alt"
             onClick={() => {
-              this.showModal(record);
+              this.showShareModal(record);
             }}
           />
           &emsp;&thinsp;
@@ -160,13 +187,19 @@ class myContent extends Component {
             changeCurrentRow={this.changeCurrentRow}
           />
           <ShareModal
-            ShareModalContent={this.ShareModalContent}
-            handleCancel={this.handleCancel}
-            onVisibleChange={this.state.modalVisible}
+            ShareModalContent={this.modalContent}
+            handleCancel={this.shareCancel}
+            handleOk={this.shareOk}
+            onVisibleChange={this.state.shareModalVisible}
+          />
+          <HistoryModal
+            historyModalContent={this.modalContent}
+            handleCancel={this.historyCancel}
+            onVisibleChange={this.state.historyModalVisible}
           />
         </Col>
       </Row>
     );
   }
 }
-export default myContent;
+export default MyContent;

@@ -10,7 +10,7 @@
   "files": ["./typings/global.d.ts"],
   "include": [
     "./page/**/**.tsx",
-    "page/home/component/myContent/dataSource.ts"
+    "page/home/component/MyContent/dataSource.ts"
   ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
