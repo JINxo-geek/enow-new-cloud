@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Layout, Menu, Icon, Button, Row, Col, Divider, Popover } from "antd";
 import "./LayoutSider.less";
-import { logobg, contentMsg, timecapsule } from "./LayoutSiderConfig";
+import { logobg, btnContentMsg, timecapsule } from "./LayoutSiderConfig";
 import Util from "../../../../util/Util";
 import { Link, withRouter } from "react-router-dom";
 
 const content = (
   <div className="newpopover">
-    {contentMsg.map(item => {
+    {btnContentMsg.map(item => {
       return (
         <p>
           <img className="iconsize" src={item.imgType} />
@@ -45,7 +45,7 @@ class LayoutSider extends Component {
             <Menu className="menu">
               <Menu.Item key="1">
                 <Link to={`/project/table`}>
-                  <img className="iconsize" src={timecapsule} />
+                  <i className="demo-icon icon-ok-squared">&#xf14a;</i>
                   &thinsp;&thinsp;
                   <span>我的文档</span>
                 </Link>
@@ -62,7 +62,7 @@ class LayoutSider extends Component {
               </div>
               <Menu.Item key="3">
                 <Link to={`/project/recyclebin`}>
-                  <img className="iconsize" src={timecapsule} />
+                  <i className="demo-icon icon-ok-squared">&#xe83d;</i>
                   &thinsp;&thinsp;
                   <span>回收站</span>
                 </Link>

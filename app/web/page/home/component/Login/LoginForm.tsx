@@ -63,7 +63,6 @@ class LoginForm extends React.Component {
             htmlType="submit"
             size="large"
             icon="login"
-            styleName="submit"
             onClick={() => {
               //@ts-ignore
               this.props.history.push("/project/table");

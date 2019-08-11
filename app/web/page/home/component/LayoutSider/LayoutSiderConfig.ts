@@ -7,7 +7,7 @@ const logobg = {
   marginLeft: 30,
   marginTop: 23
 };
-const contentMsg = [
+const btnContentMsg = [
   {
     imgType: timecapsule,
     text: "在线白板",
@@ -38,4 +38,4 @@ const contentMsg = [
   }
 ];
 
-export { logobg, contentMsg, timecapsule };
+export { logobg, btnContentMsg, timecapsule };

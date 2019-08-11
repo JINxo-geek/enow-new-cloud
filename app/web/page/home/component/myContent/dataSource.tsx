@@ -37,14 +37,14 @@ let dataSource: Array<dataSourceType> = [
   },
   {
     key: "4",
-    name: "文件",
+    name: "我是希沃白板5",
     date: "2014-12-24",
     size: "4MB",
     type: "file"
   },
   {
     key: "5",
-    name: "文件2",
+    name: "我是课件",
     date: "2014-12-24",
     size: "4MB",
     type: "file"

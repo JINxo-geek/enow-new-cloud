@@ -1,0 +1,8 @@
+
+.icon-ok-squared:before { content: '\32'; } /* '2' */
+.icon-download:before { content: '\e800'; } /* '' */
+.icon-upload:before { content: '\e801'; } /* '' */
+.icon-trash:before { content: '\e83d'; } /* '' */
+.icon-folder:before { content: '\f14a'; } /* '' */
+.icon-doc-text-inv:before { content: '\f15c'; } /* '' */
+.icon-brush:before { content: '\f1fc'; } /* '' */

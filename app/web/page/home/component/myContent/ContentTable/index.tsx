@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { Table } from "antd";
 import { dataSource, tableTitle } from "../dataSource";
-
+import "../indexclass.less";
 export interface ContentTableProps {
   columns: any;
+  changeCurrentRow: Function;
 }
 class ContentTable extends Component<ContentTableProps> {
   columns: any;
+  changeCurrentRow: any;
   constructor(props: ContentTableProps) {
     super(props);
     this.columns = props.columns;
     this.state = {};
+    this.changeCurrentRow = props.changeCurrentRow;
   }
 
   render() {
@@ -25,8 +28,7 @@ class ContentTable extends Component<ContentTableProps> {
           return {
             onMouseEnter: event => {
               record.showSate = true;
-              console.log("移入");
-              this.forceUpdate();
+              this.changeCurrentRow(record);
             },
             onMouseLeave: event => {
               record.showSate = false;
