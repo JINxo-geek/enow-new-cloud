@@ -4,10 +4,10 @@ const { Sider } = Layout;
 import "./tab.css";
 import LayoutSider from "./LayoutSider";
 import LayoutHeader from "./LayoutHeader";
-import myContent from "./myContent";
+import MyContent from "./MyContent";
 import About from "./About";
-import timeCapsule from "./timeCapsule";
-import recycleBin from "./recycleBin";
+import TimeCapsule from "./TimeCapsule";
+import RecycleBin from "./RecycleBin";
 import { Route, Switch, withRouter } from "react-router-dom";
 class Tab extends Component {
   render() {
@@ -24,9 +24,9 @@ class Tab extends Component {
             <LayoutHeader accountMsg={{}} />
             <div>
               <Switch>
-                <Route path="/project/table" component={myContent} />
-                <Route path="/project/recyclebin" component={recycleBin} />
-                <Route path="/project/timecapsule" component={timeCapsule} />
+                <Route path="/project/table" component={MyContent} />
+                <Route path="/project/recyclebin" component={RecycleBin} />
+                <Route path="/project/timecapsule" component={TimeCapsule} />
                 <Route path="/project/about" component={About} />
               </Switch>
             </div>
