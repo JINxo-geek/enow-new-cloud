@@ -18,7 +18,6 @@ class myContent extends Component {
     this.renderFileType;
     this.renderAction;
   }
-  content2 = <div>ssss</div>;
   content = (
     <div>
       {contentMsg.map(item => {
@@ -153,7 +152,6 @@ class myContent extends Component {
   ];
 
   render() {
-    console.log("触发render");
     return (
       <Row>
         <Col span={22} offset={1}>

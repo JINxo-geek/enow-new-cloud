@@ -3,41 +3,64 @@ import { Layout, Menu, Icon, Button, Row, Col, Divider, Popover } from "antd";
 import "./LayoutSider.less";
 import { logobg, btnContentMsg, timecapsule } from "./LayoutSiderConfig";
 import { Link } from "react-router-dom";
-
-const content = (
-  <div className="newpopover">
-    {btnContentMsg.map(item => {
-      var icon = <i />;
-      switch (item.imgType) {
-        case "brush":
-          icon = <i className="demo-icon icon-brush">&#xf1fc;</i>;
-          break;
-        case "folder":
-          icon = <i className="demo-icon icon-folder">&#xf14a;</i>;
-          break;
-        case "upload":
-          icon = <i className="demo-icon  icon-upload">&#xe801;</i>;
-          break;
-        case "timecapsule":
-          icon = <img className="iconsize" src={timecapsule} />;
-          break;
-      }
-      return (
-        <p>
-          {icon}
-          <Button type="link" className="btncolor">
-            {item.text}
-          </Button>
-        </p>
-      );
-    })}
-  </div>
-);
+import NewFolderModal from "../NewFolderModal";
 
 class LayoutSider extends Component {
+  state = { newFolderModalVisible: false };
+  showNewFolderModalVisible = () => {
+    this.setState({ newFolderModalVisible: true });
+  };
+  cancelNewFolderModalVisible = () => {
+    this.setState({ newFolderModalVisible: false });
+  };
+  content = (
+    <div className="newpopover">
+      {btnContentMsg.map(item => {
+        var icon = <i />;
+        switch (item.imgType) {
+          case "brush":
+            icon = <i className="demo-icon icon-brush">&#xf1fc;</i>;
+            break;
+          case "folder":
+            icon = <i className="demo-icon icon-folder">&#xf14a;</i>;
+            break;
+          case "upload":
+            icon = <i className="demo-icon  icon-upload">&#xe801;</i>;
+            break;
+          case "timecapsule":
+            icon = <img className="iconsize" src={timecapsule} />;
+            break;
+        }
+        return (
+          <p>
+            {icon}
+            <Button
+              type="link"
+              className="btncolor"
+              onClick={() => {
+                this.buttonFun(item.text);
+              }}
+            >
+              {item.text}
+            </Button>
+          </p>
+        );
+      })}
+    </div>
+  );
+  buttonFun(text) {
+    switch (text) {
+      case "新建文件夹":
+        this.showNewFolderModalVisible();
+    }
+  }
   render() {
     return (
       <div className="layout">
+        <NewFolderModal
+          newFolderModalVisible={this.state.newFolderModalVisible}
+          cancelNewFolderModalVisible={this.cancelNewFolderModalVisible}
+        />
         <Row>
           <Col>
             <div className="logo" style={logobg} />
@@ -45,7 +68,7 @@ class LayoutSider extends Component {
         </Row>
         <Row>
           <Col>
-            <Popover placement="bottom" content={content} trigger="click">
+            <Popover placement="bottom" content={this.content} trigger="click">
               <Button className="bttonclass">
                 <div className="vertical">
                   <span className="buttontext">+</span>&thinsp;<span>新建</span>
