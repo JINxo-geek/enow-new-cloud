@@ -28,7 +28,7 @@ function ShareModal(props) {
       // title={}
       title={
         <div>
-          <img src={file} />
+          <i className="demo-icon icon-ok-squared">&#xf15c;</i>
           {props.ShareModalContent.name}
         </div>
       }
@@ -37,7 +37,9 @@ function ShareModal(props) {
       footer={null}
     >
       <Row>
-        <Col span={4}>分享有效期</Col>
+        <Col span={4} offset={1}>
+          分享有效期
+        </Col>
 
         <Col span={4}>
           <Select
@@ -71,9 +73,8 @@ function ShareModal(props) {
         <Col span={12}>
           <div className="QRtop">
             <div className="QRframe">
-              <p>扫描二维码，打开链接即可分享给你的好友</p>
-              {/* <div className="QR" /> */}
-              <QRCode value={shareUrl} />
+              <p className="QRtip">扫二维码，打开链接即可分享给你的好友</p>
+              <QRCode size={106} value={shareUrl} />
             </div>
           </div>
         </Col>
@@ -87,7 +88,9 @@ function ShareModal(props) {
               {shareUrl}
               <br />
             </div>
-            <Button onClick={copyUrl}>复制链接</Button>
+            <Button className="btncopy" onClick={copyUrl}>
+              复制链接
+            </Button>
           </div>
         </Col>
       </Row>
