@@ -51,3 +51,23 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
+
+.icon-doc-text-inv {
+  color: rgb(101, 173, 89);
+}
+
+.icon-trash {
+  color: rgb(153, 153, 153);
+}
+
+.icon-brush {
+  color: rgb(37, 155, 36);
+}
+
+.icon-upload {
+  color: rgb(153, 153, 153);
+}
+
+.icon-folder {
+  color: rgb(224, 152, 101);
+}

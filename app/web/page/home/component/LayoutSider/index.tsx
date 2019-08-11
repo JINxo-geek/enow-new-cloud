@@ -10,13 +10,13 @@ const content = (
       var icon = <i />;
       switch (item.imgType) {
         case "brush":
-          icon = <i className="demo-icon icon-ok-squared">&#xf1fc;</i>;
+          icon = <i className="demo-icon icon-brush">&#xf1fc;</i>;
           break;
         case "folder":
-          icon = <i className="demo-icon icon-ok-squared">&#xf14a;</i>;
+          icon = <i className="demo-icon icon-folder">&#xf14a;</i>;
           break;
         case "upload":
-          icon = <i className="demo-icon icon-ok-squared">&#xe801;</i>;
+          icon = <i className="demo-icon  icon-upload">&#xe801;</i>;
           break;
         case "timecapsule":
           icon = <img className="iconsize" src={timecapsule} />;
@@ -59,15 +59,15 @@ class LayoutSider extends Component {
             <Menu className="menu">
               <Menu.Item key="1">
                 <Link to={`/project/table`}>
-                  <i className="demo-icon icon-ok-squared">&#xf14a;</i>
-                  &thinsp;&thinsp;
+                  <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
+                  &thinsp;
                   <span>我的文档</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="2">
                 <Link to={`/project/timecapsule`}>
                   <img className="iconsize" src={timecapsule} />
-                  &thinsp;&thinsp;
+                  &thinsp;
                   <span>时间胶囊</span>
                 </Link>
               </Menu.Item>
@@ -76,8 +76,8 @@ class LayoutSider extends Component {
               </div>
               <Menu.Item key="3">
                 <Link to={`/project/recyclebin`}>
-                  <i className="demo-icon icon-ok-squared">&#xe83d;</i>
-                  &thinsp;&thinsp;
+                  <i className="demo-icon icon-trash">&#xe83d;</i>
+                  &thinsp;
                   <span>回收站</span>
                 </Link>
               </Menu.Item>
