@@ -5,6 +5,8 @@
   "login.css": "/public/css/login.css",
   "login.js": "/public/js/chunk/login.js",
   "runtime.js": "/public/js/runtime.js",
+  "font/global.css": "/public/font/fontello.woff",
+  "img/global.css": "/public/img/fontello.svg",
   "img/logo.png": "/public/img/logo.png",
   "img/timecapsule.png": "/public/img/timecapsule.png",
   "deps": {
