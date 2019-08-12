@@ -21,7 +21,7 @@ class LayoutHeader extends Component<LayoutHeaderState> {
     }
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.content = (
       <div className="headerpopover">
         {/* <p> {this.state.accountMsg.name}</p> */}
