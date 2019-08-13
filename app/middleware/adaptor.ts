@@ -10,8 +10,8 @@ import { logger } from './utils';
 
 export const Code = {
   begin: 'HTTP Config begin',
-  end: 'HTTP Config end'
-}
+  end: 'HTTP Config end',
+};
 
 export default function(options) {
   return async (ctx, next) => {
@@ -24,7 +24,7 @@ export default function(options) {
       signed: false,
     });
 
-    const appCodeConfig = get(options, 'authApp', '');
+    const appCodeConfig = get(options, 'authApp', 'EasiNote5');
 
     const headers = {
       'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default function(options) {
       "Accept": '*/*',
       "Authorization": '',
       'x-auth-refer': 'EasiNoteWeb',
-      "Cookie": 'x-auth-token=' + accessToken + ';x-auth-app=' + (appCode || appCodeConfig),
+      "Cookie": 'x-auth-token=' + (accessToken || '00ce6d52b57a45c197068af89f9c9a84') + ';x-auth-app=' + (appCode || appCodeConfig),
     };
 
     const adaptorConfig = {
@@ -42,9 +42,9 @@ export default function(options) {
         headers,
         baseURL: get(options, 'baseURL.edu', ''),
         beforeRequest(httpConfig) {
-          _logger(Code.begin)
+          _logger(Code.begin);
           ctx.logger.info(httpConfig);
-          _logger(Code.end)
+          _logger(Code.end);
         },
       },
     };
