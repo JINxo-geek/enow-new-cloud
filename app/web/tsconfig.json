@@ -6,7 +6,14 @@
     "module": "esnext",
     "sourceMap": true,
     "outDir": "./build",
-    "lib": ["es6", "dom", "es2017", "esnext"]
+    "lib": ["es6", "dom", "es2017", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@helpers/*": ["helpers/*"],
+      "@util/*": ["util/*"],
+      "@images/*": ["asset/images/*"],
+      "@css/*": ["asset/css/*"],
+    }
   },
   "files": ["./typings/global.d.ts"],
   "include": [
