@@ -6,14 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from './router';
 import '@css/global.css';
 
-class App extends Component<any, any> {
-  render() {
-    return (
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    );
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
 
 function bootstrap() {
@@ -22,6 +20,7 @@ function bootstrap() {
   }
   const state = window.__INITIAL_STATE__;
   const root = document.getElementById('app');
+
   if (EASY_ENV_IS_DEV) {
     ReactDOM.render(
       <AppContainer>
@@ -29,11 +28,12 @@ function bootstrap() {
       </AppContainer>,
       root
     );
+    if (module.hot) {
+      module.hot.accept();
+    }
+  } else {
+    ReactDOM.render(<App {...state} />, root);
   }
-  if (module.hot) {
-    module.hot.accept();
-  }
-  ReactDOM.render(<App {...state} />, root);
 }
 
 export default bootstrap();
