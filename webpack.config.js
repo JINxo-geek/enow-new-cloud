@@ -1,43 +1,43 @@
-"use strict";
+'use strict';
 // https://www.yuque.com/easy-team/egg-react/config
-const path = require("path");
+const path = require('path');
 const resolve = filepath => path.resolve(__dirname, filepath);
 module.exports = {
-  target: "web", //只会构建浏览器运行的 JSBundle 文件
+  target: 'web', //只会构建浏览器运行的 JSBundle 文件
   resolve: {
     alias: {
-      "@images": resolve(`app/web/asset/images`),
-      "@util": resolve(`app/web/util`),
-      '@helpers': resolve(`app/web/helpers`)
-    }
+      '@images': resolve('app/web/asset/images'),
+      '@util': resolve('app/web/util'),
+      '@helpers': resolve('app/web/helpers'),
+    },
   },
-  devtool: "eval",
+  devtool: 'inline-cheap-source-map',
   entry: {
-    home: "app/web/page/home/index.tsx",
+    home: 'app/web/page/home/index.tsx',
     // login: "app/web/page/login/index.tsx"
   },
-  lib: ["react", "react-dom"],
+  lib: ['react', 'react-dom'],
   loaders: {
     babel: {
-      include: [resolve("app/web"), resolve("node_modules")]
+      include: [resolve('app/web'), resolve('node_modules')],
     },
     less: {
-      include: [resolve("app/web"), resolve("node_modules")],
+      include: [resolve('app/web'), resolve('node_modules')],
       options: {
         javascriptEnabled: true,
         modifyVars: {
           // 'primary-color': 'rgba(241,241,241,1)',
           // 'link-color': 'rgba(241,241,241,1)',
-          "border-radius-base": "2px"
-        }
-      }
+          'border-radius-base': '2px',
+        },
+      },
     },
-    typescript: true
+    typescript: true,
   },
   plugins: {
-    imagemini: false
+    imagemini: false,
   },
   done() {
-    console.log("---webpack compile finish---");
-  }
+    console.log('---webpack compile finish---');
+  },
 };

@@ -32,6 +32,58 @@
   "keys": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
   "authApp": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
   "middleware": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+  "security": {
+    "xframe": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
+    "protocolWhiteList": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+    "csrf": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "useSession": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
+    }
+  },
   "reactssr": {
     "layout": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
     "injectCss": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
@@ -76,58 +128,6 @@
   },
   "logview": {
     "dir": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts"
-  },
-  "security": {
-    "domainWhiteList": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
-    "protocolWhiteList": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-    "defaultMiddleware": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-    "csrf": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "useSession": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "ignoreJSON": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "cookieName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "sessionName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "headerName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "bodyName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "queryName": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "xframe": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "hsts": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.local.js",
-      "maxAge": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "includeSubdomains": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "dta": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "methodnoallow": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "noopen": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "nosniff": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "referrerPolicy": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "xssProtection": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "csp": {
-      "enable": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "policy": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    },
-    "ssrf": {
-      "ipBlackList": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js",
-      "checkAddress": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/config.default.js"
-    }
   },
   "session": {
     "maxAge": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-session/config/config.default.js",

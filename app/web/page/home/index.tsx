@@ -5,13 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 
 import Layout from "../../framework/layout";
 import Router from "./router";
-// import fetch from '../../helpers/callAPI';
-
+import fetch from '@helpers/callAPI';
 import "../../asset/css/global.css";
 
-// fetch('GET_USER_LEVEL').then(res => {
-//   console.log('GET_USER_LEVEL', res);
-// });
+fetch('GET_USER_LEVEL', {}).then(res => {
+  console.log('GET_USER_LEVEL', res);
+});
 
 class App extends Component<any, any> {
   render() {

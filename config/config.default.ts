@@ -36,6 +36,12 @@ export default function(app: EggAppConfig) {
   //   },
   // };
 
+  exports.security = {
+    xframe: {
+      enable: false,
+    },
+  };
+
   exports.reactssr = {
     layout: path.join(app.baseDir, 'app/web/view/layout.html'),
   };
@@ -47,9 +53,9 @@ export default function(app: EggAppConfig) {
 
   exports.baseURL = baseURL;
   exports.adaptor = {
-    baseURL: baseURL,
-    authApp: 'EasiNote5'
-  }
+    baseURL,
+    authApp: 'EasiNote5',
+  };
 
   return exports;
 }
