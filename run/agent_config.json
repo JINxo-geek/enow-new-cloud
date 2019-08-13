@@ -163,8 +163,7 @@
       "defaultViewEngine": "",
       "mapping": {
         ".js": "react",
-        ".jsx": "react",
-        ".html": "ejs"
+        ".jsx": "react"
       }
     },
     "reactssr": {

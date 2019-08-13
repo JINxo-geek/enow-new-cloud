@@ -3,7 +3,7 @@
 const path = require("path");
 const resolve = filepath => path.resolve(__dirname, filepath);
 module.exports = {
-  // target: "web", //只会构建浏览器运行的 JSBundle 文件
+  target: "web", //只会构建浏览器运行的 JSBundle 文件
   resolve: {
     alias: {
       "@images": resolve(`app/web/asset/images`),
