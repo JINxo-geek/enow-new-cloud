@@ -199,13 +199,12 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@cvte/easi-adaptor@^2.0.11":
-  version "2.0.11"
-  resolved "http://nexus.gz.cvte.cn/nexus/repository/npm-group/@cvte/easi-adaptor/-/easi-adaptor-2.0.11.tgz#7acccd365016a8c0e032b6c0729cca051fcb8a58"
+"@cvte/easi-adaptor@2.0.6":
+  version "2.0.6"
+  resolved "http://nexus.gz.cvte.cn/nexus/repository/npm-group/@cvte/easi-adaptor/-/easi-adaptor-2.0.6.tgz#c8215b653434eb72fe37f8af88b5d2d1cbfbe96a"
   dependencies:
     "@cvte/easi-validate" "^1.0.4"
     axios "^0.16.2"
-    babel-preset-flow "^6.23.0"
     bluebird "^3.5.0"
     deep-extend "^0.5.0"
     http-errors "^1.6.2"

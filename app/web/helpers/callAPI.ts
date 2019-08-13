@@ -3,33 +3,47 @@
  * @description easi-adaptor的API调用
  */
 
-import CallAPI from '@cvte/easi-adaptor/dist/callAPI';
+import axios from 'axios';
 import event from './event';
-import { merge } from 'lodash';
+import { get } from 'lodash';
 
 export const EHttpEventCode = {
   INVALID_NAME: Symbol('invalid name'),
+  ACTION_SUCCESS: Symbol('action success'),
+  ACTION_FAIL: Symbol('action fail'),
 }
 
-const adaptor = new CallAPI({
-  http: {
-    url: '/apis'
-  }
+export const TIMEOUT = 2e3;
+
+const ax = axios.create({
+  baseURL: '/apis',
+  timeout: TIMEOUT,
 });
 
-const defaultConfig = {};
-const mdwBefore = [];
-const mdwAfter = [];
+ax.interceptors.request.use(
+  // @TODO
+);
 
-adaptor.beforeRequest(mdwBefore);
-adaptor.afterRequest(mdwAfter);
-
-export default function fetch(name: string, config: any = {}, options: any = {}): Promise<any> {
-  if (typeof name === 'string' && name.length > 0) {
-    const dispatch = adaptor.dispatch.bind(adaptor);
-    return dispatch(name, merge({}, defaultConfig, config), options);
-  } else {
-    event.emit(EHttpEventCode.INVALID_NAME);
-    return Promise.reject(name);
+ax.interceptors.response.use(
+  resp => {
+    const data = resp.data;
+    if(get(resp, 'data.status') === 200) {
+      event.emit(EHttpEventCode.ACTION_SUCCESS, data)
+    } else {
+      event.emit(EHttpEventCode.ACTION_FAIL, data)
+    }
+    return data;
   }
-}
+);
+
+export default function fetch(actionName: string, params: any = {}): Promise<any> {
+  return ax({
+    // 使用 POST 提交到Node端，进行接口转发
+    method: 'POST',
+    url: `?actionName=${actionName}&ts=${Date.now()}`,
+    data: {
+      ...params,
+      _csrf: get(window, '__INITIAL_STATE__.csrf', '')
+    },
+  });
+};
