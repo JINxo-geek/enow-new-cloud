@@ -6,10 +6,16 @@
 import Adaptor from '@cvte/easi-adaptor';
 import apis from '../apis/index';
 import { get } from 'lodash';
-import { chalk } from './utils';
+import { logger } from './utils';
+
+export const Code = {
+  begin: 'HTTP Config begin',
+  end: 'HTTP Config end'
+}
 
 export default function(options) {
   return async (ctx, next) => {
+    const _logger = logger(ctx);
     const accessToken = ctx.cookies.get('x-auth-token', {
       signed: false,
     });
@@ -34,11 +40,11 @@ export default function(options) {
       apis,
       http: {
         headers,
-        baseURL: get(options, 'serverUrl', ''),
+        baseURL: get(options, 'baseURL.edu', ''),
         beforeRequest(httpConfig) {
-          ctx.logger.info(chalk('HTTP config start', 'green'));
+          _logger(Code.begin)
           ctx.logger.info(httpConfig);
-          ctx.logger.info(chalk('HTTP config end', 'green'));
+          _logger(Code.end)
         },
       },
     };

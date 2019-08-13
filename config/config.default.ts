@@ -21,7 +21,7 @@ export default function(app: EggAppConfig) {
   exports.keys = '123456';
 
   exports.authApp = 'EasiNote5';
-  exports.serverUrl = ''
+  // exports.serverUrl = '';
 
   exports.middleware = [
     // 'access'
