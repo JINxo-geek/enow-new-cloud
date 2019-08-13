@@ -4,14 +4,7 @@
  */
 
 import { get } from 'lodash';
-import { logger } from './utils';
-
-export const Code = {
-  ok: 'AUTH Ok',
-  error: 'AUTH Error',
-  end: 'AUTH End',
-  fail: 'AUTH Fail',
-};
+import { logger, Code } from './utils';
 
 export default function(options) {
   return async (ctx, next) => {
