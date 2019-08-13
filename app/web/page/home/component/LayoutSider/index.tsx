@@ -32,7 +32,7 @@ class LayoutSider extends Component {
             break;
         }
         return (
-          <p>
+          <p key={item.imgType}>
             {icon}
             <Button
               type="link"
