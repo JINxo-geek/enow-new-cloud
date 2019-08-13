@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 import { merge, isPlainObject } from 'lodash';
 
 const files = fs.readdirSync(__dirname);

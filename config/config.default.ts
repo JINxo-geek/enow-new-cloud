@@ -20,12 +20,21 @@ export default function(app: EggAppConfig) {
 
   exports.keys = '123456';
 
+  exports.authApp = 'EasiNote5';
+  exports.serverUrl = ''
+
   exports.middleware = [
     // 'access'
+    'adaptor'
   ];
 
   exports.reactssr = {
     layout: path.join(app.baseDir, 'app/web/view/layout.html')
+  };
+
+  exports.baseURL = {
+    enow: 'http://enow-kernel.test.seewo.com',
+    edu: 'http://edu.test.seewo.com',
   };
 
   return exports;
