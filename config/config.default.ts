@@ -26,6 +26,7 @@ export default function(app: EggAppConfig) {
   exports.middleware = [
     // 'access'
     'adaptor',
+    'api',
   ];
 
   exports.view = {

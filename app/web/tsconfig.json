@@ -5,12 +5,12 @@
     "target": "es5",
     "module": "esnext",
     "sourceMap": true,
+    "outDir": "./build",
     "lib": ["es6", "dom", "es2017", "esnext"]
   },
   "files": ["./typings/global.d.ts"],
   "include": [
     "./page/**/**.tsx",
-    "page/home/component/MyContent/dataSource.ts"
   ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

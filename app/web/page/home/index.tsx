@@ -1,12 +1,19 @@
-import React, { Component, ReactElement } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
-import Layout from "../../framework/layout";
-import { TabProps } from "../../framework/type";
-import Router from "./router";
 import { BrowserRouter } from "react-router-dom";
+
+import Layout from "../../framework/layout";
+import Router from "./router";
+// import fetch from '../../helpers/callAPI';
+
 import "../../asset/css/global.css";
-class App extends Component<TabProps, any> {
+
+// fetch('GET_USER_LEVEL').then(res => {
+//   console.log('GET_USER_LEVEL', res);
+// });
+
+class App extends Component<any, any> {
   render() {
     return (
       <Layout {...this.props}>
@@ -33,7 +40,7 @@ function bootstrap() {
     );
   }
   if (module.hot) {
-    console.log("启动热重载");
+    console.log("ENOW...");
     module.hot.accept();
   }
   ReactDOM.hydrate(<App {...state} />, root);

@@ -2,13 +2,7 @@ import { Controller } from 'egg';
 export default class HomeController extends Controller {
   public async index() {
     const { ctx } = this;
-    await ctx.renderClient('home.js');
+    await ctx.renderClient('home');
     // await ctx.render('home.js');
-  }
-
-  public async login() {
-    const { ctx } = this;
-    await ctx.renderClient('login.js');
-    // await ctx.render('login.js');
   }
 }

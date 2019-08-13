@@ -226,6 +226,7 @@
     },
     "dependencies": {
       "@cvte/easi-adaptor": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "axios": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "colors": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "copy-to-clipboard": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "cross-env": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
@@ -236,6 +237,7 @@
       "egg-validate": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-view-ejs": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-view-react-ssr": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "events": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "extend": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "history": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "lodash": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",

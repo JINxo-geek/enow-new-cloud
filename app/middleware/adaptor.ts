@@ -51,6 +51,7 @@ export default function(options) {
 
     const adaptor = new Adaptor(adaptorConfig);
     ctx.request.dispatch = adaptor.dispatch.bind(adaptor);
+
     await next();
   };
 }
