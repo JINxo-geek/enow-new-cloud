@@ -29,12 +29,12 @@ export default function(app: EggAppConfig) {
     'api',
   ];
 
-  exports.view = {
-    defaultExtension: '.html',
-    mapping: {
-      '.html': 'ejs',
-    },
-  };
+  // exports.view = {
+  //   defaultExtension: '.html',
+  //   mapping: {
+  //     '.html': 'ejs',
+  //   },
+  // };
 
   exports.reactssr = {
     layout: path.join(app.baseDir, 'app/web/view/layout.html'),

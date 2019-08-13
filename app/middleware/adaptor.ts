@@ -6,12 +6,7 @@
 import * as Adaptor from '@cvte/easi-adaptor';
 import apis from '../apis/index';
 import { get } from 'lodash';
-import { logger } from './utils';
-
-export const Code = {
-  begin: 'HTTP Config begin',
-  end: 'HTTP Config end',
-};
+import { logger, Code } from './utils';
 
 export default function(options) {
   return async (ctx, next) => {
@@ -32,7 +27,7 @@ export default function(options) {
       "Accept": '*/*',
       "Authorization": '',
       'x-auth-refer': 'EasiNoteWeb',
-      "Cookie": 'x-auth-token=' + (accessToken || '00ce6d52b57a45c197068af89f9c9a84') + ';x-auth-app=' + (appCode || appCodeConfig),
+      "Cookie": 'x-auth-token=' + accessToken + ';x-auth-app=' + (appCode || appCodeConfig),
     };
 
     const adaptorConfig = {
@@ -42,9 +37,9 @@ export default function(options) {
         headers,
         baseURL: get(options, 'baseURL.edu', ''),
         beforeRequest(httpConfig) {
-          _logger(Code.begin);
+          _logger(Code.beginConfig);
           ctx.logger.info(httpConfig);
-          _logger(Code.end);
+          _logger(Code.endConfig);
         },
       },
     };
