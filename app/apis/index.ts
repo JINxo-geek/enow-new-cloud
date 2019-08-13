@@ -4,7 +4,7 @@ import { merge, isPlainObject } from 'lodash';
 
 const files = fs.readdirSync(__dirname);
 const getAPI = (filename: string) => require(path.join(__dirname, filename));
-const isMatchAPI = (filename: string) => /\w*.api.js/.test(filename);
+const isMatchAPI = (filename: string) => /\w*.api\.[tj]s/.test(filename);
 let mergeAPIs = {};
 
 files.forEach(name => {
@@ -14,5 +14,4 @@ files.forEach(name => {
   }
 });
 
-console.log('mergeAPIs ================', mergeAPIs)
 export default mergeAPIs;

@@ -22,7 +22,7 @@ export default function(options) {
 
     try {
       resp = await ctx.request.dispatch(actionName, { params });
-      _logger(resp);
+
       ctx.body = {
         status: 200,
         data: get(resp, 'res.data.data', {}),

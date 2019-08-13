@@ -9,9 +9,17 @@ import * as fs from 'fs';
 
 export default function(app) {
   const exports: any = {};
-  exports.baseURL = {
+
+  const baseURL = {
     enow: 'http://enow-kernel.seewo.com',
     edu: 'http://edu.seewo.com',
   };
+
+  exports.baseURL = baseURL;
+  exports.adaptor = {
+    baseURL: baseURL,
+    authApp: 'EasiNote5'
+  }
+
   return exports;
 }

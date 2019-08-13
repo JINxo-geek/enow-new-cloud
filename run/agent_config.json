@@ -245,6 +245,7 @@
         "redux": "^3.7.2"
       },
       "devDependencies": {
+        "@types/lodash": "^4.14.136",
         "@types/react": "^16.0.34",
         "@types/react-dom": "^16.0.3",
         "antd": "^3.0.3",
@@ -392,6 +393,13 @@
     "baseURL": {
       "enow": "http://enow-kernel.test.seewo.com",
       "edu": "http://edu.test.seewo.com"
+    },
+    "adaptor": {
+      "baseURL": {
+        "enow": "http://enow-kernel.test.seewo.com",
+        "edu": "http://edu.test.seewo.com"
+      },
+      "authApp": "EasiNote5"
     },
     "logview": {
       "dir": "/Users/yanguangjie/Desktop/enow-new-cloud/logs"

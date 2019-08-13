@@ -40,10 +40,16 @@ export default function(app: EggAppConfig) {
     layout: path.join(app.baseDir, 'app/web/view/layout.html'),
   };
 
-  exports.baseURL = {
+  const baseURL = {
     enow: 'http://enow-kernel.test.seewo.com',
     edu: 'http://edu.test.seewo.com',
   };
+
+  exports.baseURL = baseURL;
+  exports.adaptor = {
+    baseURL: baseURL,
+    authApp: 'EasiNote5'
+  }
 
   return exports;
 }
