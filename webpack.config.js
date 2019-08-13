@@ -7,6 +7,7 @@ module.exports = {
   resolve: {
     alias: {
       '@images': resolve('app/web/asset/images'),
+      '@css': resolve('app/web/asset/css'),
       '@util': resolve('app/web/util'),
       '@helpers': resolve('app/web/helpers'),
     },
