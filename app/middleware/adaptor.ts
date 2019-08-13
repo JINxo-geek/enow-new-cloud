@@ -3,7 +3,7 @@
  * @description API路由适配中间件
  */
 
-import Adaptor from '@cvte/easi-adaptor';
+import * as Adaptor from '@cvte/easi-adaptor';
 import apis from '../apis/index';
 import { get } from 'lodash';
 import { logger } from './utils';

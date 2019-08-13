@@ -30,7 +30,19 @@
     "maxFiles": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-static/config/config.default.js"
   },
   "keys": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+  "authApp": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
   "middleware": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+  "view": {
+    "defaultExtension": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+    "mapping": {
+      ".js": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js",
+      ".jsx": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js",
+      ".html": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts"
+    },
+    "cache": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
+    "root": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/config.default.js"
+  },
   "reactssr": {
     "layout": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
     "injectCss": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
@@ -45,15 +57,9 @@
     "fallbackToClient": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js",
     "afterRender": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js"
   },
-  "view": {
-    "cache": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
-    "root": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/config.default.js",
-    "defaultExtension": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/config.default.js",
-    "defaultViewEngine": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/config.default.js",
-    "mapping": {
-      ".js": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js",
-      ".jsx": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/config.default.js"
-    }
+  "baseURL": {
+    "enow": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts",
+    "edu": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.default.ts"
   },
   "development": {
     "watchDirs": "/Users/yanguangjie/Desktop/enow-new-cloud/config/config.local.ts",
@@ -219,18 +225,23 @@
       "ii": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js"
     },
     "dependencies": {
+      "@cvte/easi-adaptor": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "colors": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "copy-to-clipboard": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "cross-env": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-logger": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-scripts": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-validate": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "egg-view-ejs": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "egg-view-react-ssr": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "extend": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "history": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "lodash": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "mockjs": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "moment": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "qrcode.react": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-dom": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-redux": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
@@ -238,9 +249,7 @@
       "react-router-config": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-dom": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-redux": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
-      "redux": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
-      "qrcode.react": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",
-      "copy-to-clipboard": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js"
+      "redux": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "@types/react": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/config.default.js",

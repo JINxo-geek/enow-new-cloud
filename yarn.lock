@@ -2691,11 +2691,7 @@ colormin@^1.0.5:
     css-color-names "0.0.4"
     has "^1.0.1"
 
-colors@^1.1.2:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
-
-colors@^1.3.3:
+colors@^1.1.2, colors@^1.3.3:
   version "1.3.3"
   resolved "http://nexus.gz.cvte.cn/nexus/repository/npm-group/colors/-/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
 
@@ -4059,6 +4055,12 @@ egg-validate@^1.0.0:
   dependencies:
     parameter "^2.4.0"
 
+egg-view-ejs@^2.0.0:
+  version "2.0.0"
+  resolved "http://nexus.gz.cvte.cn/nexus/repository/npm-group/egg-view-ejs/-/egg-view-ejs-2.0.0.tgz#996f38e61b497c92b449dbb1103141a13f32d65f"
+  dependencies:
+    ejs "^2.5.7"
+
 egg-view-react-ssr@^2.3.2:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/egg-view-react-ssr/-/egg-view-react-ssr-2.5.0.tgz#aa3ad9ebdff971df53aab186592caead7b599a45"
@@ -4141,7 +4143,7 @@ egg@^2.1.0:
     utility "^1.15.0"
     ylru "^1.2.1"
 
-ejs@^2.6.1:
+ejs@^2.5.7, ejs@^2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.2.tgz#3a32c63d1cd16d11266cd4703b14fec4e74ab4f6"
 
