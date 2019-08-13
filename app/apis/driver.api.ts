@@ -1,4 +1,4 @@
-module.exports.GET_DRIVER_LIST = {
+export const GET_DRIVER_LIST = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/space',
@@ -9,7 +9,7 @@ module.exports.GET_DRIVER_LIST = {
   },
 };
 
-module.exports.DRIVER_LIST_RENAME = {
+export const DRIVER_LIST_RENAME = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/rename',
@@ -20,7 +20,7 @@ module.exports.DRIVER_LIST_RENAME = {
   },
 };
 
-module.exports.DRIVER_LIST_DELETE = {
+export const DRIVER_LIST_DELETE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/delete/prejudgment',
@@ -33,7 +33,7 @@ module.exports.DRIVER_LIST_DELETE = {
 
 /* 移动 */
 // 获取所有层级课件组
-module.exports.DRIVER_GET_ALL_FOLDER = {
+export const DRIVER_GET_ALL_FOLDER = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/folder/list',
@@ -44,7 +44,7 @@ module.exports.DRIVER_GET_ALL_FOLDER = {
   },
 };
 // 新建文件夹
-module.exports.DRIVER_CREATE_FOLDER = {
+export const DRIVER_CREATE_FOLDER = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/folder/new',
@@ -55,7 +55,7 @@ module.exports.DRIVER_CREATE_FOLDER = {
   },
 };
 // 移动
-module.exports.DRIVER_MOVE_HERE = {
+export const DRIVER_MOVE_HERE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/drive/move',
