@@ -1,5 +1,5 @@
 /* 云课件列表 */
-module.exports.GET_COURSEWARES = {
+export const GET_COURSEWARES = {
   adaptorName: 'http',
   http: {
     url: '/api/v2/courseware/list',
@@ -10,7 +10,7 @@ module.exports.GET_COURSEWARES = {
   },
 };
 
-module.exports.GET_RECIVE = {
+export const GET_RECIVE = {
   adaptorName: 'http',
   http: {
     url: '/api/v2/courseware/group/share/list',
@@ -21,7 +21,7 @@ module.exports.GET_RECIVE = {
   },
 };
 
-module.exports.COURSEWARE_RECEIVE = {
+export const COURSEWARE_RECEIVE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/receive',
@@ -32,7 +32,7 @@ module.exports.COURSEWARE_RECEIVE = {
   },
 };
 
-module.exports.COURSEWARE_IGNORE = {
+export const COURSEWARE_IGNORE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/ignore',
@@ -43,7 +43,7 @@ module.exports.COURSEWARE_IGNORE = {
   },
 };
 
-module.exports.COURSEWARE_G_RECEIVE = {
+export const COURSEWARE_G_RECEIVE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/group/receive',
@@ -54,7 +54,7 @@ module.exports.COURSEWARE_G_RECEIVE = {
   },
 };
 
-module.exports.COURSEWARE_G_IGNORE = {
+export const COURSEWARE_G_IGNORE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/group/ignore',
@@ -65,7 +65,7 @@ module.exports.COURSEWARE_G_IGNORE = {
   },
 };
 
-module.exports.GET_SHAREDAY = {
+export const GET_SHAREDAY = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/link/days',
@@ -77,7 +77,7 @@ module.exports.GET_SHAREDAY = {
 };
 
 // 课件分享
-module.exports.CREATE_SHARELINK = {
+export const CREATE_SHARELINK = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/link',
@@ -89,7 +89,7 @@ module.exports.CREATE_SHARELINK = {
 };
 
 // 课件组分享
-module.exports.CREATE_G_SHARELINK = {
+export const CREATE_G_SHARELINK = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/group/link',
@@ -101,7 +101,7 @@ module.exports.CREATE_G_SHARELINK = {
 };
 
 // 链接分享课件详情
-module.exports.GET_SHARELINK_DETAIL = {
+export const GET_SHARELINK_DETAIL = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/link/detail',
@@ -112,7 +112,7 @@ module.exports.GET_SHARELINK_DETAIL = {
   },
 };
 // 链接分享课件组详情
-module.exports.GET_SHARELINK_DETAIL_G = {
+export const GET_SHARELINK_DETAIL_G = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/coursewareShare/group/link/detail',
@@ -124,7 +124,7 @@ module.exports.GET_SHARELINK_DETAIL_G = {
 };
 
 // 课件重命名
-module.exports.COURSEWARE_RENAME = {
+export const COURSEWARE_RENAME = {
   adaptorName: 'http',
   http: {
     url: '/app/api/v1/courseware/rename',
@@ -135,7 +135,7 @@ module.exports.COURSEWARE_RENAME = {
   },
 };
 // 课件组重命名
-module.exports.COURSEWARE_G_RENAME = {
+export const COURSEWARE_G_RENAME = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/courseware/group/rename',
@@ -147,7 +147,7 @@ module.exports.COURSEWARE_G_RENAME = {
 };
 
 // 删除课件/课件组
-module.exports.COURSEWARE_DELETE = {
+export const COURSEWARE_DELETE = {
   adaptorName: 'http',
   http: {
     url: '/api/v2/courseware/group/delete',
@@ -159,7 +159,7 @@ module.exports.COURSEWARE_DELETE = {
 };
 
 // 获取所有层级课件组
-module.exports.GET_ALL_GROUP = {
+export const GET_ALL_GROUP = {
   adaptorName: 'http',
   http: {
     url: '/app/api/v1/courseware/group/all',
@@ -170,7 +170,7 @@ module.exports.GET_ALL_GROUP = {
   },
 };
 
-module.exports.CREATE_FOLDER = {
+export const CREATE_FOLDER = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/courseware/group/new',
@@ -181,7 +181,7 @@ module.exports.CREATE_FOLDER = {
   },
 };
 
-module.exports.MOVE_HERE = {
+export const MOVE_HERE = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/courseware/group/move',

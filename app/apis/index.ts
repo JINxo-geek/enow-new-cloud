@@ -1,17 +1,17 @@
-const fs = require('fs');
-const path = require('path');
-const { merge, isObject } = require('lodash');
+import fs from 'fs';
+import path from 'path';
+import { merge, isPlainObject } from 'lodash';
 
 const files = fs.readdirSync(__dirname);
-const apis = {};
+const getAPI = (filename: string) => require(path.join(__dirname, filename));
+const isMatchAPI = (filename: string) => /\w*.api.js/.test(filename);
+let mergeAPIs = {};
 
-files.map(function(item) {
-  if (/\w*.api.js/.test(item)) {
-    const api = require(path.join(__dirname, item));
-    if (isObject(api)) {
-      merge(apis, api);
-    }
+files.forEach(name => {
+  const api = getAPI(name);
+  if (isMatchAPI(name) && isPlainObject(api)) {
+    mergeAPIs = merge({}, mergeAPIs, api);
   }
 });
 
-module.exports = apis;
+export default mergeAPIs;

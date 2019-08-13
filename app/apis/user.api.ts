@@ -1,5 +1,5 @@
 /* 用户管理 */
-module.exports.USER_AUTH = {
+export const USER_AUTH = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth',
@@ -10,7 +10,7 @@ module.exports.USER_AUTH = {
   },
 };
 
-module.exports.USER_REGISTER = {
+export const USER_REGISTER = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth/users',
@@ -21,7 +21,7 @@ module.exports.USER_REGISTER = {
   },
 };
 
-module.exports.USER_FORGET = {
+export const USER_FORGET = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth/users/pwd/reset',
@@ -32,7 +32,7 @@ module.exports.USER_FORGET = {
   },
 };
 
-module.exports.USER_CAPTCHAS = {
+export const USER_CAPTCHAS = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth/captchas',
@@ -43,7 +43,7 @@ module.exports.USER_CAPTCHAS = {
   },
 };
 
-module.exports.USER_DYNAMICS = {
+export const USER_DYNAMICS = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth/dynamics',
@@ -55,7 +55,7 @@ module.exports.USER_DYNAMICS = {
 };
 
 // 会员积分等级信息
-module.exports.GET_USER_LEVEL = {
+export const GET_USER_LEVEL = {
   adaptorName: 'http',
   http: {
     url: '/api/v2/user/level',
@@ -67,7 +67,7 @@ module.exports.GET_USER_LEVEL = {
 };
 
 // 已经注册
-module.exports.USER_REGISTERED = {
+export const USER_REGISTERED = {
   adaptorName: 'http',
   http: {
     url: '/api/v1/auth/phones',
