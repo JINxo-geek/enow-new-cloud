@@ -7,13 +7,14 @@ module.exports = {
   resolve: {
     alias: {
       "@images": resolve(`app/web/asset/images`),
-      "@util": resolve(`app/web/util`)
+      "@util": resolve(`app/web/util`),
+      '@helpers': resolve(`app/web/helpers`)
     }
   },
   devtool: "eval",
   entry: {
     home: "app/web/page/home/index.tsx",
-    login: "app/web/page/login/index.tsx"
+    // login: "app/web/page/login/index.tsx"
   },
   lib: ["react", "react-dom"],
   loaders: {

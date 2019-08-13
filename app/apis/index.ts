@@ -14,4 +14,5 @@ files.forEach(name => {
   }
 });
 
+console.log('mergeAPIs ================', mergeAPIs)
 export default mergeAPIs;
