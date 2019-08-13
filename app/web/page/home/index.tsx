@@ -1,25 +1,17 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { AppContainer } from "react-hot-loader";
-import { BrowserRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { BrowserRouter } from 'react-router-dom';
 
-import Layout from "../../framework/layout";
-import Router from "./router";
-import fetch from "@helpers/callAPI";
-import "../../asset/css/global.css";
-
-fetch('GET_USER_LEVEL', {}).then(res => {
-  console.log('GET_USER_LEVEL', res);
-});
+import Router from './router';
+import '@css/global.css';
 
 class App extends Component<any, any> {
   render() {
     return (
-      <Layout {...this.props}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </Layout>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     );
   }
 }
@@ -29,9 +21,9 @@ function bootstrap() {
     return App;
   }
   const state = window.__INITIAL_STATE__;
-  const root = document.getElementById("app");
+  const root = document.getElementById('app');
   if (EASY_ENV_IS_DEV) {
-    ReactDOM.hydrate(
+    ReactDOM.render(
       <AppContainer>
         <App {...state} />
       </AppContainer>,
@@ -39,10 +31,9 @@ function bootstrap() {
     );
   }
   if (module.hot) {
-    console.log("ENOW...");
     module.hot.accept();
   }
-  ReactDOM.hydrate(<App {...state} />, root);
+  ReactDOM.render(<App {...state} />, root);
 }
 
 export default bootstrap();
