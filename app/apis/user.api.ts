@@ -1,4 +1,15 @@
 /* 用户管理 */
+export const AUTH = {
+  adaptorName: 'http',
+  http: {
+    url: '/api/v2/user/both/info',
+    method: 'GET'
+  },
+  mock: {
+    data: {}
+  }
+};
+
 export const USER_AUTH = {
   adaptorName: 'http',
   http: {
