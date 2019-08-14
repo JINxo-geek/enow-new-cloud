@@ -1,4 +1,8 @@
-const contentMsg = [
+interface contentType {
+  text: String;
+  func?: Function;
+}
+const contentMsg: Array<contentType> = [
   {
     text: "分享",
     func: () => {

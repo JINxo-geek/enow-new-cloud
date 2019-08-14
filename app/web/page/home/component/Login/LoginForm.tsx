@@ -1,11 +1,13 @@
 import React from "react";
 import { Form, Icon, Input, Button } from "antd";
 import { withRouter } from "react-router-dom";
-import { createMemoryHistory } from "history";
 import "./Login.less";
 const FormItem = Form.Item;
-
-class LoginForm extends React.Component {
+interface LoginFormProps {
+  history: any;
+}
+class LoginForm extends React.Component<LoginFormProps> {
+  createMemoryHistory: any;
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +18,7 @@ class LoginForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    createMemoryHistory.push("/project");
+    this.props.history.push("/project");
   };
 
   componentDidMount = () => {};
@@ -84,4 +86,4 @@ class LoginForm extends React.Component {
 
 const LoginFormWarf = Form.create()(LoginForm);
 
-export default withRouter(LoginFormWarf);
+export default withRouter(LoginFormWarf as any);
