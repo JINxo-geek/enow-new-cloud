@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Icon, Input, Button } from "antd";
 import { withRouter } from "react-router-dom";
-import "./Login.less";
+import "./LoginForm.less";
 const FormItem = Form.Item;
 interface LoginFormProps {
   history: any;

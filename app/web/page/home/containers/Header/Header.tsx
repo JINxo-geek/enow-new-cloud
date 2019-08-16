@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Avatar, Badge, Input, Row, Col, Popover, Button, Divider } from "antd";
 const { Search } = Input;
-import "./LayoutHeadercss.less";
-interface LayoutHeaderState {
+import "./Header.less";
+interface ContainersHeaderState {
   accountMsg: any;
 }
-class LayoutHeader extends Component<LayoutHeaderState> {
+class ContainersHeader extends Component<ContainersHeaderState> {
   private content: any;
   constructor(props: any) {
     super(props);
     this.content = null;
   }
 
-  state: LayoutHeaderState = {
+  state: ContainersHeaderState = {
     accountMsg: {
       name: "凌轩",
       level: "15",
@@ -50,7 +50,6 @@ class LayoutHeader extends Component<LayoutHeaderState> {
       <div className="headerframe">
         <Row>
           <Col span={21} offset={1}>
-            {" "}
             <Search
               placeholder="搜索文档"
               onSearch={value => console.log(value)}
@@ -71,4 +70,4 @@ class LayoutHeader extends Component<LayoutHeaderState> {
   }
 }
 
-export default LayoutHeader;
+export default ContainersHeader;

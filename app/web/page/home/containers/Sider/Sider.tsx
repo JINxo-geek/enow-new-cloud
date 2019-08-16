@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Layout, Menu, Icon, Button, Row, Col, Divider, Popover } from "antd";
-import "./LayoutSider.less";
-import { logobg, btnContentMsg, timecapsule } from "./LayoutSiderConfig";
-import { Link } from "react-router-dom";
+import { Button, Row, Col, Popover } from "antd";
+import "./Sider.less";
+import { logobg, btnContentMsg, timecapsule } from "./SiderConfig";
+import SiderMenu from "../../sections/SiderMenu";
 import NewFolderModal from "../../sections/NewFolderModal";
 
 class LayoutSider extends Component {
@@ -79,32 +79,7 @@ class LayoutSider extends Component {
         </Row>
         <Row>
           <Col>
-            <Menu className="menu">
-              <Menu.Item key="1">
-                <Link to={`/project/table`}>
-                  <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
-                  &thinsp;
-                  <span>我的文档</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to={`/project/timecapsule`}>
-                  <img className="iconsize" src={timecapsule} />
-                  &thinsp;
-                  <span>时间胶囊</span>
-                </Link>
-              </Menu.Item>
-              <div>
-                <Divider />
-              </div>
-              <Menu.Item key="3">
-                <Link to={`/project/recyclebin`}>
-                  <i className="demo-icon icon-trash">&#xe83d;</i>
-                  &thinsp;
-                  <span>回收站</span>
-                </Link>
-              </Menu.Item>
-            </Menu>
+            <SiderMenu timecapsule={timecapsule} />
           </Col>
         </Row>
       </div>

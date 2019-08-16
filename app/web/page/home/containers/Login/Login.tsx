@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import LoginForm from "../../sections/LoginForm";
 import "./Login.less";
-import LoginForm from "./LoginForm";
-
-class Login extends Component {
+class ContainersLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -26,4 +25,4 @@ class Login extends Component {
   };
 }
 
-export default Login;
+export default ContainersLogin;

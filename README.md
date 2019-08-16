@@ -94,15 +94,15 @@ npm run build
   |	|	├──reducers.ts//存放reducer.ts
   |	|	├──contant.ts//存放常亮
   |	|	├──index.ts//createStore
-  |	|   ├──typings//类型声明
+  |	├──typings//类型声明
   |	├──view//客户端渲染模版（<div id="app"></div>）
   | ├──page//页面
   |      ├──home//多页面渲染的home页面，本项目结构支持多页面渲染和当页面渲染
   |      ├──component//存放通用组件，和antd类似的组件，不包含业务逻辑
   |      ├──sections//存放业务组件，业务组件独有的业务的函数
   |      ├──containers//存放容器组件，容器组件从redux中获取数据，将数据注入给子组件业务组件中，存放子业务共用的业务函数
-  |	        ├──screens//组织页面的组件，负责组织容器组件布局
-  |	        ├──index.ts//前端入口文件，渲染如有组件，导入全局css，ReactDOM.render(),webpack中配置的入口
+  |	     ├──screens//组织页面的组件，负责组织容器组件布局
+  |	      ├──index.ts//前端入口文件，渲染如有组件，导入全局css，ReactDOM.render(),webpack中配置的入口
   |		    ├──router.ts//路由组件，引入页面组件
   ├──router.ts//用于配置 URL 路由规则,转发到contorller,在app目录下
 

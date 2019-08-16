@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Row, Col, Input, Button, message } from "antd";
+import { Modal, Input, Button } from "antd";
 
 function NewFolderModal(props) {
   return (
