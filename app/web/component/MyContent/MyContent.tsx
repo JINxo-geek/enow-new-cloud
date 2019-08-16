@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Row, Col, Divider, Icon, Popover, Button } from "antd";
-import MyContentTable from "../../../sections/MyContentTable";
-import ShareModal from "../../../sections/ShareModal";
-import HistoryModal from "../../../sections/HistoryModal";
-import MoveFileModal from "../../../sections/MoveFileModal";
-import MyContentMsg from "./MyContentMsg";
-import { dataSource, tableTitle } from "./MyContentData";
-import "./MyContent.less";
+import ContentTable from "./ContentTable";
+import ShareModal from "./ShareModal";
+import HistoryModal from "./HistoryModal";
+import MoveFileModal from "../MoveFileModal";
+import contentMsg from "./contentMsg";
+
+import "./indexclass.less";
 
 class MyContent extends Component {
   columns: any;
@@ -20,7 +20,7 @@ class MyContent extends Component {
   };
   content = (
     <div>
-      {MyContentMsg.map((item, index) => {
+      {contentMsg.map((item, index) => {
         if (item.text == "Divider") {
           return <Divider key={index} className="btnframe" />;
         }
@@ -208,9 +208,7 @@ class MyContent extends Component {
     return (
       <Row>
         <Col span={22} offset={1}>
-          <MyContentTable
-            dataSource={dataSource}
-            tableTitle={tableTitle}
+          <ContentTable
             columns={this.columns}
             changeCurrentRow={this.changeCurrentRow}
           />
