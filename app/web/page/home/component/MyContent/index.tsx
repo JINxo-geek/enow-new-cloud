@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { Row, Col, Divider, Icon, Popover, Button } from 'antd';
-import ContentTable from './ContentTable';
-import ShareModal from './ShareModal';
-import HistoryModal from './HistoryModal';
-import MoveFileModal from '../MoveFileModal';
-import contentMsg from './contentMsg';
+import React, { Component } from "react";
+import { Row, Col, Divider, Icon, Popover, Button } from "antd";
+import ContentTable from "./ContentTable";
+import ShareModal from "./ShareModal";
+import HistoryModal from "./HistoryModal";
+import MoveFileModal from "../MoveFileModal";
+import contentMsg from "./contentMsg";
 
-import './indexclass.less';
-
+import "./indexclass.less";
 
 class MyContent extends Component {
   columns: any;
@@ -17,12 +16,12 @@ class MyContent extends Component {
     historyModalVisible: false,
     moveFileModalVisible: false,
     currentRow: {},
-    popoverVisible: false,
+    popoverVisible: false
   };
   content = (
     <div>
       {contentMsg.map((item, index) => {
-        if (item.text == 'Divider') {
+        if (item.text == "Divider") {
           return <Divider key={index} className="btnframe" />;
         }
         return (
@@ -47,28 +46,28 @@ class MyContent extends Component {
     super(props);
     this.columns = [
       {
-        title: '名称',
-        dataIndex: 'name',
-        key: 'name',
-        render: this.renderFileType,
+        title: "名称",
+        dataIndex: "name",
+        key: "name",
+        render: this.renderFileType
       },
       {
-        title: '更新时间',
-        dataIndex: 'date',
-        key: 'date',
+        title: "更新时间",
+        dataIndex: "date",
+        key: "date"
       },
       {
-        title: '大小',
-        dataIndex: 'size',
-        key: 'size',
+        title: "大小",
+        dataIndex: "size",
+        key: "size"
       },
       {
-        title: '',
+        title: "",
         width: 120,
-        dataIndex: 'key',
-        key: 'key',
-        render: this.renderAction,
-      },
+        dataIndex: "key",
+        key: "key",
+        render: this.renderAction
+      }
     ];
     // this.renderFileType;
     // this.renderAction;
@@ -76,88 +75,88 @@ class MyContent extends Component {
 
   changeCurrentRow = record => {
     this.setState({ currentRow: record });
-  }
+  };
 
   selectFunc = e => {
     switch (e) {
-      case '分享':
+      case "分享":
         this.showShareModal(this.state.currentRow);
         break;
-      case '历史版本':
+      case "历史版本":
         this.showHistoryModal(this.state.currentRow);
         break;
-      case '移动到':
+      case "移动到":
         this.showMoveFileModal(this.state.currentRow);
         break;
     }
-  }
+  };
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
-  }
+  };
   // 分享
   shareCancel = e => {
     console.log(e);
     this.setState({
-      shareModalVisible: false,
+      shareModalVisible: false
     });
-  }
+  };
   shareOk = e => {
     console.log(e);
     this.setState({
-      shareModalVisible: false,
+      shareModalVisible: false
     });
-  }
+  };
 
   showShareModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
     this.setState({
-      shareModalVisible: true,
+      shareModalVisible: true
     });
-  }
+  };
   // 历史
   historyCancel = e => {
     console.log(e);
     this.setState({
-      historyModalVisible: false,
+      historyModalVisible: false
     });
-  }
+  };
   historyOk = e => {
     console.log(e);
     this.setState({
-      historyModalVisible: false,
+      historyModalVisible: false
     });
-  }
+  };
   showHistoryModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
     this.setState({
-      historyModalVisible: true,
+      historyModalVisible: true
     });
-  }
+  };
   // 移动
   moveFileCancel = e => {
     console.log(e);
     this.setState({
-      moveFileModalVisible: false,
+      moveFileModalVisible: false
     });
-  }
+  };
   moveFileOk = e => {
     console.log(e);
     this.setState({
-      moveFileModalVisible: false,
+      moveFileModalVisible: false
     });
-  }
+  };
   showMoveFileModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
-    console.log('showMoveFileModal');
+    console.log("showMoveFileModal");
     this.setState({
-      moveFileModalVisible: true,
+      moveFileModalVisible: true
     });
-  }
+  };
   renderAction = (text, record) => {
-    if (record.showSate && record.type == 'file') {
+    if (record.showSate && record.type == "file") {
       return (
         <div>
           <Icon
@@ -181,15 +180,15 @@ class MyContent extends Component {
     } else {
       return <div />;
     }
-  }
+  };
   renderFileType = (text, record) => {
-    return record.type == 'file' ? (
-      <div style={{ display: 'inline-flex', marginTop: '10px' }}>
-        <img width={12} height={17} src={require('@images/file.png')} style={{ marginTop: 3 }} />
+    return record.type == "file" ? (
+      <div style={{ display: "inline-flex", marginTop: "10px" }}>
+        <img width={12} height={17} src={require("@images/file.png")} />
         <p>&emsp;&thinsp;{text}</p>
       </div>
     ) : (
-      <div style={{ display: 'inline-flex', marginTop: '10px' }}>
+      <div style={{ display: "inline-flex", marginTop: "10px" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -197,28 +196,38 @@ class MyContent extends Component {
           width="18"
           height="18"
           viewBox="0 0 24 24"
-          style={{ marginTop: 3 }}
         >
           <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
         </svg>
         <p>&emsp;{text}</p>
       </div>
     );
-  }
+  };
 
   render() {
     return (
       <Row>
         <Col span={22} offset={1}>
-          <ContentTable columns={this.columns} changeCurrentRow={this.changeCurrentRow} />
+          <ContentTable
+            columns={this.columns}
+            changeCurrentRow={this.changeCurrentRow}
+          />
           <ShareModal
             modalContent={this.modalContent}
             handleCancel={this.shareCancel}
             handleOk={this.shareOk}
             onVisibleChange={this.state.shareModalVisible}
           />
-          <HistoryModal modalContent={this.modalContent} handleCancel={this.historyCancel} onVisibleChange={this.state.historyModalVisible} />
-          <MoveFileModal modalContent={this.modalContent} handleCancel={this.moveFileCancel} onVisibleChange={this.state.moveFileModalVisible} />
+          <HistoryModal
+            modalContent={this.modalContent}
+            handleCancel={this.historyCancel}
+            onVisibleChange={this.state.historyModalVisible}
+          />
+          <MoveFileModal
+            modalContent={this.modalContent}
+            handleCancel={this.moveFileCancel}
+            onVisibleChange={this.state.moveFileModalVisible}
+          />
         </Col>
       </Row>
     );
