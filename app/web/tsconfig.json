@@ -11,7 +11,7 @@
     "paths": {
       "@helpers/*": ["helpers/*"],
       "@util/*": ["util/*"],
-      "@images/*": ["asset/images/*"],
+      "@images/*": ["./asset/images/*"],
       "@css/*": ["asset/css/*"]
     }
   },

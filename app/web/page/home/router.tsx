@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import Login from "./component/Login";
-import Tab from "./component/tab";
+import ScreensLogin from "./screens/Login/Login";
+import ScreensLayout from "./screens/Layout/Layout";
 
 export default class App extends Component {
   constructor(props) {
@@ -11,9 +11,9 @@ export default class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="/login" component={Login} />
-        <Route path="/project/" component={Tab} />
+        <Route exact path="/" component={ScreensLogin} />
+        <Route path="/login" component={ScreensLogin} />
+        <Route path="/project/" component={ScreensLayout} />
       </Switch>
     );
   }

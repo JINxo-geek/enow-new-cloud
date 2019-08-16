@@ -1,34 +1,40 @@
 import React, { Component } from "react";
 import { Table } from "antd";
-import { dataSource, tableTitle } from "../dataSource";
-import "../indexclass.less";
+import "./MyContentTable.less";
+
 export interface ContentTableProps {
+  dataSource: any;
+  tableTitle: any;
   columns: any;
   changeCurrentRow: Function;
 }
-class ContentTable extends Component<ContentTableProps> {
-  columns: any;
-  changeCurrentRow: any;
+class MyContentTable extends Component<ContentTableProps> {
+  static defaultProps = {
+    columns: [],
+    changeCurrentRow: {},
+    dataSource: [],
+    tableTitle: ""
+  };
+
   constructor(props: ContentTableProps) {
     super(props);
-    this.columns = props.columns;
     this.state = {};
-    this.changeCurrentRow = props.changeCurrentRow;
   }
 
   render() {
+    const { columns, changeCurrentRow, dataSource, tableTitle } = this.props;
     return (
       <Table
         dataSource={dataSource}
-        columns={this.columns}
+        columns={columns}
         title={() => {
           return tableTitle;
         }}
-        onRow={record => {
+        onRow={(record: any) => {
           return {
             onMouseEnter: event => {
               record.showSate = true;
-              this.changeCurrentRow(record);
+              changeCurrentRow(record);
             },
             onMouseLeave: event => {
               record.showSate = false;
@@ -41,4 +47,4 @@ class ContentTable extends Component<ContentTableProps> {
   }
 }
 
-export default ContentTable;
+export default MyContentTable;
