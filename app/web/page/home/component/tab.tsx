@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Layout, Divider } from "antd";
 const { Sider } = Layout;
-import "./tab.css";
+import "./tab.less";
 import LayoutSider from "./LayoutSider";
 import LayoutHeader from "./LayoutHeader";
 import MyContent from "./MyContent";
@@ -36,4 +36,4 @@ class Tab extends Component {
     );
   }
 }
-export default withRouter(Tab);
+export default Tab;

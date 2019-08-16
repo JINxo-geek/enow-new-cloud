@@ -16,13 +16,13 @@
       "domainWhiteList": [
         "http://localhost:7001",
         "http://127.0.0.1:7001",
-        "http://172.18.92.94:7001",
+        "http://172.18.144.14:7001",
         "http://localhost:9000",
         "http://127.0.0.1:9000",
-        "http://172.18.92.94:9000",
+        "http://172.18.144.14:9000",
         "http://localhost:9001",
         "http://127.0.0.1:9001",
-        "http://172.18.92.94:9001"
+        "http://172.18.144.14:9001"
       ],
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
@@ -95,29 +95,29 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-onerror/lib/onerror_page.mustache"
+      "templatePath": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-onerror/lib/onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-session/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-jsonp/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-onerror/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-i18n/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-watcher/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-schedule/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-multipart/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-development/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-static/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-cors/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-webpack/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-webpack-react/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/locales",
-        "/Users/yanguangjie/Desktop/enow-new-cloud/config/locales"
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-session/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-security/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-jsonp/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-onerror/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-i18n/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-watcher/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-schedule/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-multipart/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-development/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-logrotator/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-static/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-view/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-view-react-ssr/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-cors/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-webpack/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-webpack-react/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/locales",
+        "/Users/cvter/Desktop/code/enow-new-cloud/config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -128,8 +128,8 @@
     "watcher": {
       "type": "development",
       "eventSources": {
-        "default": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-watcher/lib/event-sources/default",
-        "development": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-watcher/lib/event-sources/development"
+        "default": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "customLogger": {
@@ -152,7 +152,7 @@
       "files": 10,
       "fileExtensions": [],
       "whitelist": null,
-      "tmpdir": "/var/folders/m4/s49fn43n7n9cbwv0n966m51c0000gn/T/egg-multipart-tmp/enow-new-cloud",
+      "tmpdir": "/var/folders/hg/x1y6yhkn70x72bkrm2n3fnsw0000gn/T/egg-multipart-tmp/enow-new-cloud",
       "cleanSchedule": {
         "cron": "0 30 4 * * *"
       }
@@ -181,7 +181,7 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/yanguangjie/Desktop/enow-new-cloud/public",
+      "dir": "/Users/cvter/Desktop/code/enow-new-cloud/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
@@ -190,7 +190,7 @@
     },
     "view": {
       "root": [
-        "/Users/yanguangjie/Desktop/enow-new-cloud/app/view"
+        "/Users/cvter/Desktop/code/enow-new-cloud/app/view"
       ],
       "cache": 0,
       "defaultExtension": ".html",
@@ -202,8 +202,8 @@
     },
     "reactssr": {
       "doctype": "<!doctype html>",
-      "layout": "/Users/yanguangjie/Desktop/enow-new-cloud/app/web/view/layout.html",
-      "manifest": "/Users/yanguangjie/Desktop/enow-new-cloud/config/manifest.json",
+      "layout": "/Users/cvter/Desktop/code/enow-new-cloud/app/web/view/layout.html",
+      "manifest": "/Users/cvter/Desktop/code/enow-new-cloud/config/manifest.json",
       "injectHeadRegex": "/(<\\/head>)/i",
       "injectBodyRegex": "/(<\\/body>)/i",
       "injectCss": true,
@@ -284,6 +284,7 @@
         "@types/lodash": "^4.14.136",
         "@types/react": "^16.0.34",
         "@types/react-dom": "^16.0.3",
+        "@types/react-router-dom": "^4.3.4",
         "antd": "^3.0.3",
         "autod-egg": "^1.0.0",
         "easywebpack-cli": "^4.0.0",
@@ -325,9 +326,9 @@
         }
       }
     },
-    "baseDir": "/Users/yanguangjie/Desktop/enow-new-cloud",
-    "HOME": "/Users/yanguangjie",
-    "rundir": "/Users/yanguangjie/Desktop/enow-new-cloud/run",
+    "baseDir": "/Users/cvter/Desktop/code/enow-new-cloud",
+    "HOME": "/Users/cvter",
+    "rundir": "/Users/cvter/Desktop/code/enow-new-cloud/run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -358,7 +359,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/yanguangjie/Desktop/enow-new-cloud/logs",
+      "dir": "/Users/cvter/Desktop/code/enow-new-cloud/logs",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
@@ -444,7 +445,7 @@
       "authApp": "EasiNote5"
     },
     "logview": {
-      "dir": "/Users/yanguangjie/Desktop/enow-new-cloud/logs"
+      "dir": "/Users/cvter/Desktop/code/enow-new-cloud/logs"
     },
     "coreMiddlewares": "~config~coreMiddleware",
     "appMiddlewares": "~config~middleware",
@@ -470,8 +471,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-session",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-session",
       "version": "3.1.0"
     },
     "security": {
@@ -483,8 +484,8 @@
         "session"
       ],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-security",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-security",
       "version": "2.5.0"
     },
     "jsonp": {
@@ -496,8 +497,8 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-jsonp",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-jsonp",
       "version": "2.0.0"
     },
     "onerror": {
@@ -509,8 +510,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-onerror",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-onerror",
       "version": "2.1.0"
     },
     "i18n": {
@@ -520,8 +521,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-i18n",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -531,8 +532,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-watcher",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-watcher",
       "version": "3.1.0"
     },
     "schedule": {
@@ -542,8 +543,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-schedule",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-schedule",
       "version": "3.6.4"
     },
     "multipart": {
@@ -555,9 +556,9 @@
         "schedule"
       ],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-multipart",
-      "version": "2.7.1"
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-multipart",
+      "version": "2.8.0"
     },
     "development": {
       "enable": true,
@@ -570,8 +571,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-development",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-development",
       "version": "2.4.3"
     },
     "logrotator": {
@@ -583,8 +584,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-logrotator",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-logrotator",
       "version": "3.1.0"
     },
     "static": {
@@ -594,8 +595,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-static",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-static",
       "version": "2.2.0"
     },
     "view": {
@@ -605,8 +606,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg/config/plugin.js",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-view",
       "version": "2.1.2"
     },
     "reactssr": {
@@ -616,8 +617,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/config/plugin.ts",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-view-react-ssr",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/config/plugin.ts",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-view-react-ssr",
       "version": "2.5.0"
     },
     "cors": {
@@ -627,8 +628,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/config/plugin.local.ts",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-cors",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/config/plugin.local.ts",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-cors",
       "version": "2.2.0"
     },
     "webpack": {
@@ -640,8 +641,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/config/plugin.local.ts",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-webpack",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/config/plugin.local.ts",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-webpack",
       "version": "4.4.9"
     },
     "webpackreact": {
@@ -653,8 +654,8 @@
       "env": [
         "local"
       ],
-      "from": "/Users/yanguangjie/Desktop/enow-new-cloud/config/plugin.local.ts",
-      "path": "/Users/yanguangjie/Desktop/enow-new-cloud/node_modules/egg-webpack-react",
+      "from": "/Users/cvter/Desktop/code/enow-new-cloud/config/plugin.local.ts",
+      "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-webpack-react",
       "version": "2.0.3"
     }
   }
