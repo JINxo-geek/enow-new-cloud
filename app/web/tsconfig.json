@@ -12,12 +12,10 @@
       "@helpers/*": ["helpers/*"],
       "@util/*": ["util/*"],
       "@images/*": ["asset/images/*"],
-      "@css/*": ["asset/css/*"],
+      "@css/*": ["asset/css/*"]
     }
   },
   "files": ["./typings/global.d.ts"],
-  "include": [
-    "./page/**/**.tsx",
-  ],
+  "include": ["./page/**/**.tsx"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
