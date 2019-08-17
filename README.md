@@ -84,7 +84,6 @@ npm run build
   ├──proxy//
   ├──view//egg需要这个目录，服务器编译文件会存放在里面,或者模版文件
   ├──util//前后端通用的函数
-  |
   ├──web//前端工程目录
   | ├──asset//存放公共css,images,font等资源，css有一个global的，在入口文件index.ts中导入
   | ├──framework//存放第三方库和前端模版（被用于react）
