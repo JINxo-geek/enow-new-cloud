@@ -84,14 +84,18 @@ npm run build
   ├──proxy//
   ├──view//egg需要这个目录，服务器编译文件会存放在里面,或者模版文件
   ├──util//前后端通用的函数
+  |
   ├──web//前端工程目录
   | ├──asset//存放公共css,images,font等资源，css有一个global的，在入口文件index.ts中导入
   | ├──framework//存放第三方库和前端模版（被用于react）
   | ├──helpers//前端通用函数
+	|	├──component//多页面通用的组件，和antd类似的组件
   | ├──store//存放reducers，actions，等
-  |	|	├──actions.ts//存放action
-  |	|	├──reducers.ts//存放reducer.ts
-  |	|	├──contant.ts//存放常亮
+  |	|	├──actions//存放action
+  |	|	├──reducers//存放reducer
+  |	|	├──constants//存放常量
+  |	|	├──saga//存放saga
+  |	|	├──services//发送请求
   |	|	├──index.ts//createStore
   |	├──typings//类型声明
   |	├──view//客户端渲染模版（<div id="app"></div>）
@@ -104,6 +108,8 @@ npm run build
   |	      ├──index.ts//前端入口文件，渲染如有组件，导入全局css，ReactDOM.render(),webpack中配置的入口
   |		    ├──router.ts//路由组件，引入页面组件
   ├──router.ts//用于配置 URL 路由规则,转发到contorller,在app目录下
+
+
 
 ```
 
