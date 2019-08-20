@@ -3,31 +3,36 @@
  * @description API路由适配中间件
  */
 
-import * as Adaptor from '@cvte/easi-adaptor';
-import apis from '../apis/index';
-import { get } from 'lodash';
-import { logger, Code } from './utils';
+import * as Adaptor from "@cvte/easi-adaptor";
+import apis from "../apis/index";
+import { get } from "lodash";
+import { logger, Code } from "./utils";
 
 export default function(options) {
   return async (ctx, next) => {
     const _logger = logger(ctx);
-    const accessToken = ctx.cookies.get('x-auth-token', {
-      signed: false,
+    let accessToken = ctx.cookies.get("x-auth-token", {
+      signed: false
+    });
+    /*   配置临时accessToken */
+    accessToken = "beda0ad32c0e4b6bbbf984d1c3c2b04d";
+    const appCode = ctx.cookies.get("x-auth-app", {
+      signed: false
     });
 
-    const appCode = ctx.cookies.get('x-auth-app', {
-      signed: false,
-    });
-
-    const appCodeConfig = get(options, 'authApp', 'EasiNote5');
+    const appCodeConfig = get(options, "authApp", "EasiNote5");
 
     const headers = {
-      'Content-Type': 'application/json',
-      'user-agent': 'default',
-      "Accept": '*/*',
-      "Authorization": '',
-      'x-auth-refer': 'EasiNoteWeb',
-      "Cookie": 'x-auth-token=' + accessToken + ';x-auth-app=' + (appCode || appCodeConfig),
+      "Content-Type": "application/json",
+      "user-agent": "default",
+      Accept: "*/*",
+      Authorization: "",
+      "x-auth-refer": "EasiNoteWeb",
+      Cookie:
+        "x-auth-token=" +
+        accessToken +
+        ";x-auth-app=" +
+        (appCode || appCodeConfig)
     };
 
     const adaptorConfig = {
@@ -35,13 +40,13 @@ export default function(options) {
       apis,
       http: {
         headers,
-        baseURL: get(options, 'baseURL.edu', ''),
+        baseURL: get(options, "baseURL.edu", ""),
         beforeRequest(httpConfig) {
           _logger(Code.beginConfig);
           ctx.logger.info(httpConfig);
           _logger(Code.endConfig);
-        },
-      },
+        }
+      }
     };
 
     const adaptor = new Adaptor(adaptorConfig);

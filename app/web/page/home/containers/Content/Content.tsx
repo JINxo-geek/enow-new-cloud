@@ -15,7 +15,7 @@ class ContainersContent extends Component {
       <div>
         <Switch>
           <Route
-            path="/project/table"
+            path="/"
             render={props => <ContainersMyContent {...props} />}
           />
           <Route

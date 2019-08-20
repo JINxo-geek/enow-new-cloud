@@ -11,9 +11,9 @@ export default class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={ScreensLogin} />
-        <Route path="/login" component={ScreensLogin} />
-        <Route path="/project/" component={ScreensLayout} />
+        <Route exact path="/" component={ScreensLayout} />
+        {/* <Route path="/login" component={ScreensLogin} /> */}
+        <Route path="/project/table" component={ScreensLayout} />
       </Switch>
     );
   }

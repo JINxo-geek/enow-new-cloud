@@ -1,0 +1,1 @@
+export const GET_COURSEWARES = "GET_COURSEWARES";
