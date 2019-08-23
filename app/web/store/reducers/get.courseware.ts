@@ -1,15 +1,50 @@
-import { handleAction } from "redux-actions";
-import { GET_COURSEWARES } from "../constants/actionType";
-
-const defaultState = { count: 1 };
-const reducer = handleAction(
+import { handleActions } from "redux-actions";
+import {
   GET_COURSEWARES,
-  (state, action) => {
-    console.log("触发reducer");
-    return {
-      count: state.count + action.payload
-    };
+  GET_COURSEWARES_SUCCESS,
+  GET_COURSEWARES_FAILURE,
+  GET_COURSEWARES_GROUP,
+  GET_COURSEWARES_GROUP_SUCCESS,
+  GET_COURSEWARES_GROUP_FAILURE
+} from "../constants/actionType";
+
+const reducer = handleActions(
+  {
+    [GET_COURSEWARES]: (state, action) => {
+      return {
+        ...state
+      };
+    },
+    [GET_COURSEWARES_SUCCESS]: (state, action) => {
+      console.log("触发成功", state, "action", action);
+      return {
+        myContentdata: action.payload
+      };
+    },
+    [GET_COURSEWARES_FAILURE]: (state, action) => {
+      return {
+        ...state
+      };
+    }
   },
-  defaultState
+  {
+    [GET_COURSEWARES_GROUP]: (state, action) => {
+      return {
+        ...state
+      };
+    },
+    [GET_COURSEWARES_GROUP_SUCCESS]: (state, action) => {
+      console.log("GET_COURSEWARES_SUCCESS,触发成功", state, "action", action);
+      return {
+        myContentdata: action.payload
+      };
+    },
+    [GET_COURSEWARES_GROUP_FAILURE]: (state, action) => {
+      return {
+        ...state
+      };
+    }
+  },
+  { myContentdata: {} }
 );
 export default reducer;

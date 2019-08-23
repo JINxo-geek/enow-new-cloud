@@ -2,8 +2,20 @@ import React, { Component } from "react";
 import "./Content.less";
 import { Route, Switch } from "react-router-dom";
 import ContainersMyContent from "./MyContent/MyContent";
-import ContainersMyContent from "./MyContent/MyContent";
-import ContainersMyContent from "./MyContent/MyContent";
+import ContainersTimeCapule from "./TimeCapsule/TimeCapsule";
+import ContainersRecycleBin from "./RecycleBin/RecycleBin";
+import { connect } from "react-redux";
+import { getCourseware } from "../../../../store/actions";
+
+const mapStateToProps = store => {
+  return { ...store };
+};
+const mapDispatchToProps = (dispatch: any) => ({
+  getCourseware: values => {
+    dispatch(getCourseware(values));
+  }
+});
+
 class ContainersContent extends Component {
   constructor(props) {
     super(props);
@@ -15,19 +27,22 @@ class ContainersContent extends Component {
       <div>
         <Switch>
           <Route
+            exact
             path="/"
-            render={props => <ContainersMyContent {...props} />}
+            render={props => <ContainersMyContent {...this.props} {...props} />}
           />
           <Route
-            path="/project/table"
-            render={props => <ContainersMyContent {...props} />}
+            path="/project/mycontent"
+            render={props => <ContainersMyContent {...this.props} {...props} />}
           />
           <Route
-            path="/project/table"
-            render={props => <ContainersMyContent {...props} />}
+            path="/project/timecapsule"
+            render={props => <ContainersTimeCapule {...props} />}
           />
-          {/* <Route path="/project/timecapsule" component={TimeCapsule} />
-<Route path="/project/about" component={RecyleBin} /> */}
+          <Route
+            path="/project/recyclebin"
+            render={props => <ContainersRecycleBin {...props} />}
+          />
         </Switch>
       </div>
     );
@@ -40,4 +55,7 @@ class ContainersContent extends Component {
   };
 }
 
-export default ContainersContent;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContainersContent);

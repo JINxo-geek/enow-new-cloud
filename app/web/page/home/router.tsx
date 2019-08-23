@@ -13,7 +13,7 @@ export default class App extends Component {
       <Switch>
         <Route exact path="/" component={ScreensLayout} />
         {/* <Route path="/login" component={ScreensLogin} /> */}
-        <Route path="/project/table" component={ScreensLayout} />
+        <Route path="/project" component={ScreensLayout} />
       </Switch>
     );
   }

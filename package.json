@@ -4,7 +4,7 @@
   "description": "new cloud app",
   "scripts": {
     "start": "egg-scripts start",
-    "dev": "egg-bin dev -r egg-ts-helper/register",
+    "dev": "egg-bin dev -r egg-ts-helper/register --open",
     "debug": "egg-bin debug",
     "build": "easy build",
     "tsc": "ets && tsc -p tsconfig.json",

@@ -13,7 +13,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
     return (
       <Menu className="menu">
         <Menu.Item key="1">
-          <Link to={`/project/table`}>
+          <Link to={`/project/mycontent`}>
             <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
             &thinsp;
             <span>我的文档</span>
@@ -22,7 +22,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
         <Menu.Item key="2">
           <Link to={`/project/timecapsule`}>
             <img className="iconsize" src={timecapsule} />
-            &thinsp;
+            &thinsp;&thinsp;&thinsp;
             <span>时间胶囊</span>
           </Link>
         </Menu.Item>

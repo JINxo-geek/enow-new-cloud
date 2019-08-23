@@ -204,7 +204,7 @@
       "description": "new cloud app",
       "scripts": {
         "start": "egg-scripts start",
-        "dev": "egg-bin dev -r egg-ts-helper/register",
+        "dev": "egg-bin dev -r egg-ts-helper/register --open",
         "debug": "egg-bin debug",
         "build": "easy build",
         "tsc": "ets && tsc -p tsconfig.json",
@@ -242,7 +242,9 @@
         "react-router-config": "^1.0.0-beta.4",
         "react-router-dom": "^5.0.1",
         "react-router-redux": "^4.0.8",
-        "redux": "^3.7.2"
+        "redux": "^3.7.2",
+        "redux-actions": "^2.6.5",
+        "redux-saga": "^1.0.5"
       },
       "devDependencies": {
         "@types/lodash": "^4.14.136",
@@ -504,7 +506,7 @@
       "env": [],
       "from": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/plugin.js",
       "path": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg-multipart",
-      "version": "2.8.0"
+      "version": "2.7.1"
     },
     "development": {
       "enable": true,

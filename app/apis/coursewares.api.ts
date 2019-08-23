@@ -1,193 +1,218 @@
 /* 云课件列表 */
-export const GET_COURSEWARES = {
-  adaptorName: 'http',
+
+/* 课件组列表 */
+export const GET_COURSEWARES_GROUP = {
+  adaptorName: "http",
   http: {
-    url: '/api/v2/courseware/list',
-    method: 'GET',
+    url: "/api/v3/courseware/group/list",
+    method: "GET"
   },
   mock: {
-    data: {},
+    data: {}
+  }
+};
+/* 按层获取课件组列表 */
+export const GET_COURSEWARES = {
+  adaptorName: "http",
+  http: {
+    url: "/api/v2/courseware/list",
+    method: "GET"
   },
+  mock: {
+    data: {}
+  }
+};
+
+/* 获取用户文档列表 */
+export const GET_COURSEWARES_LIST = {
+  adaptorName: "http",
+  http: {
+    url: "/api/v1/courseware/list",
+    method: "GET"
+  },
+  mock: {
+    data: {}
+  }
 };
 
 export const GET_RECIVE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v2/courseware/group/share/list',
-    method: 'GET',
+    url: "/api/v2/courseware/group/share/list",
+    method: "GET"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const COURSEWARE_RECEIVE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/receive',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/receive",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const COURSEWARE_IGNORE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/ignore',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/ignore",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const COURSEWARE_G_RECEIVE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/group/receive',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/group/receive",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const COURSEWARE_G_IGNORE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/group/ignore',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/group/ignore",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const GET_SHAREDAY = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/link/days',
-    method: 'GET',
+    url: "/api/v1/coursewareShare/link/days",
+    method: "GET"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 课件分享
 export const CREATE_SHARELINK = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/link',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/link",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 课件组分享
 export const CREATE_G_SHARELINK = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/group/link',
-    method: 'POST',
+    url: "/api/v1/coursewareShare/group/link",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 链接分享课件详情
 export const GET_SHARELINK_DETAIL = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/link/detail',
-    method: 'GET',
+    url: "/api/v1/coursewareShare/link/detail",
+    method: "GET"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 // 链接分享课件组详情
 export const GET_SHARELINK_DETAIL_G = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/coursewareShare/group/link/detail',
-    method: 'GET',
+    url: "/api/v1/coursewareShare/group/link/detail",
+    method: "GET"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 课件重命名
 export const COURSEWARE_RENAME = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/app/api/v1/courseware/rename',
-    method: 'PUT',
+    url: "/app/api/v1/courseware/rename",
+    method: "PUT"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 // 课件组重命名
 export const COURSEWARE_G_RENAME = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/courseware/group/rename',
-    method: 'PUT',
+    url: "/api/v1/courseware/group/rename",
+    method: "PUT"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 删除课件/课件组
 export const COURSEWARE_DELETE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v2/courseware/group/delete',
-    method: 'POST',
+    url: "/api/v2/courseware/group/delete",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 // 获取所有层级课件组
 export const GET_ALL_GROUP = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/app/api/v1/courseware/group/all',
-    method: 'GET',
+    url: "/app/api/v1/courseware/group/all",
+    method: "GET"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const CREATE_FOLDER = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/courseware/group/new',
-    method: 'POST',
+    url: "/api/v1/courseware/group/new",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };
 
 export const MOVE_HERE = {
-  adaptorName: 'http',
+  adaptorName: "http",
   http: {
-    url: '/api/v1/courseware/group/move',
-    method: 'POST',
+    url: "/api/v1/courseware/group/move",
+    method: "POST"
   },
   mock: {
-    data: {},
-  },
+    data: {}
+  }
 };

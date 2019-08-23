@@ -30,15 +30,23 @@ class MyContentTable extends Component<ContentTableProps> {
         title={() => {
           return tableTitle;
         }}
+        rowKey={record => record.id}
         onRow={(record: any) => {
           return {
             onMouseEnter: event => {
-              record.showSate = true;
+              if (record.isGroup == false) {
+                document.getElementsByClassName(
+                  `action${record.id}`
+                )[0].style.display = "block";
+              }
               changeCurrentRow(record);
             },
             onMouseLeave: event => {
-              record.showSate = false;
-              this.forceUpdate();
+              if (record.isGroup == false) {
+                document.getElementsByClassName(
+                  `action${record.id}`
+                )[0].style.display = "none";
+              }
             }
           };
         }}

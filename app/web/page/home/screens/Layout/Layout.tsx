@@ -4,9 +4,6 @@ const { Sider } = Layout;
 import ContainersSider from "../../containers/Sider/Sider";
 import ContainersHeader from "../../containers/Header/Header";
 import ContainerContent from "../../containers/Content/Content";
-// import About from "./About";
-// import TimeCapsule from "./TimeCapsule";
-// import RecycleBin from "./RecycleBin";
 class ScreensLayout extends Component {
   render() {
     return (
