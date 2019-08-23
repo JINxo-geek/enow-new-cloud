@@ -1,46 +1,27 @@
 import React, { Component } from "react";
-import { Row, Col, Divider, Icon, Popover, Button } from "antd";
+import { Row, Col, Divider, Icon, Menu, Dropdown } from "antd";
 import MyContentTable from "../../../sections/MyContentTable";
 import ShareModal from "../../../sections/ShareModal";
 import HistoryModal from "../../../sections/HistoryModal";
 import MoveFileModal from "../../../sections/MoveFileModal";
 import MyContentMsg from "./MyContentMsg";
 import { dataSource, tableTitle } from "./MyContentData";
+import uuid from "uuid";
 import "./MyContent.less";
 
-class MyContent extends Component {
+interface MyContentProps {
+  getCourseware?: any;
+  myContent?: any;
+}
+class MyContent extends Component<MyContentProps> {
   columns: any;
   modalContent: any = {};
+  currentRow = {};
   state = {
     shareModalVisible: false,
     historyModalVisible: false,
-    moveFileModalVisible: false,
-    currentRow: {},
-    popoverVisible: false
+    moveFileModalVisible: false
   };
-  content = (
-    <div>
-      {MyContentMsg.map((item, index) => {
-        if (item.text == "Divider") {
-          return <Divider key={index} className="btnframe" />;
-        }
-        return (
-          <p key={index} className="btnframe">
-            <Button
-              type="link"
-              className="btncolor"
-              onClick={() => {
-                this.setState({ popoverVisible: false });
-                this.selectFunc(item.text);
-              }}
-            >
-              {item.text}
-            </Button>
-          </p>
-        );
-      })}
-    </div>
-  );
 
   constructor(props: any) {
     super(props);
@@ -69,27 +50,49 @@ class MyContent extends Component {
         render: this.renderAction
       }
     ];
-    // this.renderFileType;
-    // this.renderAction;
+    this.props.getCourseware();
   }
 
   changeCurrentRow = record => {
-    this.setState({ currentRow: record });
+    this.currentRow = record;
   };
 
   selectFunc = e => {
+    console.log("selectFunc", e);
     switch (e) {
       case "分享":
-        this.showShareModal(this.state.currentRow);
+        this.showShareModal(this.currentRow);
         break;
       case "历史版本":
-        this.showHistoryModal(this.state.currentRow);
+        this.showHistoryModal(this.currentRow);
         break;
       case "移动到":
-        this.showMoveFileModal(this.state.currentRow);
+        this.showMoveFileModal(this.currentRow);
         break;
     }
   };
+  menu = (
+    <Menu>
+      {MyContentMsg.map((item, index) => {
+        var idx = uuid.v4();
+        if (item.text == "Divider") {
+          return <Menu.Divider key={idx} />;
+        } else if (item.text == "删除") {
+          return (
+            <Menu.Item onClick={() => this.selectFunc(item.text)} key={idx}>
+              <p className="btndelete">{item.text}</p>
+            </Menu.Item>
+          );
+        } else {
+          return (
+            <Menu.Item onClick={() => this.selectFunc(item.text)} key={idx}>
+              {item.text}
+            </Menu.Item>
+          );
+        }
+      })}
+    </Menu>
+  );
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
   };
@@ -110,6 +113,7 @@ class MyContent extends Component {
   showShareModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
+    console.log("触发2", "e.name", e.name, "e.key", e.key);
     this.setState({
       shareModalVisible: true
     });
@@ -156,9 +160,9 @@ class MyContent extends Component {
     });
   };
   renderAction = (text, record) => {
-    if (record.showSate && record.type == "file") {
+    if (record.isGroup == false) {
       return (
-        <div>
+        <div className={`action${record.id}`} style={{ display: "none" }}>
           <Icon
             type="share-alt"
             onClick={() => {
@@ -166,15 +170,9 @@ class MyContent extends Component {
             }}
           />
           &emsp;&thinsp;
-          <Popover
-            visible={this.state.popoverVisible}
-            placement="bottom"
-            content={this.content}
-            trigger="click"
-            onVisibleChange={this.handleVisibleChange}
-          >
+          <Dropdown overlay={this.menu} trigger={["click"]}>
             <Icon type="align-center" />
-          </Popover>
+          </Dropdown>
         </div>
       );
     } else {
@@ -182,23 +180,14 @@ class MyContent extends Component {
     }
   };
   renderFileType = (text, record) => {
-    return record.type == "file" ? (
+    return record.isGroup == false ? (
       <div style={{ display: "inline-flex", marginTop: "10px" }}>
-        <img width={12} height={17} src={require("@images/file.png")} />
+        <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
         <p>&emsp;&thinsp;{text}</p>
       </div>
     ) : (
       <div style={{ display: "inline-flex", marginTop: "10px" }}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          fill="rgb(224, 152, 101)"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-        >
-          <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-        </svg>
+        <i className="demo-icon icon-folder">&#xf14a;</i>
         <p>&emsp;{text}</p>
       </div>
     );

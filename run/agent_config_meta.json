@@ -258,7 +258,9 @@
       "react-router-config": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-dom": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
       "react-router-redux": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
-      "redux": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js"
+      "redux": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "redux-actions": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
+      "redux-saga": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "@types/lodash": "/Users/cvter/Desktop/code/enow-new-cloud/node_modules/egg/config/config.default.js",
