@@ -23,10 +23,7 @@ export const getCoursewareGroup = createAction(
 );
 export const getCoursewareGroupSuccess = createAction(
   type.GET_COURSEWARES_GROUP_SUCCESS,
-  mount => mount,
-  () => {
-    return { admin: true };
-  }
+  mount => mount
 );
 
 export const getCoursewareGroupFailure = createAction(

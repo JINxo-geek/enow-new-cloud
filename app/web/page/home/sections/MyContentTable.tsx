@@ -7,6 +7,7 @@ export interface ContentTableProps {
   tableTitle: any;
   columns: any;
   changeCurrentRow: Function;
+  loading: boolean;
 }
 class MyContentTable extends Component<ContentTableProps> {
   static defaultProps = {
@@ -22,9 +23,16 @@ class MyContentTable extends Component<ContentTableProps> {
   }
 
   render() {
-    const { columns, changeCurrentRow, dataSource, tableTitle } = this.props;
+    const {
+      columns,
+      changeCurrentRow,
+      dataSource,
+      tableTitle,
+      loading
+    } = this.props;
     return (
       <Table
+        loading={loading}
         pagination={false}
         dataSource={dataSource}
         columns={columns}

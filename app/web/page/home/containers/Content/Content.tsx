@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 });
 interface ContainersContentProps {
   getCourseware?: object;
+  getCoursewareGroup?: any;
 }
 class ContainersContent extends Component<ContainersContentProps> {
   constructor(props) {
@@ -35,6 +36,7 @@ class ContainersContent extends Component<ContainersContentProps> {
             render={props => (
               <ContainersMyContent
                 getCourseware={this.props.getCourseware}
+                getCoursewareGroup={this.props.getCoursewareGroup}
                 {...props}
               />
             )}

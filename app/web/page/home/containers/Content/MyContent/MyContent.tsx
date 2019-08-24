@@ -27,7 +27,8 @@ class MyContent extends Component<MyContentProps> {
   state = {
     shareModalVisible: false,
     historyModalVisible: false,
-    moveFileModalVisible: false
+    moveFileModalVisible: false,
+    loading: true
   };
 
   constructor(props: any) {
@@ -37,6 +38,7 @@ class MyContent extends Component<MyContentProps> {
         title: "名称",
         dataIndex: "name",
         key: "name",
+        width: 460,
         render: this.renderFileType
       },
       {
@@ -52,10 +54,10 @@ class MyContent extends Component<MyContentProps> {
         render: this.renderSize
       },
       {
-        title: "",
-        width: 120,
+        title: "操作",
         dataIndex: "id",
         key: "id",
+        width: 200,
         render: this.renderAction
       }
     ];
@@ -64,19 +66,21 @@ class MyContent extends Component<MyContentProps> {
 
   get dataSource() {
     console.log("this.props.getCourseware", this.props);
-    const { content } = this.props.getCourseware.myContentdata.data;
-    if (this.dataSourceOrigin !== content) {
+    const { myContentdata } = this.props.getCourseware;
+    console.log("myContentdata", myContentdata);
+    if (
+      JSON.stringify(this.dataSourceOrigin) !== JSON.stringify(myContentdata)
+    ) {
       console.log("数据变动");
-      this.dataSourceOrigin = content;
-      this.dataSourceCache = content;
+      this.dataSourceOrigin = myContentdata;
+      this.dataSourceCache = myContentdata;
+      this.setState({ loading: false });
     }
     return this.dataSourceCache;
   }
 
   componentDidMount = () => {
-    this.props.getCoursewareGroup({
-      callback: () => {}
-    });
+    this.props.getCoursewareGroup();
   };
 
   changeCurrentRow = record => {
@@ -212,26 +216,30 @@ class MyContent extends Component<MyContentProps> {
 
   renderFileType = (text, record) => {
     return record.isGroup == false ? (
-      <div style={{ display: "inline-flex", marginTop: "10px" }}>
+      <div style={{ display: "inline-flex" }}>
         <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
         <p>&emsp;&thinsp;{text}</p>
       </div>
     ) : (
-      <div style={{ display: "inline-flex", marginTop: "10px" }}>
+      <div style={{ display: "inline-flex" }}>
         <i className="demo-icon icon-folder">&#xf14a;</i>
-        <p>&emsp;{text}</p>
+        <p className="namesize">&emsp;{text}</p>
       </div>
     );
   };
 
   /* 渲染文件大小 */
   renderSize = (text, record) => {
-    return record.isGroup ? "" : parseFileSize(record.size);
+    return (
+      <p className="smallsize">
+        {record.isGroup ? "" : parseFileSize(record.size)}
+      </p>
+    );
   };
 
   /* 渲染文件大小 */
   renderTime = (text, record) => {
-    return timeBeauty(record.update_time);
+    return <p className="smallsize">{timeBeauty(record.update_time)}</p>;
   };
 
   render() {
@@ -240,6 +248,7 @@ class MyContent extends Component<MyContentProps> {
       <Row>
         <Col span={22} offset={1}>
           <MyContentTable
+            loading={this.state.loading}
             dataSource={this.dataSource}
             tableTitle={tableTitle}
             columns={this.columns}
