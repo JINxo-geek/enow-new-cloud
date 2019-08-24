@@ -8,7 +8,7 @@ import {
   GET_COURSEWARES_GROUP_FAILURE
 } from "../constants/actionType";
 
-const reducer = handleActions(
+const reducers = handleActions(
   {
     [GET_COURSEWARES]: (state, action) => {
       return {
@@ -18,16 +18,14 @@ const reducer = handleActions(
     [GET_COURSEWARES_SUCCESS]: (state, action) => {
       console.log("触发成功", state, "action", action);
       return {
-        myContentdata: action.payload
+        ...state
       };
     },
     [GET_COURSEWARES_FAILURE]: (state, action) => {
       return {
         ...state
       };
-    }
-  },
-  {
+    },
     [GET_COURSEWARES_GROUP]: (state, action) => {
       return {
         ...state
@@ -45,6 +43,9 @@ const reducer = handleActions(
       };
     }
   },
-  { myContentdata: {} }
+  {
+    myContentdata: { allgroup: { data: [] }, data: { content: [] } },
+    reqparams: { index: 0, pagesize: 10 }
+  }
 );
-export default reducer;
+export default reducers;
