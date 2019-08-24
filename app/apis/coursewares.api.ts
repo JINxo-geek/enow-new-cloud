@@ -1,6 +1,7 @@
 /* 云课件列表 */
 
-/* 课件组列表 */
+/* 课件组列表 接口文档有错误，父节点为目录时，将不会返回parentId字段
+ */
 export const GET_COURSEWARES_GROUP = {
   adaptorName: "http",
   http: {

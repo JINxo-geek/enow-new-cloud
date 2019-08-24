@@ -34,7 +34,8 @@ const reducers = handleActions(
     [GET_COURSEWARES_GROUP_SUCCESS]: (state, action) => {
       console.log("GET_COURSEWARES_SUCCESS,触发成功", state, "action", action);
       return {
-        myContentdata: action.payload
+        myContentdata: action.payload.data,
+        reqparams: action.payload.reqparams
       };
     },
     [GET_COURSEWARES_GROUP_FAILURE]: (state, action) => {
@@ -44,8 +45,8 @@ const reducers = handleActions(
     }
   },
   {
-    myContentdata: { allgroup: { data: [] }, data: { content: [] } },
-    reqparams: { index: 0, pagesize: 10 }
+    myContentdata: [],
+    reqparams: { index: 0, pagesize: 99 }
   }
 );
 export default reducers;
