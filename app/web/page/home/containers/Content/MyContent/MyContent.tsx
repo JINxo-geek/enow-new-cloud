@@ -5,18 +5,25 @@ import ShareModal from "../../../sections/ShareModal";
 import HistoryModal from "../../../sections/HistoryModal";
 import MoveFileModal from "../../../sections/MoveFileModal";
 import MyContentMsg from "./MyContentMsg";
-import { dataSource, tableTitle } from "./MyContentData";
+import { tableTitle } from "./MyContentData";
+import { parseFileSize } from "../../../../../helpers/util";
+import { timeBeauty } from "../../../../../helpers/timeBeauty";
 import uuid from "uuid";
 import "./MyContent.less";
 
 interface MyContentProps {
-  getCourseware?: any;
+  getCoursewareGroup?: any;
   myContent?: any;
+  getCourseware?: any;
 }
 class MyContent extends Component<MyContentProps> {
   columns: any;
   modalContent: any = {};
-  currentRow = {};
+  currentRow: any = {};
+  private _dataSource: any = [];
+  dataSourceOrigin: any = [];
+  dataSourceCache: any = [];
+
   state = {
     shareModalVisible: false,
     historyModalVisible: false,
@@ -34,24 +41,43 @@ class MyContent extends Component<MyContentProps> {
       },
       {
         title: "更新时间",
-        dataIndex: "date",
-        key: "date"
+        dataIndex: "update_time",
+        key: "update_time",
+        render: this.renderTime
       },
       {
         title: "大小",
         dataIndex: "size",
-        key: "size"
+        key: "size",
+        render: this.renderSize
       },
       {
         title: "",
         width: 120,
-        dataIndex: "key",
-        key: "key",
+        dataIndex: "id",
+        key: "id",
         render: this.renderAction
       }
     ];
-    this.props.getCourseware();
   }
+  /* 监听数据变动 */
+
+  get dataSource() {
+    console.log("this.props.getCourseware", this.props);
+    const { content } = this.props.getCourseware.myContentdata.data;
+    if (this.dataSourceOrigin !== content) {
+      console.log("数据变动");
+      this.dataSourceOrigin = content;
+      this.dataSourceCache = content;
+    }
+    return this.dataSourceCache;
+  }
+
+  componentDidMount = () => {
+    this.props.getCoursewareGroup({
+      callback: () => {}
+    });
+  };
 
   changeCurrentRow = record => {
     this.currentRow = record;
@@ -113,7 +139,6 @@ class MyContent extends Component<MyContentProps> {
   showShareModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
-    console.log("触发2", "e.name", e.name, "e.key", e.key);
     this.setState({
       shareModalVisible: true
     });
@@ -159,6 +184,9 @@ class MyContent extends Component<MyContentProps> {
       moveFileModalVisible: true
     });
   };
+
+  /* 渲染操作 */
+
   renderAction = (text, record) => {
     if (record.isGroup == false) {
       return (
@@ -179,6 +207,9 @@ class MyContent extends Component<MyContentProps> {
       return <div />;
     }
   };
+
+  /* 渲染名称 */
+
   renderFileType = (text, record) => {
     return record.isGroup == false ? (
       <div style={{ display: "inline-flex", marginTop: "10px" }}>
@@ -193,12 +224,23 @@ class MyContent extends Component<MyContentProps> {
     );
   };
 
+  /* 渲染文件大小 */
+  renderSize = (text, record) => {
+    return record.isGroup ? "" : parseFileSize(record.size);
+  };
+
+  /* 渲染文件大小 */
+  renderTime = (text, record) => {
+    return timeBeauty(record.update_time);
+  };
+
   render() {
+    console.log("props", this.props);
     return (
       <Row>
         <Col span={22} offset={1}>
           <MyContentTable
-            dataSource={dataSource}
+            dataSource={this.dataSource}
             tableTitle={tableTitle}
             columns={this.columns}
             changeCurrentRow={this.changeCurrentRow}

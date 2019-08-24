@@ -5,31 +5,39 @@ import ContainersMyContent from "./MyContent/MyContent";
 import ContainersTimeCapule from "./TimeCapsule/TimeCapsule";
 import ContainersRecycleBin from "./RecycleBin/RecycleBin";
 import { connect } from "react-redux";
-import { getCourseware } from "../../../../store/actions";
+import { getCoursewareGroup } from "../../../../store/actions";
 
 const mapStateToProps = store => {
   return { ...store };
 };
 const mapDispatchToProps = (dispatch: any) => ({
-  getCourseware: values => {
-    dispatch(getCourseware(values));
+  getCoursewareGroup: values => {
+    dispatch(getCoursewareGroup(values));
   }
 });
-
-class ContainersContent extends Component {
+interface ContainersContentProps {
+  getCourseware?: object;
+}
+class ContainersContent extends Component<ContainersContentProps> {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
+    console.log("ContainersContentProps", this.props);
     return (
       <div>
         <Switch>
           <Route
             exact
             path="/"
-            render={props => <ContainersMyContent {...this.props} {...props} />}
+            render={props => (
+              <ContainersMyContent
+                getCourseware={this.props.getCourseware}
+                {...props}
+              />
+            )}
           />
           <Route
             path="/project/mycontent"

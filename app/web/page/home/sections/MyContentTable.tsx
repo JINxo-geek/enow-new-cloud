@@ -25,6 +25,7 @@ class MyContentTable extends Component<ContentTableProps> {
     const { columns, changeCurrentRow, dataSource, tableTitle } = this.props;
     return (
       <Table
+        pagination={false}
         dataSource={dataSource}
         columns={columns}
         title={() => {
