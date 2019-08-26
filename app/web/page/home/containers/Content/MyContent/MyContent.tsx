@@ -8,9 +8,9 @@ import MyContentMsg from "./MyContentMsg";
 import { tableTitle } from "./MyContentData";
 import { parseFileSize } from "../../../../../helpers/util";
 import { timeBeauty } from "../../../../../helpers/timeBeauty";
+import TableName from "../../../sections/TableName";
 import uuid from "uuid";
 import "./MyContent.less";
-
 interface MyContentProps {
   getCoursewareGroup?: any;
   myContent?: any;
@@ -23,12 +23,12 @@ class MyContent extends Component<MyContentProps> {
   private _dataSource: any = [];
   dataSourceOrigin: any = [];
   dataSourceCache: any = [];
-
+  private _loading: boolean = true;
+  loadingFlag: boolean = true;
   state = {
     shareModalVisible: false,
     historyModalVisible: false,
-    moveFileModalVisible: false,
-    loading: true
+    moveFileModalVisible: false
   };
 
   constructor(props: any) {
@@ -72,11 +72,19 @@ class MyContent extends Component<MyContentProps> {
       JSON.stringify(this.dataSourceOrigin) !== JSON.stringify(myContentdata)
     ) {
       console.log("数据变动");
+      this.loadingFlag = false;
       this.dataSourceOrigin = myContentdata;
       this.dataSourceCache = myContentdata;
-      this.setState({ loading: false });
     }
     return this.dataSourceCache;
+  }
+
+  get loading() {
+    if (this.loadingFlag) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   componentDidMount = () => {
@@ -123,6 +131,8 @@ class MyContent extends Component<MyContentProps> {
       })}
     </Menu>
   );
+
+  //显示下拉菜单
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
   };
@@ -218,12 +228,13 @@ class MyContent extends Component<MyContentProps> {
     return record.isGroup == false ? (
       <div style={{ display: "inline-flex" }}>
         <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
-        <p>&emsp;&thinsp;{text}</p>
+        <TableName title={text} lineClampNum={2} data={record} />
       </div>
     ) : (
       <div style={{ display: "inline-flex" }}>
         <i className="demo-icon icon-folder">&#xf14a;</i>
-        <p className="namesize">&emsp;{text}</p>
+        {/* <p className="namesize">&emsp;{text}</p> */}
+        <TableName title={text} lineClampNum={2} data={record} />
       </div>
     );
   };
@@ -248,8 +259,8 @@ class MyContent extends Component<MyContentProps> {
       <Row>
         <Col span={22} offset={1}>
           <MyContentTable
-            loading={this.state.loading}
             dataSource={this.dataSource}
+            loading={this.loading}
             tableTitle={tableTitle}
             columns={this.columns}
             changeCurrentRow={this.changeCurrentRow}
