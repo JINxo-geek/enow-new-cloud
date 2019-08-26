@@ -12,7 +12,7 @@ export const EHttpEventCode = {
   ACTION_FAIL: Symbol("action fail")
 };
 
-export const TIMEOUT = 2e3;
+export const TIMEOUT = 4e3;
 
 const ax = axios.create({
   baseURL: "/apis",
