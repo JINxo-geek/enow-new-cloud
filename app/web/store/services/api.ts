@@ -17,15 +17,18 @@ export async function apiGetGoursewareGrop(payload: any): Promise<any> {
   });
 }
 
-/* 获取用户文档列表 */
-
-export async function apiGetGoursewareList(payload: any): Promise<any> {
-  return fetch("GET_COURSEWARES_LIST", payload);
-}
-
 /* 获取所有层级课件组 */
 
 export async function apiGetGoursewareAll(): Promise<any> {
   console.log("/* 获取所有层级课件组 */");
   return fetch("GET_ALL_GROUP");
+}
+
+/* 生成分享链接 */
+
+export async function apiGreateGShareLink(payload: any): Promise<any> {
+  console.log("/* 生成分享链接 */", payload);
+  return fetch("CREATE_G_SHARELINK", {
+    params: payload
+  });
 }

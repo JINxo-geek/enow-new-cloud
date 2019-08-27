@@ -7,16 +7,33 @@ import QRCode from "qrcode.react";
 import copy from "copy-to-clipboard";
 const { Option } = Select;
 
-const shareUrl = "http://www.baidu.com";
-
 function ShareModal(props) {
-  const shareContent = {};
+  const { link, password, type, linkLock } = props.postShare;
+  console.log("props.postShare", JSON.stringify(props.postShare));
+  let iconLoading = props.iconLoading;
+  if (props.postShare.linkLock == false) {
+    iconLoading = false;
+    console.log("执行");
+  } else {
+    console.log("linkLock == false", linkLock);
+  }
+  console.log("iconLoading", iconLoading);
+  console.log("props.postShare", props.postShare);
+  let shareUrl = link;
+  const shareType = props.shareType;
   const handleChange = value => {
-    console.log(value);
+    shareType.expiredDay = value.key;
+  };
+  const handleChange2 = value => {
+    shareType.type = value.key;
   };
   const copyUrl = () => {
     try {
-      copy(shareUrl);
+      if (password == "") {
+        copy(shareUrl);
+      } else {
+        copy("链接" + shareUrl + "密码" + password);
+      }
     } catch (e) {
       message.error("复制失败" + e);
     }
@@ -25,7 +42,6 @@ function ShareModal(props) {
 
   return (
     <Modal
-      // title={}
       title={
         <div>
           <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
@@ -46,12 +62,12 @@ function ShareModal(props) {
             className="select"
             labelInValue
             size="small"
-            defaultValue={{ key: "7day" }}
+            defaultValue={{ key: `${props.shareType.expiredDay}` }}
             onChange={handleChange}
           >
-            <Option value="7day">7天</Option>
-            <Option value="30day">30天</Option>
-            <Option value="forever">永久</Option>
+            <Option value="7">7天</Option>
+            <Option value="30">30天</Option>
+            <Option value="0">永久</Option>
           </Select>
         </Col>
         <Col span={4}>分享形式</Col>
@@ -61,12 +77,24 @@ function ShareModal(props) {
             className="select"
             size="small"
             labelInValue
-            defaultValue={{ key: "public" }}
-            onChange={handleChange}
+            defaultValue={{ key: `${props.shareType.type}` }}
+            onChange={handleChange2}
           >
-            <Option value="public">公开</Option>
-            <Option value="encrypt">加密</Option>
+            <Option value="0">公开</Option>
+            <Option value="1">加密</Option>
           </Select>
+        </Col>
+        <Col span={4}>
+          <Button
+            icon="plus"
+            loading={iconLoading}
+            onClick={() => {
+              props.changeShareType(shareType);
+            }}
+            className="btnLink"
+          >
+            创建新链接
+          </Button>
         </Col>
       </Row>
       <Row>
@@ -85,11 +113,14 @@ function ShareModal(props) {
               <br />
               {`《${props.modalContent.name}》`}
               <br />
-              {shareUrl}
+              <a href={shareUrl} target={"_blank"}>
+                {shareUrl}
+              </a>
               <br />
+              {password !== "" ? `密码${password}` : ""}
             </div>
             <Button className="btncopy" onClick={copyUrl}>
-              复制链接
+              {password !== "" ? "复制链接和密码" : "复制链接"}
             </Button>
           </div>
         </Col>

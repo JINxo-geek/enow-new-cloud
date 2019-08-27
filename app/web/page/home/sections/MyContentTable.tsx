@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "antd";
+import { Table, Spin } from "antd";
 import "./MyContentTable.less";
 
 export interface ContentTableProps {
@@ -22,6 +22,18 @@ class MyContentTable extends Component<ContentTableProps> {
     this.state = {};
   }
 
+  shouldComponentUpdate(nextProps) {
+    if (
+      JSON.stringify(this.props["dataSource"]) ===
+      JSON.stringify(nextProps["dataSource"])
+    ) {
+      console.log("值没有变动");
+      return false;
+    }
+    console.log("值变动");
+    return true;
+  }
+
   render() {
     const {
       columns,
@@ -31,35 +43,36 @@ class MyContentTable extends Component<ContentTableProps> {
       loading
     } = this.props;
     return (
-      <Table
-        loading={loading}
-        pagination={false}
-        dataSource={dataSource}
-        columns={columns}
-        title={() => {
-          return tableTitle;
-        }}
-        rowKey={record => record.id}
-        onRow={(record: any) => {
-          return {
-            onMouseEnter: event => {
-              if (record.isGroup == false) {
-                document.getElementsByClassName(
-                  `action${record.id}`
-                )[0].style.display = "block";
+      <Spin spinning={loading}>
+        <Table
+          pagination={false}
+          dataSource={dataSource}
+          columns={columns}
+          title={() => {
+            return tableTitle;
+          }}
+          rowKey={record => record.id}
+          onRow={(record: any) => {
+            return {
+              onMouseEnter: event => {
+                if (record.isGroup == false) {
+                  document.getElementsByClassName(
+                    `action${record.id}`
+                  )[0].style.display = "block";
+                }
+                changeCurrentRow(record);
+              },
+              onMouseLeave: event => {
+                if (record.isGroup == false) {
+                  document.getElementsByClassName(
+                    `action${record.id}`
+                  )[0].style.display = "none";
+                }
               }
-              changeCurrentRow(record);
-            },
-            onMouseLeave: event => {
-              if (record.isGroup == false) {
-                document.getElementsByClassName(
-                  `action${record.id}`
-                )[0].style.display = "none";
-              }
-            }
-          };
-        }}
-      />
+            };
+          }}
+        />
+      </Spin>
     );
   }
 }

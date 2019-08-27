@@ -1,8 +1,13 @@
 import { takeEvery } from "redux-saga/effects";
 import { all, fork, put, take, call, select } from "redux-saga/effects";
 import * as ActionType from "../constants/actionType";
-import * as Action from "../actions";
-import { apiGetGoursewareGrop, apiGetGoursewareAll } from "../services/api";
+import * as Action from "../actions/get.courseware";
+import { getShareSuccess, getShareFailure } from "../actions/post.share";
+import {
+  apiGetGoursewareGrop,
+  apiGetGoursewareAll,
+  apiGreateGShareLink
+} from "../services/api";
 
 /***************************** Subroutines ************************************/
 //排序函数
@@ -17,7 +22,7 @@ function* sortIt(content) {
   res.push(...enbx);
   return res;
 }
-//
+//过滤parentId
 function* filterParentId(content, parentId = "") {
   return content.filter(item => {
     if (parentId == "") {
@@ -27,11 +32,21 @@ function* filterParentId(content, parentId = "") {
     }
   });
 }
+//过滤name
+// function* filtername(content, name = "") {
+//   return content.filter(item => {
+//     if (name == "") {
+//       return item.parentId == name || !item.parentId;
+//     } else {
+//       return item.parentId == name;
+//     }
+//   });
+// }
 
+/* 获得所有数据 */
 function* getCourseware() {
   const state = yield select();
-  yield console.log("state", state);
-  const { reqparams } = state.getCourseware;
+  const { reqparams, parentId } = state.getCourseware;
   let data = yield call(apiGetGoursewareGrop, reqparams);
   /* 拿到total值，根据total值是否为0判断是否继续发送请求 */
   let total;
@@ -50,13 +65,43 @@ function* getCourseware() {
       totalData.push(...p.data.content);
     }
   }
-  const allgroup = yield call(apiGetGoursewareAll);
-  //得到这个目录下的数据
-  let filterParentIdData = yield call(filterParentId, totalData);
+  // const allgroup = yield call(apiGetGoursewareAll);
   //对数据进行排序
-  data = yield call(sortIt, filterParentIdData);
-  yield (data.allgroup = allgroup);
-  yield put(Action.getCoursewareGroupSuccess({ data, reqparams }));
+  let sortData = yield call(sortIt, totalData);
+  //得到根目录下的数据
+  let filterParentIdData = yield call(filterParentId, sortData, parentId);
+
+  let partdata = filterParentIdData;
+  // yield (data.allgroup = allgroup);
+  yield put(
+    Action.getCoursewareGroupSuccess({ sortData, partdata, reqparams })
+  );
+}
+
+/* 获取某个文件夹的文件 */
+function* getSubfile() {
+  const state = yield select();
+  yield console.log("state", state);
+  const { sortData, reqparams } = state.getCourseware;
+  const { parentId } = state.getSubFile;
+  let filterParentIdData = yield call(filterParentId, sortData, parentId);
+  let partdata = filterParentIdData;
+  yield put(
+    Action.getCoursewareGroupSuccess({ sortData, partdata, reqparams })
+  );
+}
+
+/* 生成分享链接 */
+
+function* getShareLink(e) {
+  let { expiredDay, type, id, linkLock } = e.payload;
+  const shareMsg = yield call(apiGreateGShareLink, { expiredDay, type, id });
+  if (shareMsg.error_code === 0) {
+    linkLock = false;
+    yield put(getShareSuccess({ shareMsg, linkLock }));
+  } else if (shareMsg.error_code === 41001) {
+    yield put(getShareFailure({ msg: "没有找到课件" }));
+  }
 }
 
 /******************************************************************************/
@@ -66,6 +111,8 @@ function* getCourseware() {
 //  WATCHERS
 function* watchGetCourseware() {
   yield takeEvery(ActionType.GET_COURSEWARES_GROUP, getCourseware);
+  yield takeEvery(ActionType.GET_SUBFILE, getSubfile);
+  yield takeEvery(ActionType.CREATE_G_SHARELINK, getShareLink);
 }
 
 // // CREATE_USER

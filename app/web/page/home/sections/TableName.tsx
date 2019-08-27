@@ -4,6 +4,7 @@ export interface TableNameProps {
   title?: string;
   lineClampNum?: number;
   data?: any;
+  getSubFile?: any;
 }
 export interface TableNameState {}
 
@@ -23,7 +24,7 @@ class TableName extends Component<TableNameProps, TableNameState> {
     const { isGroup, version, id } = data;
     if (isGroup) {
       //文件夹id，传递出去，之后过滤得到parenId的子数据
-      //   browserHistory.push(`/courseware_group_pc/${id}`);
+      this.props.getSubFile(id);
       return;
     }
     // const target = process.env.target;
