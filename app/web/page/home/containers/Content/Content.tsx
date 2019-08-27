@@ -5,7 +5,9 @@ import ContainersMyContent from "./MyContent/MyContent";
 import ContainersTimeCapule from "./TimeCapsule/TimeCapsule";
 import ContainersRecycleBin from "./RecycleBin/RecycleBin";
 import { connect } from "react-redux";
-import { getCoursewareGroup } from "../../../../store/actions";
+import { getCoursewareGroup } from "../../../../store/actions/get.courseware";
+import { getSubFile } from "../../../../store/actions/get.subFile";
+import { getShare } from "../../../../store/actions/post.share";
 
 const mapStateToProps = store => {
   return { ...store };
@@ -13,11 +15,20 @@ const mapStateToProps = store => {
 const mapDispatchToProps = (dispatch: any) => ({
   getCoursewareGroup: values => {
     dispatch(getCoursewareGroup(values));
+  },
+  getSubFile: values => {
+    dispatch(getSubFile(values));
+  },
+  getShareLink: values => {
+    dispatch(getShare(values));
   }
 });
 interface ContainersContentProps {
   getCourseware?: object;
   getCoursewareGroup?: any;
+  getSubFile?: any;
+  getShareLink?: any;
+  postShare?: object;
 }
 class ContainersContent extends Component<ContainersContentProps> {
   constructor(props) {
@@ -27,6 +38,7 @@ class ContainersContent extends Component<ContainersContentProps> {
 
   render() {
     console.log("ContainersContentProps", this.props);
+    console.log("postShare", JSON.stringify(this.props.postShare));
     return (
       <div>
         <Switch>
@@ -36,7 +48,10 @@ class ContainersContent extends Component<ContainersContentProps> {
             render={props => (
               <ContainersMyContent
                 getCourseware={this.props.getCourseware}
+                postShare={this.props.postShare}
                 getCoursewareGroup={this.props.getCoursewareGroup}
+                getSubFile={this.props.getSubFile}
+                getShareLink={this.props.getShareLink}
                 {...props}
               />
             )}

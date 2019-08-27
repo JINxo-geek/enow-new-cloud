@@ -26,15 +26,16 @@ const reducers = handleActions(
         ...state
       };
     },
-    [GET_COURSEWARES_GROUP]: (state, action) => {
-      return {
-        ...state
-      };
-    },
+    // [GET_COURSEWARES_GROUP]: (state, action) => {
+    //   return {
+    //     ...state
+    //   };
+    // },
     [GET_COURSEWARES_GROUP_SUCCESS]: (state, action) => {
       console.log("GET_COURSEWARES_SUCCESS,触发成功", state, "action", action);
       return {
-        myContentdata: action.payload.data,
+        sortData: action.payload.sortData,
+        partContentdata: action.payload.partdata,
         reqparams: action.payload.reqparams
       };
     },
@@ -45,8 +46,10 @@ const reducers = handleActions(
     }
   },
   {
-    myContentdata: [],
-    reqparams: { index: 0, pagesize: 99 }
+    sortData: [],
+    reqparams: { index: 0, pagesize: 99 },
+    parentId: "",
+    partContentdata: []
   }
 );
 export default reducers;

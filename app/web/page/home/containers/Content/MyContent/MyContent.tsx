@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Divider, Icon, Menu, Dropdown } from "antd";
+import { Row, Col, Spin, Icon, Menu, Dropdown, Alert, message } from "antd";
 import MyContentTable from "../../../sections/MyContentTable";
 import ShareModal from "../../../sections/ShareModal";
 import HistoryModal from "../../../sections/HistoryModal";
@@ -9,23 +9,28 @@ import { tableTitle } from "./MyContentData";
 import { parseFileSize } from "../../../../../helpers/util";
 import { timeBeauty } from "../../../../../helpers/timeBeauty";
 import TableName from "../../../sections/TableName";
-import uuid from "uuid";
+import _ from "lodash";
 import "./MyContent.less";
 interface MyContentProps {
   getCoursewareGroup?: any;
   myContent?: any;
   getCourseware?: any;
+  getSubFile?: any;
+  getShareLink?: any;
+  postShare?: object;
 }
 class MyContent extends Component<MyContentProps> {
   columns: any;
   modalContent: any = {};
   currentRow: any = {};
-  private _dataSource: any = [];
-  dataSourceOrigin: any = [];
-  dataSourceCache: any = [];
-  private _loading: boolean = true;
-  loadingFlag: boolean = true;
+  shareType: any = { type: 0, expiredDay: 30 };
+  iconLoading: boolean = true;
+  preParentId: string = "";
   state = {
+    hasMore: { x: 1.8, has: false },
+    dataSource: [],
+    dataSourceOrigin: [],
+    loading: true,
     shareModalVisible: false,
     historyModalVisible: false,
     moveFileModalVisible: false
@@ -63,38 +68,70 @@ class MyContent extends Component<MyContentProps> {
     ];
   }
   /* 监听数据变动 */
-
-  get dataSource() {
-    console.log("this.props.getCourseware", this.props);
-    const { myContentdata } = this.props.getCourseware;
-    console.log("myContentdata", myContentdata);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { partContentdata } = nextProps.getCourseware;
     if (
-      JSON.stringify(this.dataSourceOrigin) !== JSON.stringify(myContentdata)
+      JSON.stringify(partContentdata) !==
+      JSON.stringify(prevState.dataSourceOrigin)
     ) {
-      console.log("数据变动");
-      this.loadingFlag = false;
-      this.dataSourceOrigin = myContentdata;
-      this.dataSourceCache = myContentdata;
-    }
-    return this.dataSourceCache;
-  }
-
-  get loading() {
-    if (this.loadingFlag) {
-      return true;
+      let has = true;
+      if (partContentdata.length < 30) {
+        //如果课件数少于30时，不显示loading
+        has = false;
+      }
+      return {
+        dataSourceOrigin: partContentdata,
+        dataSource: partContentdata.slice(0, 22),
+        loading: false,
+        hasMore: { has: has, x: 1.8 }
+      };
     } else {
-      return false;
+      console.log("数据未变动");
+      return {
+        ...prevState
+      };
     }
   }
 
+  /* 监听滚动 */
+  handleOnScroll() {
+    document
+      .getElementsByClassName("ant-layout")[1]
+      .addEventListener("scroll", this.scrollFn(), false);
+  }
+  scrollFn = () => {
+    return _.throttle(() => {
+      const ele = document.getElementsByClassName("ant-layout")[1];
+      const scrollTop = document.getElementsByClassName("ant-layout")[1]
+        .scrollTop; //设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离
+      const scrollHeight = ele.scrollHeight; //获取对象的滚动高度。
+      const clientHeight = ele.clientHeight; //网页可见区域高
+      const heightFromBottom = scrollHeight - scrollTop - clientHeight;
+      if (heightFromBottom < 100 && this.state.hasMore.has) {
+        if (this.state.dataSource.length < this.state.dataSourceOrigin.length) {
+          let x = this.state.hasMore.x;
+          let dataSource = this.state.dataSourceOrigin.slice(0, 30 * x);
+          x = x + 1;
+          this.setState({
+            dataSource: dataSource,
+            hasMore: { has: true, x: x }
+          });
+        } else {
+          this.setState({ hasMore: { has: false } });
+        }
+      } else if (heightFromBottom < 10 && this.state.hasMore.has == false) {
+        //可以写无更多课件提示
+      }
+    }, 1000);
+  };
   componentDidMount = () => {
     this.props.getCoursewareGroup();
+    this.handleOnScroll();
   };
 
   changeCurrentRow = record => {
     this.currentRow = record;
   };
-
   selectFunc = e => {
     console.log("selectFunc", e);
     switch (e) {
@@ -112,18 +149,17 @@ class MyContent extends Component<MyContentProps> {
   menu = (
     <Menu>
       {MyContentMsg.map((item, index) => {
-        var idx = uuid.v4();
         if (item.text == "Divider") {
-          return <Menu.Divider key={idx} />;
+          return <Menu.Divider key={index} />;
         } else if (item.text == "删除") {
           return (
-            <Menu.Item onClick={() => this.selectFunc(item.text)} key={idx}>
+            <Menu.Item onClick={() => this.selectFunc(item.text)} key={index}>
               <p className="btndelete">{item.text}</p>
             </Menu.Item>
           );
         } else {
           return (
-            <Menu.Item onClick={() => this.selectFunc(item.text)} key={idx}>
+            <Menu.Item onClick={() => this.selectFunc(item.text)} key={index}>
               {item.text}
             </Menu.Item>
           );
@@ -149,13 +185,29 @@ class MyContent extends Component<MyContentProps> {
       shareModalVisible: false
     });
   };
-
+  //显示分享
   showShareModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
+    //重置选项
+    this.shareType = { type: 0, expiredDay: 30 };
+    let { id } = this.currentRow;
+    let { type, expiredDay } = this.shareType;
+    this.props.getShareLink({ id, type, expiredDay, linkLock: true });
     this.setState({
       shareModalVisible: true
     });
+  };
+  //生成新的分享链接
+  changeShareType = e => {
+    console.log("e", e);
+    this.shareType.type = e.type;
+    this.shareType.expiredDay = e.expiredDay;
+    let { id } = this.currentRow;
+    let { type, expiredDay } = this.shareType;
+    this.iconLoading = true;
+    this.props.getShareLink({ id, type, expiredDay, linkLock: true });
+    //this.shareType
   };
   // 历史
   historyCancel = e => {
@@ -198,9 +250,7 @@ class MyContent extends Component<MyContentProps> {
       moveFileModalVisible: true
     });
   };
-
   /* 渲染操作 */
-
   renderAction = (text, record) => {
     if (record.isGroup == false) {
       return (
@@ -233,8 +283,12 @@ class MyContent extends Component<MyContentProps> {
     ) : (
       <div style={{ display: "inline-flex" }}>
         <i className="demo-icon icon-folder">&#xf14a;</i>
-        {/* <p className="namesize">&emsp;{text}</p> */}
-        <TableName title={text} lineClampNum={2} data={record} />
+        <TableName
+          getSubFile={this.props.getSubFile}
+          title={text}
+          lineClampNum={2}
+          data={record}
+        />
       </div>
     );
   };
@@ -254,33 +308,59 @@ class MyContent extends Component<MyContentProps> {
   };
 
   render() {
-    console.log("props", this.props);
     return (
       <Row>
         <Col span={22} offset={1}>
           <MyContentTable
-            dataSource={this.dataSource}
-            loading={this.loading}
+            loading={this.state.loading}
+            dataSource={this.state.dataSource}
             tableTitle={tableTitle}
             columns={this.columns}
             changeCurrentRow={this.changeCurrentRow}
           />
-          <ShareModal
-            modalContent={this.modalContent}
-            handleCancel={this.shareCancel}
-            handleOk={this.shareOk}
-            onVisibleChange={this.state.shareModalVisible}
-          />
-          <HistoryModal
-            modalContent={this.modalContent}
-            handleCancel={this.historyCancel}
-            onVisibleChange={this.state.historyModalVisible}
-          />
-          <MoveFileModal
-            modalContent={this.modalContent}
-            handleCancel={this.moveFileCancel}
-            onVisibleChange={this.state.moveFileModalVisible}
-          />
+          {this.state.hasMore.has ? (
+            <Spin tip="加载更多课件中..." size="large">
+              <Alert
+                message="温馨小提示"
+                description="课件太多太混乱，快用文件夹给课件分类吧！"
+                type="info"
+              />
+            </Spin>
+          ) : (
+            ""
+          )}
+          {this.state.shareModalVisible ? (
+            <ShareModal
+              postShare={this.props.postShare}
+              shareType={this.shareType}
+              changeShareType={this.changeShareType}
+              iconLoading={this.iconLoading}
+              modalContent={this.modalContent}
+              handleCancel={this.shareCancel}
+              handleOk={this.shareOk}
+              onVisibleChange={this.state.shareModalVisible}
+            />
+          ) : (
+            " "
+          )}
+          {this.state.historyModalVisible ? (
+            <HistoryModal
+              modalContent={this.modalContent}
+              handleCancel={this.historyCancel}
+              onVisibleChange={this.state.historyModalVisible}
+            />
+          ) : (
+            ""
+          )}
+          {this.state.moveFileModalVisible ? (
+            <MoveFileModal
+              modalContent={this.modalContent}
+              handleCancel={this.moveFileCancel}
+              onVisibleChange={this.state.moveFileModalVisible}
+            />
+          ) : (
+            ""
+          )}
         </Col>
       </Row>
     );
