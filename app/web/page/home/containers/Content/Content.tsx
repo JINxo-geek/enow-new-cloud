@@ -38,7 +38,6 @@ class ContainersContent extends Component<ContainersContentProps> {
 
   render() {
     console.log("ContainersContentProps", this.props);
-    console.log("postShare", JSON.stringify(this.props.postShare));
     return (
       <div>
         <Switch>

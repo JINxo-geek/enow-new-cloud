@@ -207,6 +207,7 @@ export const CREATE_FOLDER = {
   }
 };
 
+/* 移动课件 */
 export const MOVE_HERE = {
   adaptorName: "http",
   http: {

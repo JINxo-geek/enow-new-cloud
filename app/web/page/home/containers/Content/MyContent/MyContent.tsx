@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { Row, Col, Spin, Icon, Menu, Dropdown, Alert, message } from "antd";
+import { connect } from "react-redux";
+import {
+  Row,
+  Col,
+  Spin,
+  Icon,
+  Menu,
+  Dropdown,
+  Alert,
+  notification
+} from "antd";
 import MyContentTable from "../../../sections/MyContentTable";
 import ShareModal from "../../../sections/ShareModal";
 import HistoryModal from "../../../sections/HistoryModal";
@@ -9,8 +19,21 @@ import { tableTitle } from "./MyContentData";
 import { parseFileSize } from "../../../../../helpers/util";
 import { timeBeauty } from "../../../../../helpers/timeBeauty";
 import TableName from "../../../sections/TableName";
+import { getAllGroup } from "../../../../../store/actions/get.allGroup";
+import { moveHere } from "../../../../../store/actions/post.moveHere";
 import _ from "lodash";
 import "./MyContent.less";
+const mapStateToProps = store => {
+  return store.getAllGroup;
+};
+const mapDispatchToProps = (dispatch: any) => ({
+  getAllGroup: values => {
+    dispatch(getAllGroup(values));
+  },
+  moveHere: values => {
+    dispatch(moveHere(values));
+  }
+});
 interface MyContentProps {
   getCoursewareGroup?: any;
   myContent?: any;
@@ -18,6 +41,9 @@ interface MyContentProps {
   getSubFile?: any;
   getShareLink?: any;
   postShare?: object;
+  getAllGroup?: any;
+  allGroup?: object;
+  moveHere?: any;
 }
 class MyContent extends Component<MyContentProps> {
   columns: any;
@@ -237,7 +263,18 @@ class MyContent extends Component<MyContentProps> {
     });
   };
   moveFileOk = e => {
-    console.log(e);
+    if (e == "none" || e == undefined) {
+      console.log("none");
+      notification.open({
+        message: "没有选择文件夹"
+      });
+      return;
+    }
+    this.props.moveHere({
+      parentId: e,
+      coursewareIds: [this.currentRow.id],
+      updata_time: new Date().getTime()
+    });
     this.setState({
       moveFileModalVisible: false
     });
@@ -246,6 +283,7 @@ class MyContent extends Component<MyContentProps> {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
     console.log("showMoveFileModal");
+    this.props.getAllGroup();
     this.setState({
       moveFileModalVisible: true
     });
@@ -308,6 +346,7 @@ class MyContent extends Component<MyContentProps> {
   };
 
   render() {
+    console.log("props", this.props);
     return (
       <Row>
         <Col span={22} offset={1}>
@@ -354,6 +393,8 @@ class MyContent extends Component<MyContentProps> {
           )}
           {this.state.moveFileModalVisible ? (
             <MoveFileModal
+              moveFileOk={this.moveFileOk}
+              treeData={this.props.allGroup}
               modalContent={this.modalContent}
               handleCancel={this.moveFileCancel}
               onVisibleChange={this.state.moveFileModalVisible}
@@ -366,4 +407,7 @@ class MyContent extends Component<MyContentProps> {
     );
   }
 }
-export default MyContent;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyContent);

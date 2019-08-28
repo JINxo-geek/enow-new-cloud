@@ -1,13 +1,48 @@
 import React from "react";
 import { Modal, Tree, Icon, Button } from "antd";
+import "./MoveFileModal.less";
 const { TreeNode } = Tree;
+
 function MoveFileModal(props) {
-  let folder = <i className="demo-icon icon-folder">&#xf14a;</i>;
+  let folder = (
+    <span>
+      <i className="demo-icon icon-folder">&#xf14a;</i>
+    </span>
+  );
+  let moveparentId = "none";
+  console.log("treeData", props.treeData);
+  let dataArray = [{ name: "根目录", id: "root", childrens: [] }];
+  dataArray[0].childrens = props.treeData.data;
+  const renderTreeNodes: any = data => {
+    return data.map(item => {
+      if (item.childrens) {
+        return (
+          <TreeNode
+            icon={folder}
+            title={item.name}
+            key={item.id}
+            dataRef={item}
+          >
+            {renderTreeNodes(item.childrens)}
+          </TreeNode>
+        );
+      }
+      return <TreeNode icon={folder} key={item.id} title={item.name} />;
+    });
+  };
+  const onSelect: any = key => {
+    if (key[0] == "root") {
+      moveparentId = "";
+    } else {
+      moveparentId = key[0];
+    }
+    console.log("key", key[0]);
+  };
   return (
     <Modal
       title={
         <div>
-          <i className="demo-icon icon-folder">&#xf14a;</i>
+          <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
           {props.modalContent.name}
         </div>
       }
@@ -21,30 +56,18 @@ function MoveFileModal(props) {
         <Button
           key="newfolderno"
           className="btngreen"
-          onClick={props.cancelNewFolderModalVisible}
+          onClick={() => {
+            props.moveFileOk(moveparentId);
+          }}
         >
           确定
         </Button>
       ]}
     >
-      <p>移动到</p>
-
-      <Tree
-        showIcon
-        defaultSelectedKeys={["0-0"]}
-        switcherIcon={<Icon type="down" />}
-      >
-        <TreeNode icon={folder} title="文件夹" key="0-0">
-          <TreeNode icon={folder} title="leaf" key="0-0-0" />
-          <TreeNode
-            icon={({ selected }) => (
-              <Icon type={selected ? "frown" : "frown-o"} />
-            )}
-            title="leaf"
-            key="0-0-1"
-          />
-        </TreeNode>
-        <TreeNode icon={folder} title="文件夹" key="0-1" />
+      <div className="funcname">移动到</div>
+      <div className="mytitle">我的文档</div>
+      <Tree showIcon onSelect={onSelect} switcherIcon={<Icon type="down" />}>
+        {renderTreeNodes(dataArray)}
       </Tree>
     </Modal>
   );
