@@ -1,12 +1,15 @@
 import { takeEvery } from "redux-saga/effects";
+import { message } from "antd";
 import { all, fork, put, take, call, select } from "redux-saga/effects";
 import * as ActionType from "../constants/actionType";
 import * as Action from "../actions/get.courseware";
 import { getShareSuccess, getShareFailure } from "../actions/post.share";
+import { getAllGroupSuccess } from "../actions/get.allGroup";
 import {
   apiGetGoursewareGrop,
   apiGetGoursewareAll,
-  apiGreateGShareLink
+  apiGreateGShareLink,
+  apiMoveHere
 } from "../services/api";
 
 /***************************** Subroutines ************************************/
@@ -81,7 +84,6 @@ function* getCourseware() {
 /* 获取某个文件夹的文件 */
 function* getSubfile() {
   const state = yield select();
-  yield console.log("state", state);
   const { sortData, reqparams } = state.getCourseware;
   const { parentId } = state.getSubFile;
   let filterParentIdData = yield call(filterParentId, sortData, parentId);
@@ -103,7 +105,29 @@ function* getShareLink(e) {
     yield put(getShareFailure({ msg: "没有找到课件" }));
   }
 }
+/* 获取目录 */
+function* getAllGroup() {
+  const allGroup = yield call(apiGetGoursewareAll);
+  yield put(getAllGroupSuccess({ allGroup }));
+}
 
+/* 移动课件 */
+function* moveHere(e) {
+  console.log("e", e);
+  const result = yield call(apiMoveHere, e.payload);
+  yield call(erro, result);
+}
+/* 判断是否成功*/
+function* erro(result) {
+  console.log("ee", result);
+  if (result.error_code == 0) {
+    message.success("移动成功");
+    yield call(getCourseware);
+    yield call(getSubfile);
+  } else {
+    message.success("移动失败");
+  }
+}
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
 /******************************************************************************/
@@ -113,6 +137,8 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.GET_COURSEWARES_GROUP, getCourseware);
   yield takeEvery(ActionType.GET_SUBFILE, getSubfile);
   yield takeEvery(ActionType.CREATE_G_SHARELINK, getShareLink);
+  yield takeEvery(ActionType.GET_ALL_GROUP, getAllGroup);
+  yield takeEvery(ActionType.MOVE_HERE, moveHere);
 }
 
 // // CREATE_USER

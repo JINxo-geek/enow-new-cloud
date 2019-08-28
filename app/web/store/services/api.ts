@@ -32,3 +32,12 @@ export async function apiGreateGShareLink(payload: any): Promise<any> {
     params: payload
   });
 }
+
+/* 移动课件 */
+
+export async function apiMoveHere(payload: any): Promise<any> {
+  console.log("/* 移动课件 */", payload);
+  return fetch("MOVE_HERE", {
+    params: payload
+  });
+}
