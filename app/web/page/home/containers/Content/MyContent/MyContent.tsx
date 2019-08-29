@@ -21,6 +21,7 @@ import { timeBeauty } from "../../../../../helpers/timeBeauty";
 import TableName from "../../../sections/TableName";
 import { getAllGroup } from "../../../../../store/actions/get.allGroup";
 import { moveHere } from "../../../../../store/actions/post.moveHere";
+import { getHistory } from "../../../../../store/actions/get.history";
 import _ from "lodash";
 import "./MyContent.less";
 const mapStateToProps = store => {
@@ -32,6 +33,9 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   moveHere: values => {
     dispatch(moveHere(values));
+  },
+  getHistory: values => {
+    dispatch(getHistory(values));
   }
 });
 interface MyContentProps {
@@ -44,6 +48,7 @@ interface MyContentProps {
   getAllGroup?: any;
   allGroup?: object;
   moveHere?: any;
+  getHistory?: any;
 }
 class MyContent extends Component<MyContentProps> {
   columns: any;
@@ -251,6 +256,9 @@ class MyContent extends Component<MyContentProps> {
   showHistoryModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
+    this.modalContent.id = e.id;
+
+    this.props.getHistory({ id: this.modalContent.id });
     this.setState({
       historyModalVisible: true
     });

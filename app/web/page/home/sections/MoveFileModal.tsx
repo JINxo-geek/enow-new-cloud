@@ -10,7 +10,6 @@ function MoveFileModal(props) {
     </span>
   );
   let moveparentId = "none";
-  console.log("treeData", props.treeData);
   let dataArray = [{ name: "根目录", id: "root", childrens: [] }];
   dataArray[0].childrens = props.treeData.data;
   const renderTreeNodes: any = data => {
@@ -49,7 +48,9 @@ function MoveFileModal(props) {
       visible={props.onVisibleChange}
       onCancel={props.handleCancel}
       footer={[
-        <Button type="link">新建文件夹</Button>,
+        <Button className="newFbtn" icon="plus" type="link">
+          新建文件夹
+        </Button>,
         <Button key="newfolderok" onClick={props.handleCancel}>
           取消
         </Button>,

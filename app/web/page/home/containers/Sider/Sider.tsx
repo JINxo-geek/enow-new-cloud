@@ -4,8 +4,23 @@ import "./Sider.less";
 import { logobg, btnContentMsg, timecapsule } from "./SiderConfig";
 import SiderMenu from "../../sections/SiderMenu";
 import NewFolderModal from "../../sections/NewFolderModal";
+import { createFolder } from "../../../../store/actions/post.createFolder";
+import { connect } from "react-redux";
+const mapDispatchToProps = (dispatch: any) => ({
+  createFolder: values => {
+    dispatch(createFolder(values));
+  }
+});
 
-class LayoutSider extends Component {
+const mapStateToProps = state => {
+  return {
+    ...state
+  };
+};
+interface LayoutSiderProps {
+  createFolder?: any;
+}
+class LayoutSider extends Component<LayoutSiderProps> {
   state = { newFolderModalVisible: false };
   showNewFolderModalVisible = () => {
     this.setState({ newFolderModalVisible: true });
@@ -57,10 +72,15 @@ class LayoutSider extends Component {
   render() {
     return (
       <div className="layout">
-        <NewFolderModal
-          newFolderModalVisible={this.state.newFolderModalVisible}
-          cancelNewFolderModalVisible={this.cancelNewFolderModalVisible}
-        />
+        {this.state.newFolderModalVisible ? (
+          <NewFolderModal
+            createFolder={this.props.createFolder}
+            newFolderModalVisible={this.state.newFolderModalVisible}
+            cancelNewFolderModalVisible={this.cancelNewFolderModalVisible}
+          />
+        ) : (
+          ""
+        )}
         <Row>
           <Col>
             <div className="logo" style={logobg} />
@@ -87,4 +107,7 @@ class LayoutSider extends Component {
   }
 }
 
-export default LayoutSider;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LayoutSider);

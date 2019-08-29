@@ -5,12 +5,17 @@ import * as ActionType from "../constants/actionType";
 import * as Action from "../actions/get.courseware";
 import { getShareSuccess, getShareFailure } from "../actions/post.share";
 import { getAllGroupSuccess } from "../actions/get.allGroup";
+import uuidv1 from "uuid/v1";
 import {
   apiGetGoursewareGrop,
   apiGetGoursewareAll,
   apiGreateGShareLink,
-  apiMoveHere
+  apiMoveHere,
+  apiCreateFolder,
+  apiGetHistory,
+  apiGetInfo
 } from "../services/api";
+import { func } from "prop-types";
 
 /***************************** Subroutines ************************************/
 //排序函数
@@ -49,7 +54,8 @@ function* filterParentId(content, parentId = "") {
 /* 获得所有数据 */
 function* getCourseware() {
   const state = yield select();
-  const { reqparams, parentId } = state.getCourseware;
+  const { reqparams } = state.getCourseware;
+  const parentId = "";
   let data = yield call(apiGetGoursewareGrop, reqparams);
   /* 拿到total值，根据total值是否为0判断是否继续发送请求 */
   let total;
@@ -68,7 +74,6 @@ function* getCourseware() {
       totalData.push(...p.data.content);
     }
   }
-  // const allgroup = yield call(apiGetGoursewareAll);
   //对数据进行排序
   let sortData = yield call(sortIt, totalData);
   //得到根目录下的数据
@@ -113,20 +118,56 @@ function* getAllGroup() {
 
 /* 移动课件 */
 function* moveHere(e) {
-  console.log("e", e);
   const result = yield call(apiMoveHere, e.payload);
   yield call(erro, result);
 }
 /* 判断是否成功*/
 function* erro(result) {
-  console.log("ee", result);
   if (result.error_code == 0) {
     message.success("移动成功");
-    yield call(getCourseware);
-    yield call(getSubfile);
+    yield call(refresh);
   } else {
     message.success("移动失败");
   }
+}
+
+/* 刷新课件 */
+function* refresh() {
+  yield call(getCourseware);
+  yield call(getSubfile);
+}
+
+/*创建新的课件组*/
+function* createFolder(e) {
+  const state = yield select();
+  const { parentId } = state.getSubFile;
+  let uuid = uuidv1();
+  while (uuid.indexOf("-") >= 0) {
+    uuid = uuid.replace("-", "");
+  }
+  const result = yield call(apiCreateFolder, {
+    name: e.payload,
+    parentId,
+    clientId: uuid,
+    create_time: new Date().getTime()
+  });
+  if (result.error_code == 0) {
+    message.success("创建成功");
+    yield call(refresh);
+  } else {
+    message.success("创建失败");
+  }
+}
+/* 获取课件历史 */
+function* getHistory(e) {
+  console.log("getHistory", e);
+  // const result = yield call(apiGetInfo, {
+  //   cid: e.payload.id
+  // });
+  const result = yield call(apiGetHistory, {
+    cid: e.payload.id
+  });
+  console.log("result", result);
 }
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
@@ -139,6 +180,9 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.CREATE_G_SHARELINK, getShareLink);
   yield takeEvery(ActionType.GET_ALL_GROUP, getAllGroup);
   yield takeEvery(ActionType.MOVE_HERE, moveHere);
+  yield takeEvery(ActionType.CREATE_FOLDER, createFolder);
+  // yield takeEvery(ActionType.CREATE_FOLDER, refresh);
+  yield takeEvery(ActionType.GET_HISTORY, getHistory);
 }
 
 // // CREATE_USER

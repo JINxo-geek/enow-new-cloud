@@ -36,7 +36,7 @@ const reducers = handleActions(
       return {
         sortData: action.payload.sortData,
         partContentdata: action.payload.partdata,
-        reqparams: action.payload.reqparams
+        reqparams: action.payload.reqparam
       };
     },
     [GET_COURSEWARES_GROUP_FAILURE]: (state, action) => {

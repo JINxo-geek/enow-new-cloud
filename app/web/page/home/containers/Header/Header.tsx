@@ -17,14 +17,16 @@ class ContainersHeader extends Component<ContainersHeaderState> {
       name: "凌轩",
       level: "15",
       msg: "小学英语老师",
-      photoUrl: "http://thumb10.jfcdns.com/2018-06/bce5b10ae530f530.png"
+      photoUrl: "http://edu.seewo.com/res/head/1/0_1_80.png"
     }
   };
 
   componentWillMount() {
     this.content = (
       <div className="headerpopover">
-        {/* <p> {this.state.accountMsg.name}</p> */}
+        <span> {this.state.accountMsg.name}</span>
+        <span>Lv{this.state.accountMsg.level}</span>
+        <div>{this.state.accountMsg.msg}</div>
         <Divider />
         <p>
           <Button type="link" className="btncolor">
@@ -58,8 +60,12 @@ class ContainersHeader extends Component<ContainersHeaderState> {
           </Col>
           <Col span={1}>
             <Popover placement="bottom" content={this.content} trigger="click">
-              <Badge count={1} offset={[0, 30]}>
-                <Avatar shape="circle" icon="user" />
+              <Badge count={3} offset={[0, 30]}>
+                <Avatar
+                  src={this.state.accountMsg.photoUrl}
+                  shape="circle"
+                  icon="user"
+                />
               </Badge>
             </Popover>
           </Col>
