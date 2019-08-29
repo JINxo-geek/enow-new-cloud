@@ -2,6 +2,11 @@ import React from "react";
 import { Modal, Input, Button } from "antd";
 
 function NewFolderModal(props) {
+  let newFolderName = "";
+  const changeName = e => {
+    console.log("input", e.target.value);
+    newFolderName = e.target.value;
+  };
   return (
     <Modal
       title={
@@ -19,13 +24,20 @@ function NewFolderModal(props) {
         <Button
           key="newfolderno"
           className="btngreen"
-          onClick={props.cancelNewFolderModalVisible}
+          onClick={() => {
+            if (newFolderName == "") {
+              console.log("为空");
+              return;
+            }
+            props.createFolder(newFolderName);
+            props.cancelNewFolderModalVisible();
+          }}
         >
           确定
         </Button>
       ]}
     >
-      <Input placeholder="输入文件夹名称" />
+      <Input onChange={changeName} placeholder="输入文件夹名称" />
     </Modal>
   );
 }

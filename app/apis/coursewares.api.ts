@@ -196,6 +196,8 @@ export const GET_ALL_GROUP = {
   }
 };
 
+/* 新建课件组 */
+
 export const CREATE_FOLDER = {
   adaptorName: "http",
   http: {
@@ -213,6 +215,28 @@ export const MOVE_HERE = {
   http: {
     url: "/api/v1/courseware/group/move",
     method: "POST"
+  },
+  mock: {
+    data: {}
+  }
+};
+/* 获取课件历史版本 */
+export const GET_HISTORY = {
+  adaptorName: "http",
+  http: {
+    url: "/api/v1/courseware/history",
+    method: "GET"
+  },
+  mock: {
+    data: {}
+  }
+};
+/* 获取简要文档信息 */
+export const GET_INFO = {
+  adaptorName: "http",
+  http: {
+    url: "/api/v1/courseware/info",
+    method: "GET"
   },
   mock: {
     data: {}

@@ -22,7 +22,7 @@ class SiderMenu extends Component<SiderMenuProps, SiderMenuState> {
         <Menu.Item key="2">
           <Link to={`/project/timecapsule`}>
             <img className="iconsize" src={timecapsule} />
-            &thinsp;&thinsp;&thinsp;
+            &thinsp;
             <span>时间胶囊</span>
           </Link>
         </Menu.Item>
