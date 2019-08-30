@@ -4,11 +4,13 @@ import { Route, Switch } from "react-router-dom";
 import ContainersMyContent from "./MyContent/MyContent";
 import ContainersTimeCapule from "./TimeCapsule/TimeCapsule";
 import ContainersRecycleBin from "./RecycleBin/RecycleBin";
+import BreadcrumbItems from "../../sections/BreadcrumbItems";
 import { connect } from "react-redux";
 import { getCoursewareGroup } from "../../../../store/actions/get.courseware";
 import { getSubFile } from "../../../../store/actions/get.subFile";
 import { getShare } from "../../../../store/actions/post.share";
-
+import { getBread } from "../../../../store/actions/get.bread";
+import {refresh} from "../../../../store/actions/refresh";
 const mapStateToProps = store => {
   return { ...store };
 };
@@ -21,6 +23,12 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   getShareLink: values => {
     dispatch(getShare(values));
+  },
+  getBread: values => {
+    dispatch(getBread(values));
+  },
+  refresh: values => {
+    dispatch(refresh(values));
   }
 });
 interface ContainersContentProps {
@@ -29,6 +37,9 @@ interface ContainersContentProps {
   getSubFile?: any;
   getShareLink?: any;
   postShare?: object;
+  getBread?: any;
+  breadcrumbs?: any;
+  refresh?:any;
 }
 class ContainersContent extends Component<ContainersContentProps> {
   constructor(props) {
@@ -40,6 +51,11 @@ class ContainersContent extends Component<ContainersContentProps> {
     console.log("ContainersContentProps", this.props);
     return (
       <div>
+        <BreadcrumbItems
+        refresh={this.props.refresh}
+          breadArray={this.props.breadcrumbs.breadArray}
+          getBread={this.props.getBread}
+        />
         <Switch>
           <Route
             exact

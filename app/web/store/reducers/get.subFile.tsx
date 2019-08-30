@@ -6,13 +6,14 @@ const reducers = handleActions(
     [GET_SUBFILE]: (state, action) => {
       console.log("触发SUBFILE成功", state, "action", action);
       return {
-        parentId: action.payload,
-        id: action.payload
+        parentId: action.payload.parentId,
+        name: action.payload.name
       };
     },
     [GET_SUBFILE_SUCCESS]: (state, action) => {
       return {
-        ...state
+        parentId: action.payload.parentId,
+        name: action.payload.name
       };
     }
   },

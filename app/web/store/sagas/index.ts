@@ -5,6 +5,8 @@ import * as ActionType from "../constants/actionType";
 import * as Action from "../actions/get.courseware";
 import { getShareSuccess, getShareFailure } from "../actions/post.share";
 import { getAllGroupSuccess } from "../actions/get.allGroup";
+import { getBreadSuccess } from "../actions/get.bread";
+import * as subAction from "../actions/get.subFile";
 import uuidv1 from "uuid/v1";
 import {
   apiGetGoursewareGrop,
@@ -12,8 +14,7 @@ import {
   apiGreateGShareLink,
   apiMoveHere,
   apiCreateFolder,
-  apiGetHistory,
-  apiGetInfo
+  apiGetHistory
 } from "../services/api";
 import { func } from "prop-types";
 
@@ -82,19 +83,54 @@ function* getCourseware() {
   let partdata = filterParentIdData;
   // yield (data.allgroup = allgroup);
   yield put(
-    Action.getCoursewareGroupSuccess({ sortData, partdata, reqparams })
+    Action.getCoursewareGroupSuccess({
+      sortData,
+      partdata,
+      reqparams,
+      tableLoading: false
+    })
   );
 }
 
 /* 获取某个文件夹的文件 */
-function* getSubfile() {
+function* getSubfile(e) {
+  const state = yield select();
+  const { sortData, reqparams } = state.getCourseware;
+  const { parentId, name } = e.payload;
+  console.log("e", e);
+  let { breadArray } = state.breadcrumbs;
+  if (name !== "root" && name !== "pre") {
+    breadArray.push({ name, id: parentId });
+  }
+  yield put(getBreadSuccess({ breadArray }));
+  console.log("parentId", parentId);
+  let filterParentIdData = yield call(filterParentId, sortData, parentId);
+  let partdata = filterParentIdData;
+  console.log("partdata", partdata);
+  yield put(
+    Action.getCoursewareGroupSuccess({
+      sortData,
+      partdata,
+      reqparams,
+      tableLoading: false
+    })
+  );
+}
+
+/* 用于刷新当前文件夹使用 */
+function* reFreshSubFile() {
   const state = yield select();
   const { sortData, reqparams } = state.getCourseware;
   const { parentId } = state.getSubFile;
   let filterParentIdData = yield call(filterParentId, sortData, parentId);
   let partdata = filterParentIdData;
   yield put(
-    Action.getCoursewareGroupSuccess({ sortData, partdata, reqparams })
+    Action.getCoursewareGroupSuccess({
+      sortData,
+      partdata,
+      reqparams,
+      tableLoading: false
+    })
   );
 }
 
@@ -134,7 +170,7 @@ function* erro(result) {
 /* 刷新课件 */
 function* refresh() {
   yield call(getCourseware);
-  yield call(getSubfile);
+  yield call(reFreshSubFile);
 }
 
 /*创建新的课件组*/
@@ -158,6 +194,7 @@ function* createFolder(e) {
     message.success("创建失败");
   }
 }
+
 /* 获取课件历史 */
 function* getHistory(e) {
   console.log("getHistory", e);
@@ -168,6 +205,48 @@ function* getHistory(e) {
     cid: e.payload.id
   });
   console.log("result", result);
+}
+
+/* 操作面包屑 */
+function* getBread(e) {
+  const state = yield select();
+  let { breadArray } = state.breadcrumbs;
+  if (e.payload.name === "返回上一级") {
+    breadArray.pop();
+    //更新显示课件
+    yield call(getSubfile, {
+      payload: {
+        parentId: breadArray[breadArray.length - 1].id,
+        name: "pre"
+      }
+    });
+    //更新面包屑
+    yield put(getBreadSuccess({ breadArray }));
+    //更新当前保存的课件信息
+    yield put(
+      subAction.getSubFileSuccess({
+        parentId: breadArray[breadArray.length - 1].id
+      })
+    );
+  } else if (e.payload.name === "根目录") {
+    yield put(getBreadSuccess({ breadArray: breadArray.slice(0, 2) }));
+    yield put(subAction.getSubFile({ parentId: "", name: "root" }));
+    yield put(Action.getCourseware());
+    yield call(getCourseware);
+  } else {
+    let hitItem;
+    breadArray.forEach((item, idx) => {
+      if (item.id === e.payload.id) {
+        hitItem = { id: item.id, name: item.name, idx };
+      }
+    });
+    yield put(
+      getBreadSuccess({ breadArray: breadArray.slice(0, hitItem.idx) })
+    );
+    yield put(
+      subAction.getSubFile({ parentId: hitItem.id, name: hitItem.name })
+    );
+  }
 }
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
@@ -181,8 +260,9 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.GET_ALL_GROUP, getAllGroup);
   yield takeEvery(ActionType.MOVE_HERE, moveHere);
   yield takeEvery(ActionType.CREATE_FOLDER, createFolder);
-  // yield takeEvery(ActionType.CREATE_FOLDER, refresh);
+  yield takeEvery(ActionType.REFRESH, refresh);
   yield takeEvery(ActionType.GET_HISTORY, getHistory);
+  yield takeEvery(ActionType.GET_BREAD, getBread);
 }
 
 // // CREATE_USER
