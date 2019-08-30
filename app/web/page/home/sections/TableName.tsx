@@ -21,10 +21,11 @@ class TableName extends Component<TableNameProps, TableNameState> {
   clickHandle() {
     let data = this.props.data;
     console.log("点击data", this.props);
-    const { isGroup, version, id } = data;
+    const { isGroup, version, id, name } = data;
     if (isGroup) {
-      //文件夹id，传递出去，之后过滤得到parenId的子数据
-      this.props.getSubFile(id);
+      //文件夹id，传递出去，之后过滤得到parenId的子数据,同时设置当前文件夹id
+      this.props.getSubFile({ parentId: id, name });
+      //
       return;
     }
     // const target = process.env.target;

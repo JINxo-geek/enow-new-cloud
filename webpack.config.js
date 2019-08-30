@@ -26,10 +26,12 @@ module.exports = {
       options: {
         javascriptEnabled: true,
         modifyVars: {
-          // 'primary-color': 'rgba(241,241,241,1)',
-          // 'link-color': 'rgba(241,241,241,1)',
           "border-radius-base": "2px",
+          "breadcrumb-link-color": "rgb(114, 181, 99)",
+          "breadcrumb-separator-margin": "0px",
           "menu-item-active-bg": "rgb(241, 241, 241)",
+          "link-color": "rgb(114, 181, 99)",
+          "link-hover-color": "rgb(114, 181, 99)",
           "table-row-hover-bg": "rgb(241, 241, 241)",
           "table-selected-row-hover-bg:": "rgb(241, 241, 241)"
         }

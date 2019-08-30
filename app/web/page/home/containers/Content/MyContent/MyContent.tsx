@@ -61,7 +61,6 @@ class MyContent extends Component<MyContentProps> {
     hasMore: { x: 1.8, has: false },
     dataSource: [],
     dataSourceOrigin: [],
-    loading: true,
     shareModalVisible: false,
     historyModalVisible: false,
     moveFileModalVisible: false
@@ -113,7 +112,6 @@ class MyContent extends Component<MyContentProps> {
       return {
         dataSourceOrigin: partContentdata,
         dataSource: partContentdata.slice(0, 22),
-        loading: false,
         hasMore: { has: has, x: 1.8 }
       };
     } else {
@@ -358,13 +356,14 @@ class MyContent extends Component<MyContentProps> {
     return (
       <Row>
         <Col span={22} offset={1}>
-          <MyContentTable
-            loading={this.state.loading}
-            dataSource={this.state.dataSource}
-            tableTitle={tableTitle}
-            columns={this.columns}
-            changeCurrentRow={this.changeCurrentRow}
-          />
+          <Spin spinning={this.props.getCourseware.tableLoading}>
+            <MyContentTable
+              dataSource={this.state.dataSource}
+              tableTitle={tableTitle}
+              columns={this.columns}
+              changeCurrentRow={this.changeCurrentRow}
+            />
+          </Spin>
           {this.state.hasMore.has ? (
             <Spin tip="加载更多课件中..." size="large">
               <Alert

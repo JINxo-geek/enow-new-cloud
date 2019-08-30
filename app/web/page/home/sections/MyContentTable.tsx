@@ -7,7 +7,6 @@ export interface ContentTableProps {
   tableTitle: any;
   columns: any;
   changeCurrentRow: Function;
-  loading: boolean;
 }
 class MyContentTable extends Component<ContentTableProps> {
   static defaultProps = {
@@ -35,44 +34,36 @@ class MyContentTable extends Component<ContentTableProps> {
   }
 
   render() {
-    const {
-      columns,
-      changeCurrentRow,
-      dataSource,
-      tableTitle,
-      loading
-    } = this.props;
+    const { columns, changeCurrentRow, dataSource, tableTitle } = this.props;
     return (
-      <Spin spinning={loading}>
-        <Table
-          pagination={false}
-          dataSource={dataSource}
-          columns={columns}
-          title={() => {
-            return tableTitle;
-          }}
-          rowKey={record => record.id}
-          onRow={(record: any) => {
-            return {
-              onMouseEnter: event => {
-                if (record.isGroup == false) {
-                  document.getElementsByClassName(
-                    `action${record.id}`
-                  )[0].style.display = "block";
-                }
-                changeCurrentRow(record);
-              },
-              onMouseLeave: event => {
-                if (record.isGroup == false) {
-                  document.getElementsByClassName(
-                    `action${record.id}`
-                  )[0].style.display = "none";
-                }
+      <Table
+        pagination={false}
+        dataSource={dataSource}
+        columns={columns}
+        title={() => {
+          return tableTitle;
+        }}
+        rowKey={record => record.id}
+        onRow={(record: any) => {
+          return {
+            onMouseEnter: event => {
+              if (record.isGroup == false) {
+                document.getElementsByClassName(
+                  `action${record.id}`
+                )[0].style.display = "block";
               }
-            };
-          }}
-        />
-      </Spin>
+              changeCurrentRow(record);
+            },
+            onMouseLeave: event => {
+              if (record.isGroup == false) {
+                document.getElementsByClassName(
+                  `action${record.id}`
+                )[0].style.display = "none";
+              }
+            }
+          };
+        }}
+      />
     );
   }
 }
