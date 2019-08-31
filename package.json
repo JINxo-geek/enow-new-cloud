@@ -61,7 +61,7 @@
     "egg-webpack-react": "^2.0.0",
     "eslint": "^4.6.1",
     "eslint-config-egg": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "ip": "^1.1.5",
     "less": "^2.7.2",
     "less-loader": "^4.0.0",

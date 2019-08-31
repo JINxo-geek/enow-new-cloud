@@ -1,20 +1,13 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from 'redux-actions';
 import {
   CREATE_G_SHARELINK,
   CREATE_G_SHARELINK_SUCCESS,
   CREATE_G_SHARELINK_FAILURE
-} from "../constants/actionType";
+} from '../constants/actionType';
 
 const reducers = handleActions(
   {
-    // [CREATE_G_SHARELINK]: (state, action) => {
-    //   console.log("CREATE_G_SHARELINK", state, "action", action);
-    //   return {
-    //     expiredDay: action.payload.expiredDay,
-    //     id: action.payload.id,
-    //     type: action.payload.type
-    //   };
-    // },
+
     [CREATE_G_SHARELINK_SUCCESS]: (state, action) => {
       return {
         ...state,
@@ -34,12 +27,12 @@ const reducers = handleActions(
     }
   },
   {
-    id: "",
+    id: '',
     type: 0,
     expiredDay: 30,
-    content: " ",
-    link: "",
-    password: "",
+    content: ' ',
+    link: '',
+    password: '',
     linkLock: true
   }
 );

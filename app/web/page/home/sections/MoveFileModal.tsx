@@ -1,16 +1,16 @@
-import React from "react";
-import { Modal, Tree, Icon, Button } from "antd";
-import "./MoveFileModal.less";
+import React from 'react';
+import { Modal, Tree, Icon, Button } from 'antd';
+import './MoveFileModal.less';
 const { TreeNode } = Tree;
 
 function MoveFileModal(props) {
-  let folder = (
+  const folder = (
     <span>
       <i className="demo-icon icon-folder">&#xf14a;</i>
     </span>
   );
-  let moveparentId = "none";
-  let dataArray = [{ name: "根目录", id: "root", childrens: [] }];
+  let moveparentId = 'none';
+  const dataArray = [{ name: '根目录', id: 'root', childrens: [] }];
   dataArray[0].childrens = props.treeData.data;
   const renderTreeNodes: any = data => {
     return data.map(item => {
@@ -30,12 +30,11 @@ function MoveFileModal(props) {
     });
   };
   const onSelect: any = key => {
-    if (key[0] == "root") {
-      moveparentId = "";
+    if (key[0] == 'root') {
+      moveparentId = '';
     } else {
       moveparentId = key[0];
     }
-    console.log("key", key[0]);
   };
   return (
     <Modal

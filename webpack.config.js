@@ -38,7 +38,8 @@ module.exports = {
         }
       }
     },
-    typescript: true
+    typescript: true,
+    tslint: {options:{fix:true}}
   },
   plugins: {
     imagemini: false

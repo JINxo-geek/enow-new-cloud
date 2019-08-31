@@ -1,30 +1,29 @@
-import React from "react";
-import { Modal, Table, Select } from "antd";
-import "./HistoryModal.less";
+import React from 'react';
+import { Modal, Table, Select } from 'antd';
+import './HistoryModal.less';
 
 function HistoryModal(props) {
   const histroycolumns: any = [
     {
-      title: "版本号",
-      dataIndex: "uid",
-      key: "uid",
+      title: '版本号',
+      dataIndex: 'uid',
+      key: 'uid',
       render: () => {}
     },
     {
-      title: "修改时间",
-      dataIndex: "name",
-      key: "name"
+      title: '修改时间',
+      dataIndex: 'name',
+      key: 'name'
     },
     {
-      title: "",
-      dataIndex: "",
-      key: "action",
+      title: '',
+      dataIndex: '',
+      key: 'action',
       render: () => {}
     }
   ];
   const dataSource = [];
   const handleChange = value => {
-    console.log(value);
   };
   return (
     <Modal
