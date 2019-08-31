@@ -1,11 +1,28 @@
 import React, { Component } from "react";
 import { Avatar, Badge, Input, Row, Col, Popover, Button, Divider } from "antd";
-const { Search } = Input;
 import "./Header.less";
+import { connect } from "react-redux";
+import { searchFile } from "../../../../store/actions/searchFile";
+import SearchBar from "../../sections/SearchBar";
+const mapStateToProps = store => {
+  return { ...store };
+};
+const mapDispatchToProps = (dispatch: any) => ({
+  searchFile: values => {
+    dispatch(searchFile(values));
+  }
+});
+
+export interface ContainersHeaderProps {
+  searchFile?: any;
+}
 interface ContainersHeaderState {
   accountMsg: any;
 }
-class ContainersHeader extends Component<ContainersHeaderState> {
+class ContainersHeader extends Component<
+  ContainersHeaderProps,
+  ContainersHeaderState
+> {
   private content: any;
   constructor(props: any) {
     super(props);
@@ -52,11 +69,7 @@ class ContainersHeader extends Component<ContainersHeaderState> {
       <div className="headerframe">
         <Row>
           <Col span={21} offset={1}>
-            <Search
-              placeholder="搜索文档"
-              onSearch={value => console.log(value)}
-              className="search"
-            />
+            <SearchBar searchFile={this.props.searchFile} />
           </Col>
           <Col span={1}>
             <Popover placement="bottom" content={this.content} trigger="click">
@@ -76,4 +89,7 @@ class ContainersHeader extends Component<ContainersHeaderState> {
   }
 }
 
-export default ContainersHeader;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContainersHeader);

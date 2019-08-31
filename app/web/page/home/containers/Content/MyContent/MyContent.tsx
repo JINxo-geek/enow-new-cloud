@@ -24,9 +24,11 @@ import { moveHere } from "../../../../../store/actions/post.moveHere";
 import { getHistory } from "../../../../../store/actions/get.history";
 import _ from "lodash";
 import "./MyContent.less";
+
 const mapStateToProps = store => {
   return store.getAllGroup;
 };
+
 const mapDispatchToProps = (dispatch: any) => ({
   getAllGroup: values => {
     dispatch(getAllGroup(values));
@@ -73,13 +75,14 @@ class MyContent extends Component<MyContentProps> {
         title: "名称",
         dataIndex: "name",
         key: "name",
-        width: 460,
+        width: 360,
         render: this.renderFileType
       },
       {
         title: "更新时间",
         dataIndex: "update_time",
         key: "update_time",
+        width: 200,
         render: this.renderTime
       },
       {
@@ -89,10 +92,11 @@ class MyContent extends Component<MyContentProps> {
         render: this.renderSize
       },
       {
-        title: "操作",
+        title: "",
         dataIndex: "id",
         key: "id",
-        width: 200,
+        width: 168,
+        align: "right",
         render: this.renderAction
       }
     ];
@@ -161,6 +165,7 @@ class MyContent extends Component<MyContentProps> {
   changeCurrentRow = record => {
     this.currentRow = record;
   };
+
   selectFunc = e => {
     console.log("selectFunc", e);
     switch (e) {

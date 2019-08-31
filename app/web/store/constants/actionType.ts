@@ -42,3 +42,7 @@ export const GET_BREAD_FAILURE = "GET_BREAD_FAILURE";
 export const REFRESH = 'REFRESH' 
     export const REFRESH_SUCCESS ='REFRESH_SUCCESS'
     export const REFRESH_FAILURE = 'REFRESH_FAILURE'
+/* 搜索课件 */
+export const SEARCH = 'SEARCH' 
+    export const SEARCH_SUCCESS ='SEARCH_SUCCESS'
+    export const SEARCH_FAILURE = 'SEARCH_FAILURE'

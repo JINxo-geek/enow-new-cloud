@@ -56,10 +56,12 @@
 
 .icon-brush {
   color: rgb(37, 155, 36);
+  font-size: 19px;
 }
 
 .icon-upload {
   color: rgb(153, 153, 153);
+  font-size: 19px;
 }
 
 .icon-folder {
