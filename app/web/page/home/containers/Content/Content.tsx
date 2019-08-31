@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import "./Content.less";
-import { Route, Switch } from "react-router-dom";
-import ContainersMyContent from "./MyContent/MyContent";
-import ContainersTimeCapule from "./TimeCapsule/TimeCapsule";
-import ContainersRecycleBin from "./RecycleBin/RecycleBin";
-import BreadcrumbItems from "../../sections/BreadcrumbItems";
-import { connect } from "react-redux";
-import { getCoursewareGroup } from "../../../../store/actions/get.courseware";
-import { getSubFile } from "../../../../store/actions/get.subFile";
-import { getShare } from "../../../../store/actions/post.share";
-import { getBread } from "../../../../store/actions/get.bread";
-import {refresh} from "../../../../store/actions/refresh";
+import React, { Component } from 'react';
+import './Content.less';
+import { Route, Switch } from 'react-router-dom';
+import ContainersMyContent from './MyContent/MyContent';
+import ContainersTimeCapule from './TimeCapsule/TimeCapsule';
+import ContainersRecycleBin from './RecycleBin/RecycleBin';
+import BreadcrumbItems from '../../sections/BreadcrumbItems';
+import { connect } from 'react-redux';
+import { getCoursewareGroup } from '../../../../store/actions/get.courseware';
+import { getSubFile } from '../../../../store/actions/get.subFile';
+import { getShare } from '../../../../store/actions/post.share';
+import { getBread } from '../../../../store/actions/get.bread';
+import {refresh} from '../../../../store/actions/refresh';
 const mapStateToProps = store => {
   return { ...store };
 };
@@ -39,7 +39,7 @@ interface ContainersContentProps {
   postShare?: object;
   getBread?: any;
   breadcrumbs?: any;
-  refresh?:any;
+  refresh?: any;
 }
 class ContainersContent extends Component<ContainersContentProps> {
   constructor(props) {
@@ -48,7 +48,6 @@ class ContainersContent extends Component<ContainersContentProps> {
   }
 
   render() {
-    console.log("ContainersContentProps", this.props);
     return (
       <div>
         <BreadcrumbItems
@@ -92,7 +91,7 @@ class ContainersContent extends Component<ContainersContentProps> {
     this.setState = () => {
       return;
     };
-  };
+  }
 }
 
 export default connect(

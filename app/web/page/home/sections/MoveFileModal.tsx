@@ -30,7 +30,7 @@ function MoveFileModal(props) {
     });
   };
   const onSelect: any = key => {
-    if (key[0] == 'root') {
+    if (key[0] === 'root') {
       moveparentId = '';
     } else {
       moveparentId = key[0];

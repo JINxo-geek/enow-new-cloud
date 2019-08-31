@@ -6,7 +6,9 @@ export interface TableNameProps {
   data?: any;
   getSubFile?: any;
 }
-export interface TableNameState {}
+export interface TableNameState {
+  formVals?: any;
+}
 
 class TableName extends Component<TableNameProps, TableNameState> {
   static defaultProps = {};
@@ -14,8 +16,7 @@ class TableName extends Component<TableNameProps, TableNameState> {
   constructor(props: TableNameProps) {
     super(props);
     this.state = {
-      formVals: {},
-      currentStep: 0
+      formVals: {}
     };
   }
   clickHandle() {

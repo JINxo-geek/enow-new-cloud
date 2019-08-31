@@ -7,8 +7,8 @@ function HistoryModal(props) {
     {
       title: '版本号',
       dataIndex: 'uid',
-      key: 'uid',
-      render: () => {}
+      key: 'uid'
+      // render: () => {}
     },
     {
       title: '修改时间',
@@ -18,13 +18,12 @@ function HistoryModal(props) {
     {
       title: '',
       dataIndex: '',
-      key: 'action',
-      render: () => {}
+      key: 'action'
+      // render: () => {}
     }
   ];
   const dataSource = [];
-  const handleChange = value => {
-  };
+  // const handleChange = value => {};
   return (
     <Modal
       title={
