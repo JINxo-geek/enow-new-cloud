@@ -52,7 +52,7 @@ class ContainersContent extends Component<ContainersContentProps> {
     return (
       <div>
         <BreadcrumbItems
-        refresh={this.props.refresh}
+          refresh={this.props.refresh}
           breadArray={this.props.breadcrumbs.breadArray}
           getBread={this.props.getBread}
         />

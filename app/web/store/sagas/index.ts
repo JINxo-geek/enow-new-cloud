@@ -41,16 +41,16 @@ function* filterParentId(content, parentId = "") {
     }
   });
 }
-//过滤name
-// function* filtername(content, name = "") {
-//   return content.filter(item => {
-//     if (name == "") {
-//       return item.parentId == name || !item.parentId;
-//     } else {
-//       return item.parentId == name;
-//     }
-//   });
-// }
+/* 过滤name */
+function* filtername(content, name = "") {
+  console.log("content", content);
+  // return content.filter(item => {
+  //   return (
+  //     item.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1 &&
+  //     !item.isGroup
+  //   );
+  // });
+}
 
 /* 获得所有数据 */
 function* getCourseware() {
@@ -90,6 +90,28 @@ function* getCourseware() {
       tableLoading: false
     })
   );
+}
+
+/* 搜索文件 */
+function* searchFile(e) {
+  console.log("searchFile", e);
+  //过滤课件
+  const state = yield select();
+  let { sortData, reqparams } = state.getCourseware;
+  let partdata = call(filtername, sortData, e.payload);
+  //重置面包屑
+
+  //更改保存id
+
+  //更新显示课件
+  // yield put(
+  //   Action.getCoursewareGroupSuccess({
+  //     sortData,
+  //     partdata,
+  //     reqparams,
+  //     tableLoading: false
+  //   })
+  // );
 }
 
 /* 获取某个文件夹的文件 */
@@ -263,6 +285,7 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.REFRESH, refresh);
   yield takeEvery(ActionType.GET_HISTORY, getHistory);
   yield takeEvery(ActionType.GET_BREAD, getBread);
+  yield takeEvery(ActionType.SEARCH, searchFile);
 }
 
 // // CREATE_USER

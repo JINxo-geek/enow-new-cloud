@@ -33,7 +33,8 @@ module.exports = {
           "link-color": "rgb(114, 181, 99)",
           "link-hover-color": "rgb(114, 181, 99)",
           "table-row-hover-bg": "rgb(241, 241, 241)",
-          "table-selected-row-hover-bg:": "rgb(241, 241, 241)"
+          "table-selected-row-hover-bg:": "rgb(241, 241, 241)",
+          "table-header-bg": "rgb(255,255,255)"
         }
       }
     },
