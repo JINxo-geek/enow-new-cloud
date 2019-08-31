@@ -1,25 +1,20 @@
-import React from "react";
-import { Modal, Row, Col, Select, Button, message } from "antd";
-import "./ShareModal.less";
-//@ts-ignore
-import file from "@images/file.png";
-import QRCode from "qrcode.react";
-import copy from "copy-to-clipboard";
+import React from 'react';
+import { Modal, Row, Col, Select, Button, message } from 'antd';
+import './ShareModal.less';
+// @ts-ignore
+import file from '@images/file.png';
+import QRCode from 'qrcode.react';
+import copy from 'copy-to-clipboard';
 const { Option } = Select;
 
 function ShareModal(props) {
   const { link, password, type, linkLock } = props.postShare;
-  console.log("props.postShare", JSON.stringify(props.postShare));
   let iconLoading = props.iconLoading;
   if (props.postShare.linkLock == false) {
     iconLoading = false;
-    console.log("执行");
   } else {
-    console.log("linkLock == false", linkLock);
   }
-  console.log("iconLoading", iconLoading);
-  console.log("props.postShare", props.postShare);
-  let shareUrl = link;
+  const shareUrl = link;
   const shareType = props.shareType;
   const handleChange = value => {
     shareType.expiredDay = value.key;
@@ -29,15 +24,15 @@ function ShareModal(props) {
   };
   const copyUrl = () => {
     try {
-      if (password == "") {
+      if (password == '') {
         copy(shareUrl);
       } else {
-        copy("链接" + shareUrl + "密码" + password);
+        copy('链接' + shareUrl + '密码' + password);
       }
     } catch (e) {
-      message.error("复制失败" + e);
+      message.error('复制失败' + e);
     }
-    message.success("复制成功");
+    message.success('复制成功');
   };
 
   return (
@@ -112,14 +107,14 @@ function ShareModal(props) {
               <br />
               {`《${props.modalContent.name}》`}
               <br />
-              <a href={shareUrl} target={"_blank"}>
+              <a href={shareUrl} target={'_blank'}>
                 {shareUrl}
               </a>
               <br />
-              {password !== "" ? `密码${password}` : ""}
+              {password !== '' ? `密码${password}` : ''}
             </div>
             <Button className="btncopy" onClick={copyUrl}>
-              {password !== "" ? "复制链接和密码" : "复制链接"}
+              {password !== '' ? '复制链接和密码' : '复制链接'}
             </Button>
           </div>
         </Col>

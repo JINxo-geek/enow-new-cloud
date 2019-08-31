@@ -1,8 +1,7 @@
-import { createAction } from "redux-actions";
-import * as type from "../constants/actionType";
+import { createAction } from 'redux-actions';
+import * as type from '../constants/actionType';
 //
 export const getCourseware = createAction(type.GET_COURSEWARES, mount => {
-  console.log("GET_COURSEWARES被触发");
   return mount;
 });
 export const getCoursewareSuccess = createAction(
@@ -19,7 +18,6 @@ export const getCoursewareFailure = createAction(
 export const getCoursewareGroup = createAction(
   type.GET_COURSEWARES_GROUP,
   mount => {
-    console.log("GET_COURSEWARES_GROUP触发");
     return mount;
   }
 );

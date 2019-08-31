@@ -1,13 +1,13 @@
-import { takeEvery } from "redux-saga/effects";
-import { message } from "antd";
-import { all, fork, put, take, call, select } from "redux-saga/effects";
-import * as ActionType from "../constants/actionType";
-import * as Action from "../actions/get.courseware";
-import { getShareSuccess, getShareFailure } from "../actions/post.share";
-import { getAllGroupSuccess } from "../actions/get.allGroup";
-import { getBreadSuccess } from "../actions/get.bread";
-import * as subAction from "../actions/get.subFile";
-import uuidv1 from "uuid/v1";
+import { takeEvery } from 'redux-saga/effects';
+import { message } from 'antd';
+import { all, fork, put, take, call, select } from 'redux-saga/effects';
+import * as ActionType from '../constants/actionType';
+import * as Action from '../actions/get.courseware';
+import { getShareSuccess, getShareFailure } from '../actions/post.share';
+import { getAllGroupSuccess } from '../actions/get.allGroup';
+import { getBreadSuccess } from '../actions/get.bread';
+import * as subAction from '../actions/get.subFile';
+import uuidv1 from 'uuid/v1';
 import {
   apiGetGoursewareGrop,
   apiGetGoursewareAll,
@@ -15,11 +15,11 @@ import {
   apiMoveHere,
   apiCreateFolder,
   apiGetHistory
-} from "../services/api";
-import { func } from "prop-types";
+} from '../services/api';
+import { func } from 'prop-types';
 
 /***************************** Subroutines ************************************/
-//排序函数
+// 排序函数
 function* sortIt(content) {
   const updateTimeSort = (b, a) =>
     Number(a.update_time) - Number(b.update_time);
@@ -31,10 +31,10 @@ function* sortIt(content) {
   res.push(...enbx);
   return res;
 }
-//过滤parentId
-function* filterParentId(content, parentId = "") {
+// 过滤parentId
+function* filterParentId(content, parentId = '') {
   return content.filter(item => {
-    if (parentId == "") {
+    if (parentId == '') {
       return item.parentId == parentId || !item.parentId;
     } else {
       return item.parentId == parentId;
@@ -42,8 +42,7 @@ function* filterParentId(content, parentId = "") {
   });
 }
 /* 过滤name */
-function* filtername(content, name = "") {
-  console.log("content", content);
+function* filtername(content, name = '') {
   return content.filter(item => {
     return (
       item.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1 &&
@@ -56,31 +55,31 @@ function* filtername(content, name = "") {
 function* getCourseware() {
   const state = yield select();
   const { reqparams } = state.getCourseware;
-  const parentId = "";
-  let data = yield call(apiGetGoursewareGrop, reqparams);
+  const parentId = '';
+  const data = yield call(apiGetGoursewareGrop, reqparams);
   /* 拿到total值，根据total值是否为0判断是否继续发送请求 */
   let total;
   yield (total = data.data.total);
   const totalIndex = Math.floor(total / 99);
   let index = 0;
   const promiseRet: any = [];
-  let totalData: any = [];
+  const totalData: any = [];
   while (index <= totalIndex) {
-    promiseRet.push(apiGetGoursewareGrop({ index: index, pagesize: 99 }));
+    promiseRet.push(apiGetGoursewareGrop({ index, pagesize: 99 }));
     index++;
   }
   if (promiseRet.length) {
     const promiseRes = yield Promise.all(promiseRet);
-    for (let p of promiseRes) {
+    for (const p of promiseRes) {
       totalData.push(...p.data.content);
     }
   }
-  //对数据进行排序
-  let sortData = yield call(sortIt, totalData);
-  //得到根目录下的数据
-  let filterParentIdData = yield call(filterParentId, sortData, parentId);
+  // 对数据进行排序
+  const sortData = yield call(sortIt, totalData);
+  // 得到根目录下的数据
+  const filterParentIdData = yield call(filterParentId, sortData, parentId);
 
-  let partdata = filterParentIdData;
+  const partdata = filterParentIdData;
   // yield (data.allgroup = allgroup);
   yield put(
     Action.getCoursewareGroupSuccess({
@@ -94,18 +93,16 @@ function* getCourseware() {
 
 /* 搜索文件 */
 function* searchFile(e) {
-  console.log("searchFile", e);
-  //过滤课件
+  // 过滤课件
   const state = yield select();
-  let { breadArray } = state.breadcrumbs;
-  let { sortData, reqparams } = state.getCourseware;
-  let partdata = yield call(filtername, sortData, e.payload);
-  console.log("partdata", partdata);
-  //重置面包屑 更改保存id
+  const { breadArray } = state.breadcrumbs;
+  const { sortData, reqparams } = state.getCourseware;
+  const partdata = yield call(filtername, sortData, e.payload);
+  // 重置面包屑 更改保存id
   yield put(getBreadSuccess({ breadArray: breadArray.slice(0, 2) }));
-  yield put(subAction.getSubFile({ parentId: "", name: "root" }));
+  yield put(subAction.getSubFile({ parentId: '', name: 'root' }));
 
-  //更新显示课件
+  // 更新显示课件
   yield put(
     Action.getCoursewareGroupSuccess({
       sortData,
@@ -121,16 +118,13 @@ function* getSubfile(e) {
   const state = yield select();
   const { sortData, reqparams } = state.getCourseware;
   const { parentId, name } = e.payload;
-  console.log("e", e);
-  let { breadArray } = state.breadcrumbs;
-  if (name !== "root" && name !== "pre") {
+  const { breadArray } = state.breadcrumbs;
+  if (name !== 'root' && name !== 'pre') {
     breadArray.push({ name, id: parentId });
   }
   yield put(getBreadSuccess({ breadArray }));
-  console.log("parentId", parentId);
-  let filterParentIdData = yield call(filterParentId, sortData, parentId);
-  let partdata = filterParentIdData;
-  console.log("partdata", partdata);
+  const filterParentIdData = yield call(filterParentId, sortData, parentId);
+  const partdata = filterParentIdData;
   yield put(
     Action.getCoursewareGroupSuccess({
       sortData,
@@ -146,8 +140,8 @@ function* reFreshSubFile() {
   const state = yield select();
   const { sortData, reqparams } = state.getCourseware;
   const { parentId } = state.getSubFile;
-  let filterParentIdData = yield call(filterParentId, sortData, parentId);
-  let partdata = filterParentIdData;
+  const filterParentIdData = yield call(filterParentId, sortData, parentId);
+  const partdata = filterParentIdData;
   yield put(
     Action.getCoursewareGroupSuccess({
       sortData,
@@ -167,7 +161,7 @@ function* getShareLink(e) {
     linkLock = false;
     yield put(getShareSuccess({ shareMsg, linkLock }));
   } else if (shareMsg.error_code === 41001) {
-    yield put(getShareFailure({ msg: "没有找到课件" }));
+    yield put(getShareFailure({ msg: '没有找到课件' }));
   }
 }
 /* 获取目录 */
@@ -184,10 +178,10 @@ function* moveHere(e) {
 /* 判断是否成功*/
 function* erro(result) {
   if (result.error_code == 0) {
-    message.success("移动成功");
+    message.success('移动成功');
     yield call(refresh);
   } else {
-    message.success("移动失败");
+    message.success('移动失败');
   }
 }
 
@@ -202,8 +196,8 @@ function* createFolder(e) {
   const state = yield select();
   const { parentId } = state.getSubFile;
   let uuid = uuidv1();
-  while (uuid.indexOf("-") >= 0) {
-    uuid = uuid.replace("-", "");
+  while (uuid.indexOf('-') >= 0) {
+    uuid = uuid.replace('-', '');
   }
   const result = yield call(apiCreateFolder, {
     name: e.payload,
@@ -212,49 +206,48 @@ function* createFolder(e) {
     create_time: new Date().getTime()
   });
   if (result.error_code == 0) {
-    message.success("创建成功");
+    message.success('创建成功');
     yield call(refresh);
   } else {
-    message.success("创建失败");
+    message.success('创建失败');
   }
 }
 
 /* 获取课件历史 */
 function* getHistory(e) {
-  console.log("getHistory", e);
+  console.log('getHistory', e);
   // const result = yield call(apiGetInfo, {
   //   cid: e.payload.id
   // });
   const result = yield call(apiGetHistory, {
     cid: e.payload.id
   });
-  console.log("result", result);
 }
 
 /* 操作面包屑 */
 function* getBread(e) {
   const state = yield select();
-  let { breadArray } = state.breadcrumbs;
-  if (e.payload.name === "返回上一级") {
+  const { breadArray } = state.breadcrumbs;
+  if (e.payload.name === '返回上一级') {
     breadArray.pop();
-    //更新显示课件
+    // 更新显示课件
     yield call(getSubfile, {
       payload: {
         parentId: breadArray[breadArray.length - 1].id,
-        name: "pre"
+        name: 'pre'
       }
     });
-    //更新面包屑
+    // 更新面包屑
     yield put(getBreadSuccess({ breadArray }));
-    //更新当前保存的课件信息
+    // 更新当前保存的课件信息
     yield put(
       subAction.getSubFileSuccess({
         parentId: breadArray[breadArray.length - 1].id
       })
     );
-  } else if (e.payload.name === "根目录") {
+  } else if (e.payload.name === '根目录') {
     yield put(getBreadSuccess({ breadArray: breadArray.slice(0, 2) }));
-    yield put(subAction.getSubFile({ parentId: "", name: "root" }));
+    yield put(subAction.getSubFile({ parentId: '', name: 'root' }));
     yield put(Action.getCourseware());
     yield call(getCourseware);
   } else {

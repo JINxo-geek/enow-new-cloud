@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Table, Spin } from "antd";
-import "./MyContentTable.less";
+import React, { Component } from 'react';
+import { Table, Spin } from 'antd';
+import './MyContentTable.less';
 
 export interface ContentTableProps {
   dataSource: any;
@@ -13,7 +13,7 @@ class MyContentTable extends Component<ContentTableProps> {
     columns: [],
     changeCurrentRow: {},
     dataSource: [],
-    tableTitle: ""
+    tableTitle: ''
   };
 
   constructor(props: ContentTableProps) {
@@ -23,13 +23,11 @@ class MyContentTable extends Component<ContentTableProps> {
 
   shouldComponentUpdate(nextProps) {
     if (
-      JSON.stringify(this.props["dataSource"]) ===
-      JSON.stringify(nextProps["dataSource"])
+      JSON.stringify(this.props.dataSource) ===
+      JSON.stringify(nextProps.dataSource)
     ) {
-      console.log("值没有变动");
       return false;
     }
-    console.log("值变动");
     return true;
   }
 
@@ -50,7 +48,7 @@ class MyContentTable extends Component<ContentTableProps> {
               if (record.isGroup == false) {
                 document.getElementsByClassName(
                   `action${record.id}`
-                )[0].style.display = "block";
+                )[0].style.display = 'block';
               }
               changeCurrentRow(record);
             },
@@ -58,7 +56,7 @@ class MyContentTable extends Component<ContentTableProps> {
               if (record.isGroup == false) {
                 document.getElementsByClassName(
                   `action${record.id}`
-                )[0].style.display = "none";
+                )[0].style.display = 'none';
               }
             }
           };

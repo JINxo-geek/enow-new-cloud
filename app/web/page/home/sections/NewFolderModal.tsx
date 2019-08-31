@@ -1,10 +1,9 @@
-import React from "react";
-import { Modal, Input, Button } from "antd";
+import React from 'react';
+import { Modal, Input, Button } from 'antd';
 
 function NewFolderModal(props) {
-  let newFolderName = "";
+  let newFolderName = '';
   const changeName = e => {
-    console.log("input", e.target.value);
     newFolderName = e.target.value;
   };
   return (
@@ -25,8 +24,7 @@ function NewFolderModal(props) {
           key="newfolderno"
           className="btngreen"
           onClick={() => {
-            if (newFolderName == "") {
-              console.log("为空");
+            if (newFolderName == '') {
               return;
             }
             props.createFolder(newFolderName);

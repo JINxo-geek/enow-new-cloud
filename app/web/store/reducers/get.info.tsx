@@ -7,19 +7,16 @@ import {
 const reducers = handleActions(
   {
     [GET_INFO]: (state, action) => {
-      console.log("GET_INFO", state, "action", action);
       return {
         x: action.payload.x
       };
     },
     [GET_INFO_SUCCESS]: (state, action) => {
-      console.log("GET_INFO_SUCCESS", state, "action", action);
       return {
         x: action.payload.x
       };
     },
     [GET_INFO_FAILURE]: (state, action) => {
-      console.log("GET_INFO_FAILURE", state, "action", action);
       return {
         x: action.payload.x
       };
