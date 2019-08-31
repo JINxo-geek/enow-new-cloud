@@ -73,7 +73,6 @@ function ShareModal(props) {
         <Col span={4}>分享形式</Col>
         <Col span={4}>
           <Select
-            style={{ border: 0 }}
             className="select"
             size="small"
             labelInValue

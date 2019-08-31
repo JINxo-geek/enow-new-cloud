@@ -4,18 +4,17 @@ const { Sider } = Layout;
 import ContainersSider from "../../containers/Sider/Sider";
 import ContainersHeader from "../../containers/Header/Header";
 import ContainerContent from "../../containers/Content/Content";
+import "./Layout.less";
 class ScreensLayout extends Component {
   render() {
     return (
       <div>
-        <Layout style={{ height: "100vh" }}>
-          <Sider width={263} style={{ backgroundColor: "rgba(255,255,255,1)" }}>
+        <Layout className="out-layout">
+          <Sider width={263} className="left-sider">
             <ContainersSider />
           </Sider>
-          <Divider type="vertical" style={{ margin: 0 }} />
-          <Layout
-            style={{ height: "100vh", backgroundColor: "rgba(255,255,255,1)" }}
-          >
+          <Divider className="divider" type="vertical" />
+          <Layout className="iner-layout">
             <ContainersHeader accountMsg={{}} />
             <ContainerContent />
           </Layout>

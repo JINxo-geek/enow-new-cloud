@@ -89,6 +89,7 @@ class MyContent extends Component<MyContentProps> {
         title: "大小",
         dataIndex: "size",
         key: "size",
+        align: "right",
         render: this.renderSize
       },
       {
@@ -325,12 +326,12 @@ class MyContent extends Component<MyContentProps> {
 
   renderFileType = (text, record) => {
     return record.isGroup == false ? (
-      <div style={{ display: "inline-flex" }}>
+      <div className="inline">
         <i className="demo-icon icon-doc-text-inv">&#xf15c;</i>
         <TableName title={text} lineClampNum={2} data={record} />
       </div>
     ) : (
-      <div style={{ display: "inline-flex" }}>
+      <div className="inline">
         <i className="demo-icon icon-folder">&#xf14a;</i>
         <TableName
           getSubFile={this.props.getSubFile}

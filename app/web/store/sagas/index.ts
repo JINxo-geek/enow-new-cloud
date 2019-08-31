@@ -44,12 +44,12 @@ function* filterParentId(content, parentId = "") {
 /* 过滤name */
 function* filtername(content, name = "") {
   console.log("content", content);
-  // return content.filter(item => {
-  //   return (
-  //     item.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1 &&
-  //     !item.isGroup
-  //   );
-  // });
+  return content.filter(item => {
+    return (
+      item.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) > -1 &&
+      !item.isGroup
+    );
+  });
 }
 
 /* 获得所有数据 */
@@ -97,21 +97,23 @@ function* searchFile(e) {
   console.log("searchFile", e);
   //过滤课件
   const state = yield select();
+  let { breadArray } = state.breadcrumbs;
   let { sortData, reqparams } = state.getCourseware;
-  let partdata = call(filtername, sortData, e.payload);
-  //重置面包屑
-
-  //更改保存id
+  let partdata = yield call(filtername, sortData, e.payload);
+  console.log("partdata", partdata);
+  //重置面包屑 更改保存id
+  yield put(getBreadSuccess({ breadArray: breadArray.slice(0, 2) }));
+  yield put(subAction.getSubFile({ parentId: "", name: "root" }));
 
   //更新显示课件
-  // yield put(
-  //   Action.getCoursewareGroupSuccess({
-  //     sortData,
-  //     partdata,
-  //     reqparams,
-  //     tableLoading: false
-  //   })
-  // );
+  yield put(
+    Action.getCoursewareGroupSuccess({
+      sortData,
+      partdata,
+      reqparams,
+      tableLoading: false
+    })
+  );
 }
 
 /* 获取某个文件夹的文件 */
