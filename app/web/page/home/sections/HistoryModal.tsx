@@ -18,7 +18,7 @@ function HistoryModal(props) {
     {
       title: "",
       dataIndex: "",
-      key: "name",
+      key: "action",
       render: () => {}
     }
   ];
