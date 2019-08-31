@@ -16,7 +16,6 @@ import {
   apiCreateFolder,
   apiGetHistory
 } from '../services/api';
-import { func } from 'prop-types';
 
 /***************************** Subroutines ************************************/
 // 排序函数
@@ -34,10 +33,10 @@ function* sortIt(content) {
 // 过滤parentId
 function* filterParentId(content, parentId = '') {
   return content.filter(item => {
-    if (parentId == '') {
-      return item.parentId == parentId || !item.parentId;
+    if (parentId === '') {
+      return item.parentId === parentId || !item.parentId;
     } else {
-      return item.parentId == parentId;
+      return item.parentId === parentId;
     }
   });
 }
@@ -155,7 +154,8 @@ function* reFreshSubFile() {
 /* 生成分享链接 */
 
 function* getShareLink(e) {
-  let { expiredDay, type, id, linkLock } = e.payload;
+  let { linkLock } = e.payload;
+  const { expiredDay, type, id } = e.payload;
   const shareMsg = yield call(apiGreateGShareLink, { expiredDay, type, id });
   if (shareMsg.error_code === 0) {
     linkLock = false;
@@ -177,7 +177,7 @@ function* moveHere(e) {
 }
 /* 判断是否成功*/
 function* erro(result) {
-  if (result.error_code == 0) {
+  if (result.error_code === 0) {
     message.success('移动成功');
     yield call(refresh);
   } else {
@@ -205,7 +205,7 @@ function* createFolder(e) {
     clientId: uuid,
     create_time: new Date().getTime()
   });
-  if (result.error_code == 0) {
+  if (result.error_code === 0) {
     message.success('创建成功');
     yield call(refresh);
   } else {

@@ -24,7 +24,7 @@ function NewFolderModal(props) {
           key="newfolderno"
           className="btngreen"
           onClick={() => {
-            if (newFolderName == '') {
+            if (newFolderName === '') {
               return;
             }
             props.createFolder(newFolderName);

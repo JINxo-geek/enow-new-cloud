@@ -6,7 +6,7 @@ export interface ContentTableProps {
   dataSource: any;
   tableTitle: any;
   columns: any;
-  changeCurrentRow: Function;
+  changeCurrentRow: any;
 }
 class MyContentTable extends Component<ContentTableProps> {
   static defaultProps = {
@@ -45,7 +45,7 @@ class MyContentTable extends Component<ContentTableProps> {
         onRow={(record: any) => {
           return {
             onMouseEnter: event => {
-              if (record.isGroup == false) {
+              if (record.isGroup === false) {
                 document.getElementsByClassName(
                   `action${record.id}`
                 )[0].style.display = 'block';
@@ -53,7 +53,7 @@ class MyContentTable extends Component<ContentTableProps> {
               changeCurrentRow(record);
             },
             onMouseLeave: event => {
-              if (record.isGroup == false) {
+              if (record.isGroup === false) {
                 document.getElementsByClassName(
                   `action${record.id}`
                 )[0].style.display = 'none';

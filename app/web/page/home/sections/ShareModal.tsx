@@ -10,9 +10,8 @@ const { Option } = Select;
 function ShareModal(props) {
   const { link, password, type, linkLock } = props.postShare;
   let iconLoading = props.iconLoading;
-  if (props.postShare.linkLock == false) {
+  if (props.postShare.linkLock === false) {
     iconLoading = false;
-  } else {
   }
   const shareUrl = link;
   const shareType = props.shareType;
@@ -24,7 +23,7 @@ function ShareModal(props) {
   };
   const copyUrl = () => {
     try {
-      if (password == '') {
+      if (password === '') {
         copy(shareUrl);
       } else {
         copy('链接' + shareUrl + '密码' + password);
