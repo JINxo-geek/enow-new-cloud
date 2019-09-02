@@ -14,7 +14,9 @@ import {
   apiGreateGShareLink,
   apiMoveHere,
   apiCreateFolder,
-  apiGetHistory
+  apiGetHistory,
+  apiGoursewareDelete,
+  apiCopyNew
 } from '../services/api';
 
 /***************************** Subroutines ************************************/
@@ -181,7 +183,7 @@ function* erro(result) {
     message.success('移动成功');
     yield call(refresh);
   } else {
-    message.success('移动失败');
+    message.error('移动失败');
   }
 }
 
@@ -209,7 +211,7 @@ function* createFolder(e) {
     message.success('创建成功');
     yield call(refresh);
   } else {
-    message.success('创建失败');
+    message.error('创建失败');
   }
 }
 
@@ -265,6 +267,33 @@ function* getBread(e) {
     );
   }
 }
+
+/* 删除课件 */
+function* deleteCourseware(e) {
+  const result = yield call(apiGoursewareDelete, {
+    coursewareIds: e.payload.id
+  });
+  if (result.error_code === 0) {
+    message.success('删除成功');
+    yield call(refresh);
+  } else {
+    message.error('删除失败');
+  }
+}
+
+/* 创建课件副本 */
+function* copyNew(e) {
+  const result = yield call(apiCopyNew, {
+    cid: e.payload
+  });
+  if (result.error_code === 0) {
+    message.success('创建成功');
+    yield call(refresh);
+  } else {
+    message.error('创建失败');
+  }
+}
+
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
 /******************************************************************************/
@@ -281,6 +310,8 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.GET_HISTORY, getHistory);
   yield takeEvery(ActionType.GET_BREAD, getBread);
   yield takeEvery(ActionType.SEARCH, searchFile);
+  yield takeEvery(ActionType.COURSEWARE_DELETE, deleteCourseware);
+  yield takeEvery(ActionType.COPY_NEW, copyNew);
 }
 
 // // CREATE_USER

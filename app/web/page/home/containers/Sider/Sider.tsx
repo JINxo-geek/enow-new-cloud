@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Button, Row, Col, Popover } from "antd";
-import "./Sider.less";
-import { logobg, btnContentMsg, timecapsule } from "./SiderConfig";
-import SiderMenu from "../../sections/SiderMenu";
-import NewFolderModal from "../../sections/NewFolderModal";
-import { createFolder } from "../../../../store/actions/post.createFolder";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Button, Row, Col, Popover } from 'antd';
+import './Sider.less';
+import { logobg, btnContentMsg, timecapsule } from './SiderConfig';
+import SiderMenu from '../../sections/SiderMenu';
+import NewFolderModal from '../../sections/NewFolderModal';
+import { createFolder } from '../../../../store/actions/post.createFolder';
+import { connect } from 'react-redux';
 const mapDispatchToProps = (dispatch: any) => ({
   createFolder: values => {
     dispatch(createFolder(values));
@@ -22,27 +22,21 @@ interface LayoutSiderProps {
 }
 class LayoutSider extends Component<LayoutSiderProps> {
   state = { newFolderModalVisible: false };
-  showNewFolderModalVisible = () => {
-    this.setState({ newFolderModalVisible: true });
-  };
-  cancelNewFolderModalVisible = () => {
-    this.setState({ newFolderModalVisible: false });
-  };
   content = (
     <div className="newpopover">
       {btnContentMsg.map(item => {
-        var icon = <i />;
+        let icon = <i />;
         switch (item.imgType) {
-          case "brush":
+          case 'brush':
             icon = <i className="demo-icon icon-brush">&#xf1fc;</i>;
             break;
-          case "folder":
+          case 'folder':
             icon = <i className="demo-icon icon-folder">&#xf14a;</i>;
             break;
-          case "upload":
+          case 'upload':
             icon = <i className="demo-icon  icon-upload">&#xe801;</i>;
             break;
-          case "timecapsule":
+          case 'timecapsule':
             icon = <img className="iconsize" src={timecapsule} />;
             break;
         }
@@ -63,12 +57,20 @@ class LayoutSider extends Component<LayoutSiderProps> {
       })}
     </div>
   );
+  showNewFolderModalVisible = () => {
+    this.setState({ newFolderModalVisible: true });
+  }
+  cancelNewFolderModalVisible = () => {
+    this.setState({ newFolderModalVisible: false });
+  }
+
   buttonFun(text) {
     switch (text) {
-      case "新建文件夹":
+      case '新建文件夹':
         this.showNewFolderModalVisible();
     }
   }
+
   render() {
     return (
       <div className="layout">
@@ -79,7 +81,7 @@ class LayoutSider extends Component<LayoutSiderProps> {
             cancelNewFolderModalVisible={this.cancelNewFolderModalVisible}
           />
         ) : (
-          ""
+          ''
         )}
         <Row>
           <Col>

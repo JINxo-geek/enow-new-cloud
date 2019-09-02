@@ -58,3 +58,17 @@ export async function apiGetInfo(payload: any): Promise<any> {
     params: payload
   });
 }
+
+/* 删除课件 */
+export async function apiGoursewareDelete(payload: any): Promise<any> {
+  return fetch('COURSEWARE_DELETE', {
+    params: payload
+  });
+}
+
+/*  创建课件副本 */
+export async function apiCopyNew(payload: any): Promise<any> {
+  return fetch('COPY_NEW', {
+    params: payload
+  });
+}
