@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Table, Spin } from 'antd';
+import React, { PureComponent } from 'react';
+import { Table } from 'antd';
 import './MyContentTable.less';
 
 export interface ContentTableProps {
@@ -8,7 +8,7 @@ export interface ContentTableProps {
   columns: any;
   changeCurrentRow: any;
 }
-class MyContentTable extends Component<ContentTableProps> {
+class MyContentTable extends PureComponent<ContentTableProps> {
   static defaultProps = {
     columns: [],
     changeCurrentRow: {},
@@ -19,16 +19,6 @@ class MyContentTable extends Component<ContentTableProps> {
   constructor(props: ContentTableProps) {
     super(props);
     this.state = {};
-  }
-
-  shouldComponentUpdate(nextProps) {
-    if (
-      JSON.stringify(this.props.dataSource) ===
-      JSON.stringify(nextProps.dataSource)
-    ) {
-      return false;
-    }
-    return true;
   }
 
   render() {
