@@ -8,7 +8,8 @@ import {
   Menu,
   Dropdown,
   Alert,
-  notification
+  notification,
+  Modal
 } from 'antd';
 import MyContentTable from '../../../sections/MyContentTable';
 import ShareModal from '../../../sections/ShareModal';
@@ -22,8 +23,11 @@ import TableName from '../../../sections/TableName';
 import { getAllGroup } from '../../../../../store/actions/get.allGroup';
 import { moveHere } from '../../../../../store/actions/post.moveHere';
 import { getHistory } from '../../../../../store/actions/get.history';
+import { deleteCourseware } from '../../../../../store/actions/post.deleteCourseware';
+import { copyNew } from '../../../../../store/actions/post.copyNew';
 import _ from 'lodash';
 import './MyContent.less';
+const { confirm } = Modal;
 
 const mapStateToProps = store => {
   return store.getAllGroup;
@@ -38,19 +42,36 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   getHistory: values => {
     dispatch(getHistory(values));
+  },
+  deleteCourseware: values => {
+    dispatch(deleteCourseware(values));
+  },
+  copyNew: values => {
+    dispatch(copyNew(values));
   }
 });
 interface MyContentProps {
-  getCoursewareGroup?: any;
+  getCoursewareGroup: () => void;
   myContent?: any;
   getCourseware?: any;
-  getSubFile?: any;
-  getShareLink?: any;
+  getSubFile: () => void;
+  getShareLink: (data: {
+    id: string;
+    type: number;
+    expiredDay: number;
+    linkLock: boolean;
+  }) => void;
   postShare?: object;
   getAllGroup?: any;
   allGroup?: object;
-  moveHere?: any;
+  moveHere: (data: {
+    parentId: string;
+    coursewareIds: any;
+    updata_time: any;
+  }) => void;
   getHistory?: any;
+  deleteCourseware?: any;
+  copyNew: (id: string) => void;
 }
 class MyContent extends Component<MyContentProps> {
   /* 监听数据变动 */
@@ -97,7 +118,10 @@ class MyContent extends Component<MyContentProps> {
           return <Menu.Divider key={index} />;
         } else if (item.text === '删除') {
           return (
-            <Menu.Item onClick={() => this.selectFunc(item.text)} key={index}>
+            <Menu.Item
+              onClick={() => this.showDeleteConfirm(this.currentRow)}
+              key={index}
+            >
               <p className="btndelete">{item.text}</p>
             </Menu.Item>
           );
@@ -153,6 +177,7 @@ class MyContent extends Component<MyContentProps> {
       .getElementsByClassName('ant-layout')[1]
       .addEventListener('scroll', this.scrollFn(), false);
   }
+
   scrollFn = () => {
     return _.throttle(() => {
       const ele = document.getElementsByClassName('ant-layout')[1];
@@ -164,7 +189,7 @@ class MyContent extends Component<MyContentProps> {
       if (heightFromBottom < 100 && this.state.hasMore.has) {
         if (this.state.dataSource.length < this.state.dataSourceOrigin.length) {
           let x = this.state.hasMore.x;
-          const dataSource = this.state.dataSourceOrigin.slice(0, 30 * x);
+          const dataSource = this.state.dataSourceOrigin.slice(0, x * 30);
           x = x + 1;
           this.setState({
             dataSource,
@@ -176,8 +201,9 @@ class MyContent extends Component<MyContentProps> {
       } else if (heightFromBottom < 10 && this.state.hasMore.has === false) {
         // 可以写无更多课件提示
       }
-    }, 1000);
+    }, 100);
   }
+
   componentDidMount = () => {
     this.props.getCoursewareGroup();
     this.handleOnScroll();
@@ -198,6 +224,9 @@ class MyContent extends Component<MyContentProps> {
       case '移动到':
         this.showMoveFileModal(this.currentRow);
         break;
+      case '新建副本':
+        this.props.copyNew(this.currentRow.id);
+        break;
     }
   }
 
@@ -205,17 +234,20 @@ class MyContent extends Component<MyContentProps> {
   handleVisibleChange = popoverVisible => {
     this.setState({ popoverVisible });
   }
+
   // 分享
   shareCancel = e => {
     this.setState({
       shareModalVisible: false
     });
   }
+
   shareOk = e => {
     this.setState({
       shareModalVisible: false
     });
   }
+
   // 显示分享
   showShareModal = e => {
     this.modalContent.name = e.name;
@@ -229,6 +261,7 @@ class MyContent extends Component<MyContentProps> {
       shareModalVisible: true
     });
   }
+
   // 生成新的分享链接
   changeShareType = e => {
     this.shareType.type = e.type;
@@ -239,17 +272,20 @@ class MyContent extends Component<MyContentProps> {
     this.props.getShareLink({ id, type, expiredDay, linkLock: true });
     // this.shareType
   }
+
   // 历史
   historyCancel = e => {
     this.setState({
       historyModalVisible: false
     });
   }
+
   historyOk = e => {
     this.setState({
       historyModalVisible: false
     });
   }
+
   showHistoryModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
@@ -260,12 +296,33 @@ class MyContent extends Component<MyContentProps> {
       historyModalVisible: true
     });
   }
+
+  // 删除课件
+
+  showDeleteConfirm = e => {
+    const postDeleteCourseware = this.props.deleteCourseware;
+    confirm({
+      title: '确定删除这个课件吗?',
+      content: `课件名:《${e.name}》`,
+      okText: '确定',
+      cancelText: '取消',
+      okType: 'danger',
+      onOk() {
+        postDeleteCourseware({ id: e.id });
+      },
+      onCancel() {
+        console.log('Cancel');
+      }
+    });
+  }
+
   // 移动
   moveFileCancel = e => {
     this.setState({
       moveFileModalVisible: false
     });
   }
+
   moveFileOk = e => {
     if (e === 'none' || e === undefined) {
       notification.open({
@@ -282,6 +339,7 @@ class MyContent extends Component<MyContentProps> {
       moveFileModalVisible: false
     });
   }
+
   showMoveFileModal = e => {
     this.modalContent.name = e.name;
     this.modalContent.key = e.key;
@@ -290,6 +348,7 @@ class MyContent extends Component<MyContentProps> {
       moveFileModalVisible: true
     });
   }
+
   /* 渲染操作 */
   renderAction = (text, record) => {
     if (record.isGroup === false) {
@@ -313,7 +372,6 @@ class MyContent extends Component<MyContentProps> {
   }
 
   /* 渲染名称 */
-
   renderFileType = (text, record) => {
     return record.isGroup === false ? (
       <div className="inline">
@@ -359,7 +417,7 @@ class MyContent extends Component<MyContentProps> {
               changeCurrentRow={this.changeCurrentRow}
             />
           </Spin>
-          {this.state.hasMore.has ? (
+          {this.state.hasMore.has && (
             <Spin tip="加载更多课件中..." size="large">
               <Alert
                 message="温馨小提示"
@@ -367,10 +425,8 @@ class MyContent extends Component<MyContentProps> {
                 type="info"
               />
             </Spin>
-          ) : (
-            ''
           )}
-          {this.state.shareModalVisible ? (
+          {this.state.shareModalVisible && (
             <ShareModal
               postShare={this.props.postShare}
               shareType={this.shareType}
@@ -381,19 +437,15 @@ class MyContent extends Component<MyContentProps> {
               handleOk={this.shareOk}
               onVisibleChange={this.state.shareModalVisible}
             />
-          ) : (
-            ' '
           )}
-          {this.state.historyModalVisible ? (
+          {this.state.historyModalVisible && (
             <HistoryModal
               modalContent={this.modalContent}
               handleCancel={this.historyCancel}
               onVisibleChange={this.state.historyModalVisible}
             />
-          ) : (
-            ''
           )}
-          {this.state.moveFileModalVisible ? (
+          {this.state.moveFileModalVisible && (
             <MoveFileModal
               moveFileOk={this.moveFileOk}
               treeData={this.props.allGroup}
@@ -401,8 +453,6 @@ class MyContent extends Component<MyContentProps> {
               handleCancel={this.moveFileCancel}
               onVisibleChange={this.state.moveFileModalVisible}
             />
-          ) : (
-            ''
           )}
         </Col>
       </Row>

@@ -242,3 +242,17 @@ export const GET_INFO = {
     data: {}
   }
 };
+
+/*  创建课件副本 */
+
+export const COPY_NEW = {
+  adaptorName: "http",
+  http: {
+    url: "/api/v3/courseware/copy/new",
+    method: "POST"
+  },
+  mock: {
+    data: {}
+  }
+};
+
