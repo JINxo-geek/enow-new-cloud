@@ -34,6 +34,7 @@ import './MyContent.less';
 const { confirm } = Modal;
 
 const mapStateToProps = store => {
+  store.getAllGroup;
   return store.getAllGroup;
 };
 
