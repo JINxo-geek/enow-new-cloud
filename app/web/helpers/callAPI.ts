@@ -12,11 +12,8 @@ export const EHttpEventCode = {
   ACTION_FAIL: Symbol('action fail')
 };
 
-export const TIMEOUT = 10e3;
-
 const ax = axios.create({
-  baseURL: '/apis',
-  timeout: TIMEOUT
+  baseURL: '/apis'
 });
 
 ax.interceptors.request
@@ -24,15 +21,37 @@ ax.interceptors.request
   // @TODO
   ();
 
-ax.interceptors.response.use(resp => {
-  const data = resp.data;
-  if (get(resp, 'data.status') === 200) {
-    event.emit(EHttpEventCode.ACTION_SUCCESS, data);
-  } else {
-    event.emit(EHttpEventCode.ACTION_FAIL, data);
+ax.interceptors.response.use(
+  resp => {
+    const data = resp.data;
+    if (get(resp, 'data.status') === 200) {
+      event.emit(EHttpEventCode.ACTION_SUCCESS, data);
+    } else {
+      event.emit(EHttpEventCode.ACTION_FAIL, data);
+    }
+    return data;
+  },
+  function(err) {
+    const config = err.config;
+    if (config.headers && !config.headers.retry) {
+      config.headers.retry = 5; // 设置默认重复次数
+    }
+    config.headers.__retryCount = config.headers.__retryCount || 0;
+    if (config.headers.__retryCount >= config.headers.retry) {
+      alert('网络错误');
+      return Promise.reject(err);
+    }
+    config.headers.__retryCount += 1;
+    const backoff = new Promise(function(resolve) {
+      setTimeout(function() {
+        resolve();
+      }, 2000);
+    });
+    return backoff.then(function() {
+      return axios(config);
+    });
   }
-  return data;
-});
+);
 
 export default function fetch(
   actionName: string,
