@@ -1,8 +1,6 @@
 import React from 'react';
 import { Modal, Row, Col, Select, Button, message } from 'antd';
 import './ShareModal.less';
-// @ts-ignore
-import file from '@images/file.png';
 import QRCode from 'qrcode.react';
 import copy from 'copy-to-clipboard';
 const { Option } = Select;

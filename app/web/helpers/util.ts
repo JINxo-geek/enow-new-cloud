@@ -1,21 +1,21 @@
 export function parseFileSize(fileSize) {
   if (fileSize < 1024) {
-    return fileSize + "B";
+    return fileSize + 'B';
   }
 
   const kbSize = Math.floor(fileSize / 1024);
   if (kbSize < 1024) {
-    return kbSize + "KB";
+    return kbSize + 'KB';
   }
 
   const mbSize = Math.floor(kbSize / 1024);
   if (mbSize < 1024) {
-    return mbSize + "MB";
+    return mbSize + 'MB';
   }
 
   const gbSize = Math.floor(mbSize / 1024);
   if (gbSize < 1024) {
-    return gbSize + "GB";
+    return gbSize + 'GB';
   }
 
   return kbSize;

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Layout, Divider } from "antd";
+import React, { Component } from 'react';
+import { Layout, Divider } from 'antd';
 const { Sider } = Layout;
-import ContainersSider from "../../containers/Sider/Sider";
-import ContainersHeader from "../../containers/Header/Header";
-import ContainerContent from "../../containers/Content/Content";
-import "./Layout.less";
+import ContainersSider from '../../containers/Sider/Sider';
+import ContainersHeader from '../../containers/Header/Header';
+import ContainerContent from '../../containers/Content/Content';
+import './Layout.less';
 class ScreensLayout extends Component {
   render() {
     return (

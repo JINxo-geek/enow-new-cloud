@@ -1,5 +1,5 @@
-import { createAction } from "redux-actions";
-import * as type from "../constants/actionType";
+import { createAction } from 'redux-actions';
+import * as type from '../constants/actionType';
 //
 export const getShare = createAction(type.CREATE_G_SHARELINK, mount => mount);
 export const getShareSuccess = createAction(

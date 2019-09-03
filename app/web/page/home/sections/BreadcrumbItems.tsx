@@ -1,6 +1,6 @@
-import { Breadcrumb, Button, Row, Col, Icon } from "antd";
-import React from "react";
-import "./BreadcrumbItems.less";
+import { Breadcrumb, Button, Row, Col, Icon } from 'antd';
+import React from 'react';
+import './BreadcrumbItems.less';
 const BreadcrumbItems = props => {
   const { getBread, breadArray, refresh } = props;
   const clickB = e => {
@@ -11,12 +11,12 @@ const BreadcrumbItems = props => {
   const activerefresh = e => {
     refresh();
     document
-      .getElementsByClassName("refresh")[0]
-      .classList.add("refresh-active");
+      .getElementsByClassName('refresh')[0]
+      .classList.add('refresh-active');
     setTimeout(() => {
       document
-        .getElementsByClassName("refresh")[0]
-        .classList.remove("refresh-active");
+        .getElementsByClassName('refresh')[0]
+        .classList.remove('refresh-active');
     }, 2000);
   };
 
@@ -27,7 +27,7 @@ const BreadcrumbItems = props => {
           <Breadcrumb.Item>
             <Button
               size="small"
-              disabled={breadArray.length == 2 && item.name == "返回上一级"}
+              disabled={breadArray.length == 2 && item.name == '返回上一级'}
               type="link"
               name={item.name}
               id={item.id}

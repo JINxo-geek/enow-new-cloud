@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { AppContainer } from "react-hot-loader";
-import { BrowserRouter } from "react-router-dom";
-import Router from "./router";
-import "@css/global.css";
-import configureStore from "../../store/configureStore";
-import rootSaga from "../../store/sagas";
-import { Provider } from "react-redux";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './router';
+import '@css/global.css';
+import configureStore from '../../store/configureStore';
+import rootSaga from '../../store/sagas';
+import { Provider } from 'react-redux';
 
 function App() {
   const store = configureStore(window.__INITIAL_STATE__);
@@ -25,7 +25,7 @@ function bootstrap() {
     return App;
   }
 
-  const root = document.getElementById("app");
+  const root = document.getElementById('app');
 
   if (EASY_ENV_IS_DEV) {
     ReactDOM.render(

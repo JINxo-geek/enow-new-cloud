@@ -1,5 +1,5 @@
-import React from "react";
-import "./UItableName.less";
+import React from 'react';
+import './UItableName.less';
 const UItableName = props => {
   const { title, lineClampNum, clickHandle } = props;
   return (

@@ -1,5 +1,5 @@
-import { createAction } from "redux-actions";
-import * as type from "../constants/actionType";
+import { createAction } from 'redux-actions';
+import * as type from '../constants/actionType';
 export const createFolder = createAction(type.CREATE_FOLDER, mount => mount);
 export const createFolderSuccess = createAction(
   type.CREATE_FOLDER_SUCCESS,

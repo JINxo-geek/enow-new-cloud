@@ -15,6 +15,7 @@ import MyContentTable from '../../../sections/MyContentTable';
 import ShareModal from '../../../sections/ShareModal';
 import HistoryModal from '../../../sections/HistoryModal';
 import MoveFileModal from '../../../sections/MoveFileModal';
+import CoursewareRecieveList from '../../../sections/CoursewareRecieveItem';
 import MyContentMsg from './MyContentMsg';
 import { tableTitle } from './MyContentData';
 import { parseFileSize } from '../../../../../helpers/util';
@@ -25,6 +26,9 @@ import { moveHere } from '../../../../../store/actions/post.moveHere';
 import { getHistory } from '../../../../../store/actions/get.history';
 import { deleteCourseware } from '../../../../../store/actions/post.deleteCourseware';
 import { copyNew } from '../../../../../store/actions/post.copyNew';
+import { getRecive } from '../../../../../store/actions/get.recive';
+import { coursewareReceive } from '../../../../../store/actions/post.coursewareReceive';
+import { coursewareIgnore } from '../../../../../store/actions/post.coursewareIgnore';
 import _ from 'lodash';
 import './MyContent.less';
 const { confirm } = Modal;
@@ -48,6 +52,15 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   copyNew: values => {
     dispatch(copyNew(values));
+  },
+  getRecive: values => {
+    dispatch(getRecive(values));
+  },
+  coursewareReceive: values => {
+    dispatch(coursewareReceive(values));
+  },
+  coursewareIgnore: values => {
+    dispatch(coursewareIgnore(values));
   }
 });
 interface MyContentProps {
@@ -406,9 +419,11 @@ class MyContent extends Component<MyContentProps> {
   }
 
   render() {
+    console.log('props', this.props);
     return (
       <Row>
         <Col span={22} offset={1}>
+          <CoursewareRecieveList></CoursewareRecieveList>
           <Spin spinning={this.props.getCourseware.tableLoading}>
             <MyContentTable
               dataSource={this.state.dataSource}

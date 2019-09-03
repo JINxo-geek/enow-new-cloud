@@ -1,2 +1,2 @@
-import Event from "events";
+import Event from 'events';
 export default new Event();
