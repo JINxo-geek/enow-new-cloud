@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import ScreensLogin from "./screens/Login/Login";
-import ScreensLayout from "./screens/Layout/Layout";
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import ScreensLogin from './screens/Login/Login';
+import ScreensLayout from './screens/Layout/Layout';
 
 export default class App extends Component {
   constructor(props) {

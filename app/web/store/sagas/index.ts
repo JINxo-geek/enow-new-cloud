@@ -16,7 +16,10 @@ import {
   apiCreateFolder,
   apiGetHistory,
   apiGoursewareDelete,
-  apiCopyNew
+  apiCopyNew,
+  apiGetRecive,
+  apiCoursewareReceive,
+  apiCoursewareIgnore
 } from '../services/api';
 
 /***************************** Subroutines ************************************/
@@ -294,6 +297,22 @@ function* copyNew(e) {
   }
 }
 
+/* 获取分享课件列表 */
+function* getRecive() {
+  // apiGetRecive,
+  // apiCoursewareReceive,
+  // apiCoursewareIgnore
+}
+
+/* 接受分享课件 */
+function* coursewareRecive(e) {
+
+}
+
+/* 忽略课件 */
+function* coursewareIgnore(e) {
+
+}
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
 /******************************************************************************/
@@ -312,6 +331,10 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.SEARCH, searchFile);
   yield takeEvery(ActionType.COURSEWARE_DELETE, deleteCourseware);
   yield takeEvery(ActionType.COPY_NEW, copyNew);
+  yield takeEvery(ActionType.GET_RECIVE, getRecive);
+  yield takeEvery(ActionType.COURESWARE_RECEIVE, coursewareRecive);
+  yield takeEvery(ActionType.COURSEWARE_IGNORE, coursewareIgnore);
+
 }
 
 // // CREATE_USER

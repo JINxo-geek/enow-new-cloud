@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Avatar, Badge, Input, Row, Col, Popover, Button, Divider } from "antd";
-import "./Header.less";
-import { connect } from "react-redux";
-import { searchFile } from "../../../../store/actions/searchFile";
-import SearchBar from "../../sections/SearchBar";
+import React, { Component } from 'react';
+import { Avatar, Badge, Input, Row, Col, Popover, Button, Divider } from 'antd';
+import './Header.less';
+import { connect } from 'react-redux';
+import { searchFile } from '../../../../store/actions/searchFile';
+import SearchBar from '../../sections/SearchBar';
 const mapStateToProps = store => {
   return { ...store };
 };
@@ -23,27 +23,27 @@ class ContainersHeader extends Component<
   ContainersHeaderProps,
   ContainersHeaderState
 > {
+
+  state: ContainersHeaderState = {
+    accountMsg: {
+      name: '凌轩',
+      level: '15',
+      msg: '小学英语老师',
+      photoUrl: 'http://edu.seewo.com/res/head/1/0_1_80.png'
+    }
+  };
   private content: any;
   constructor(props: any) {
     super(props);
     this.content = null;
   }
 
-  state: ContainersHeaderState = {
-    accountMsg: {
-      name: "凌轩",
-      level: "15",
-      msg: "小学英语老师",
-      photoUrl: "http://edu.seewo.com/res/head/1/0_1_80.png"
-    }
-  };
-
   componentWillMount() {
     this.content = (
       <div className="headerpopover">
-        <span> {this.state.accountMsg.name}</span>
-        <span>Lv{this.state.accountMsg.level}</span>
-        <div>{this.state.accountMsg.msg}</div>
+        <span className="name"> {this.state.accountMsg.name}</span>
+        <span className="grade">Lv{this.state.accountMsg.level}</span>
+        <div className="introduce">{this.state.accountMsg.msg}</div>
         <Divider />
         <p>
           <Button type="link" className="btncolor">

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Input } from "antd";
+import React, { Component } from 'react';
+import { Input } from 'antd';
 const { Search } = Input;
 
 export interface SearchBarProps {

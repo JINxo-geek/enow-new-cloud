@@ -1,5 +1,5 @@
-const logo = require("@images/logo.png");
-const timecapsule = require("@images/timecapsule.png");
+const logo = require('@images/logo.png');
+const timecapsule = require('@images/timecapsule.png');
 const logobg = {
   backgroundImage: `url(${logo})`,
   width: 120,
@@ -9,20 +9,20 @@ const logobg = {
 };
 const btnContentMsg = [
   {
-    imgType: "brush",
-    text: "在线白板"
+    imgType: 'brush',
+    text: '在线白板'
   },
   {
-    imgType: "timecapsule",
-    text: "时间胶囊"
+    imgType: 'timecapsule',
+    text: '时间胶囊'
   },
   {
-    imgType: "folder",
-    text: "新建文件夹"
+    imgType: 'folder',
+    text: '新建文件夹'
   },
   {
-    imgType: "upload",
-    text: "导入PPT文档"
+    imgType: 'upload',
+    text: '导入PPT文档'
   }
 ];
 

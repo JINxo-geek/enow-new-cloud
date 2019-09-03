@@ -72,3 +72,22 @@ export async function apiCopyNew(payload: any): Promise<any> {
     params: payload
   });
 }
+
+/* 接收分享课件 */
+export async function apiGetRecive(payload: any): Promise<any> {
+  return fetch('GET_RECIVE', {
+    params: payload
+  });
+}
+
+export async function apiCoursewareReceive(payload: any): Promise<any> {
+  return fetch('COURESWARE_RECEIVE', {
+    params: payload
+  });
+}
+
+export async function apiCoursewareIgnore(payload: any): Promise<any> {
+  return fetch('COURSEWARE_IGNORE', {
+    params: payload
+  });
+}

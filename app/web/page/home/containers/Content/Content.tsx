@@ -11,6 +11,7 @@ import { getSubFile } from '../../../../store/actions/get.subFile';
 import { getShare } from '../../../../store/actions/post.share';
 import { getBread } from '../../../../store/actions/get.bread';
 import {refresh} from '../../../../store/actions/refresh';
+
 const mapStateToProps = store => {
   return { ...store };
 };
@@ -29,7 +30,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   refresh: values => {
     dispatch(refresh(values));
-  }
+  },
 });
 interface ContainersContentProps {
   getCourseware?: object;

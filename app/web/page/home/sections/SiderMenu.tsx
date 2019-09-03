@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Menu, Divider } from "antd";
-import { Link } from "react-router-dom";
-import "./SiderMenu.less";
+import React, { Component } from 'react';
+import { Menu, Divider } from 'antd';
+import { Link } from 'react-router-dom';
+import './SiderMenu.less';
 export interface SiderMenuProps {
   timecapsule: any;
 }
