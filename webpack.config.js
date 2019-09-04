@@ -26,6 +26,7 @@ module.exports = {
       options: {
         javascriptEnabled: true,
         modifyVars: {
+          "primary-color": "rgb(114, 181, 99)",
           "border-radius-base": "2px",
           "breadcrumb-link-color": "rgb(114, 181, 99)",
           "breadcrumb-separator-margin": "0px",
