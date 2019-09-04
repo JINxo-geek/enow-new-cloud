@@ -28,16 +28,16 @@ class LayoutSider extends Component<LayoutSiderProps> {
         let icon = <i />;
         switch (item.imgType) {
           case 'brush':
-            icon = <i className="demo-icon icon-brush">&#xf1fc;</i>;
+            icon = <i className="demo-icon icon-brush rightmove">&#xf1fc;</i>;
             break;
           case 'folder':
-            icon = <i className="demo-icon icon-folder">&#xf14a;</i>;
+            icon = <i className="demo-icon icon-folder rightmove">&#xf14a;</i>;
             break;
           case 'upload':
-            icon = <i className="demo-icon  icon-upload">&#xe801;</i>;
+            icon = <i className="demo-icon  icon-upload rightmove">&#xe801;</i>;
             break;
           case 'timecapsule':
-            icon = <img className="iconsize" src={timecapsule} />;
+            icon = <img className="iconsize rightmove" src={timecapsule} />;
             break;
         }
         return (

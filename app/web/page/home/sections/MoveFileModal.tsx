@@ -11,7 +11,7 @@ function MoveFileModal(props) {
   );
   let moveparentId = 'none';
   const dataArray = [{ name: '根目录', id: 'root', childrens: [] }];
-  dataArray[0].childrens = props.treeData.data;
+  dataArray[0].childrens = props.treeData.allGroup.data;
   const renderTreeNodes: any = data => {
     return data.map(item => {
       if (item.childrens) {

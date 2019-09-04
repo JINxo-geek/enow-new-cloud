@@ -32,14 +32,23 @@ module.exports = {
           "menu-item-active-bg": "rgb(241, 241, 241)",
           "link-color": "rgb(114, 181, 99)",
           "link-hover-color": "rgb(114, 181, 99)",
+          "radio-button-hover-color": "rgb(114, 181, 99)",
+          "dark-menu-item-hover-bg": "rgb(114, 181, 99)",
+          "input-hover-border-color:": "rgb(114, 181, 99)",
+          "link-hover-color": "rgb(114, 181, 99)",
+          "item-active-bg": "rgb(114, 181, 99)",
+          "item-hover-bg": "rgb(114, 181, 99)",
+          "link-active-color": "rgb(114, 181, 99)",
+          "select-item-active-bg": "rgb(114, 181, 99)",
           "table-row-hover-bg": "rgb(241, 241, 241)",
           "table-selected-row-hover-bg:": "rgb(241, 241, 241)",
-          "table-header-bg": "rgb(255,255,255)"
+          "table-header-bg": "rgb(255,255,255)",
+          "btn-default-border": "0px"
         }
       }
     },
     typescript: true,
-    tslint: {options:{fix:true}}
+    tslint: { options: { fix: true } }
   },
   plugins: {
     imagemini: false

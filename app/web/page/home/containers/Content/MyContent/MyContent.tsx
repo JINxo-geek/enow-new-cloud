@@ -17,6 +17,7 @@ import HistoryModal from '../../../sections/HistoryModal';
 import MoveFileModal from '../../../sections/MoveFileModal';
 import CoursewareRecieveList from '../../../sections/CoursewareRecieveItem';
 import MyContentMsg from './MyContentMsg';
+import RenameModal from '../../../sections/RenameModal';
 import { tableTitle } from './MyContentData';
 import { parseFileSize } from '../../../../../helpers/util';
 import { timeBeauty } from '../../../../../helpers/timeBeauty';
@@ -29,13 +30,14 @@ import { copyNew } from '../../../../../store/actions/post.copyNew';
 import { getRecive } from '../../../../../store/actions/get.recive';
 import { coursewareReceive } from '../../../../../store/actions/post.coursewareReceive';
 import { coursewareIgnore } from '../../../../../store/actions/post.coursewareIgnore';
+import { coursewareRename } from '../../../../../store/actions/put.coursewareRename';
 import _ from 'lodash';
 import './MyContent.less';
+
 const { confirm } = Modal;
 
 const mapStateToProps = store => {
-  store.getAllGroup;
-  return store.getAllGroup;
+  return { treeData: store.getAllGroup, recivelist: store.getRecive };
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -62,6 +64,9 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
   coursewareIgnore: values => {
     dispatch(coursewareIgnore(values));
+  },
+  coursewareRename: values => {
+    dispatch(coursewareRename(values));
   }
 });
 interface MyContentProps {
@@ -76,6 +81,7 @@ interface MyContentProps {
     linkLock: boolean;
   }) => void;
   postShare?: object;
+  treeData: any;
   getAllGroup?: any;
   allGroup?: object;
   moveHere: (data: {
@@ -85,7 +91,12 @@ interface MyContentProps {
   }) => void;
   getHistory?: any;
   deleteCourseware?: any;
-  copyNew: (id: string) => void;
+  copyNew: (data: any) => void;
+  recivelist: any;
+  getRecive: (data: { index: number; pagesize: number }) => void;
+  coursewareReceive: (data: any) => void;
+  coursewareIgnore: (data: any) => void;
+  coursewareRename: (data: any) => void;
 }
 class MyContent extends Component<MyContentProps> {
   /* 监听数据变动 */
@@ -123,7 +134,8 @@ class MyContent extends Component<MyContentProps> {
     dataSourceOrigin: [],
     shareModalVisible: false,
     historyModalVisible: false,
-    moveFileModalVisible: false
+    moveFileModalVisible: false,
+    renameModalvisible: false
   };
   menu = (
     <Menu>
@@ -171,7 +183,6 @@ class MyContent extends Component<MyContentProps> {
         title: '大小',
         dataIndex: 'size',
         key: 'size',
-        align: 'right',
         render: this.renderSize
       },
       {
@@ -179,7 +190,6 @@ class MyContent extends Component<MyContentProps> {
         dataIndex: 'id',
         key: 'id',
         width: 168,
-        align: 'right',
         render: this.renderAction
       }
     ];
@@ -220,6 +230,7 @@ class MyContent extends Component<MyContentProps> {
 
   componentDidMount = () => {
     this.props.getCoursewareGroup();
+    this.props.getRecive({ index: 0, pagesize: 99 });
     this.handleOnScroll();
   }
 
@@ -239,7 +250,19 @@ class MyContent extends Component<MyContentProps> {
         this.showMoveFileModal(this.currentRow);
         break;
       case '新建副本':
-        this.props.copyNew(this.currentRow.id);
+        this.props.copyNew({
+          cid: this.currentRow.id,
+          clientVersion: this.currentRow.client_version
+        });
+        break;
+      case '重命名':
+        this.showRenameModal(this.currentRow);
+        break;
+      case '远程演示':
+        window.open(
+          `http://enow-kernel2.test.seewo.com/view?version=${this.currentRow.version}&from=remote#/enbx/${this.currentRow.id}`,
+          '_blank'
+        );
         break;
     }
   }
@@ -308,6 +331,36 @@ class MyContent extends Component<MyContentProps> {
     this.props.getHistory({ id: this.modalContent.id });
     this.setState({
       historyModalVisible: true
+    });
+  }
+
+  // 重命名课件
+
+  renameCancel = e => {
+    this.setState({
+      renameModalvisible: false
+    });
+  }
+
+  renameOk = e => {
+    const { id, client_version, version } = this.currentRow;
+    this.props.coursewareRename({
+      cid: id,
+      version,
+      name: e,
+      clientVersion: client_version
+    });
+    this.setState({
+      renameModalvisible: false
+    });
+  }
+
+  showRenameModal = e => {
+    this.modalContent.name = e.name;
+    this.modalContent.key = e.key;
+    this.modalContent.id = e.id;
+    this.setState({
+      renameModalvisible: true
     });
   }
 
@@ -420,11 +473,17 @@ class MyContent extends Component<MyContentProps> {
   }
 
   render() {
-    console.log('props', this.props);
+    const recivelistLength = this.props.recivelist.data.content.length;
     return (
       <Row>
         <Col span={22} offset={1}>
-          <CoursewareRecieveList></CoursewareRecieveList>
+          {recivelistLength > 0 && (
+            <CoursewareRecieveList
+              coursewareIgnore={this.props.coursewareIgnore}
+              coursewareReceive={this.props.coursewareReceive}
+              recivelist={this.props.recivelist}
+            ></CoursewareRecieveList>
+          )}
           <Spin spinning={this.props.getCourseware.tableLoading}>
             <MyContentTable
               dataSource={this.state.dataSource}
@@ -464,11 +523,19 @@ class MyContent extends Component<MyContentProps> {
           {this.state.moveFileModalVisible && (
             <MoveFileModal
               moveFileOk={this.moveFileOk}
-              treeData={this.props.allGroup}
+              treeData={this.props.treeData}
               modalContent={this.modalContent}
               handleCancel={this.moveFileCancel}
               onVisibleChange={this.state.moveFileModalVisible}
             />
+          )}
+          {this.state.renameModalvisible && (
+            <RenameModal
+              modalContent={this.modalContent}
+              renameModalvisible={this.state.renameModalvisible}
+              renameOk={this.renameOk}
+              renameCancel={this.renameCancel}
+            ></RenameModal>
           )}
         </Col>
       </Row>

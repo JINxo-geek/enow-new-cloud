@@ -23,11 +23,10 @@ class ContainersHeader extends Component<
   ContainersHeaderProps,
   ContainersHeaderState
 > {
-
   state: ContainersHeaderState = {
     accountMsg: {
-      name: '凌轩',
-      level: '15',
+      name: 'JINxo',
+      level: '100',
       msg: '小学英语老师',
       photoUrl: 'http://edu.seewo.com/res/head/1/0_1_80.png'
     }

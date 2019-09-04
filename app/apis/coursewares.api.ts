@@ -255,4 +255,3 @@ export const COPY_NEW = {
     data: {}
   }
 };
-

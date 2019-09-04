@@ -81,13 +81,21 @@ export async function apiGetRecive(payload: any): Promise<any> {
 }
 
 export async function apiCoursewareReceive(payload: any): Promise<any> {
-  return fetch('COURESWARE_RECEIVE', {
+  return fetch('COURSEWARE_G_RECEIVE', {
     params: payload
   });
 }
 
 export async function apiCoursewareIgnore(payload: any): Promise<any> {
   return fetch('COURSEWARE_IGNORE', {
+    params: payload
+  });
+}
+
+// 课件重命名
+
+export async function apiCoursewareRename(payload: any): Promise<any> {
+  return fetch('COURSEWARE_RENAME', {
     params: payload
   });
 }

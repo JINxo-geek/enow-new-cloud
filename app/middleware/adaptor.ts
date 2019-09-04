@@ -15,7 +15,7 @@ export default function(options) {
       signed: false
     });
     /*   配置临时accessToken */
-    accessToken = "4316cb07e19043719c7f6c5c066477d8";
+    accessToken = "635bf02420054597a731782cfe5060c7";
     const appCode = ctx.cookies.get("x-auth-app", {
       signed: false
     });
