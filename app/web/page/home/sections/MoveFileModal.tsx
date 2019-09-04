@@ -47,6 +47,9 @@ function MoveFileModal(props) {
       visible={props.onVisibleChange}
       onCancel={props.handleCancel}
       footer={[
+        <Button className="newFbtn" icon="plus" type="link">
+          新建文件夹
+        </Button>,
         <Button key="newfolderok" onClick={props.handleCancel}>
           取消
         </Button>,
