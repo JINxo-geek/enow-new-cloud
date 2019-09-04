@@ -6,6 +6,7 @@ import * as Action from '../actions/get.courseware';
 import { getShareSuccess, getShareFailure } from '../actions/post.share';
 import { getAllGroupSuccess } from '../actions/get.allGroup';
 import { getBreadSuccess } from '../actions/get.bread';
+import { getReciveSuccess } from '../actions/get.recive';
 import * as subAction from '../actions/get.subFile';
 import uuidv1 from 'uuid/v1';
 import {
@@ -19,7 +20,8 @@ import {
   apiCopyNew,
   apiGetRecive,
   apiCoursewareReceive,
-  apiCoursewareIgnore
+  apiCoursewareIgnore,
+  apiCoursewareRename
 } from '../services/api';
 
 /***************************** Subroutines ************************************/
@@ -104,9 +106,7 @@ function* searchFile(e) {
   const partdata = yield call(filtername, sortData, e.payload);
   // 重置面包屑 更改保存id
   yield put(getBreadSuccess({ breadArray: breadArray.slice(0, 2) }));
-  yield put(subAction.getSubFile({ parentId: '', name: 'root' }));
-
-  // 更新显示课件
+  yield put(subAction.getSubFileSuccess({ parentId: '', name: 'root' }));
   yield put(
     Action.getCoursewareGroupSuccess({
       sortData,
@@ -220,10 +220,7 @@ function* createFolder(e) {
 
 /* 获取课件历史 */
 function* getHistory(e) {
-  console.log('getHistory', e);
-  // const result = yield call(apiGetInfo, {
-  //   cid: e.payload.id
-  // });
+  // 接口不可使用
   const result = yield call(apiGetHistory, {
     cid: e.payload.id
   });
@@ -286,9 +283,7 @@ function* deleteCourseware(e) {
 
 /* 创建课件副本 */
 function* copyNew(e) {
-  const result = yield call(apiCopyNew, {
-    cid: e.payload
-  });
+  const result = yield call(apiCopyNew, e.payload);
   if (result.error_code === 0) {
     message.success('创建成功');
     yield call(refresh);
@@ -298,21 +293,53 @@ function* copyNew(e) {
 }
 
 /* 获取分享课件列表 */
-function* getRecive() {
-  // apiGetRecive,
-  // apiCoursewareReceive,
-  // apiCoursewareIgnore
+function* getRecive(e) {
+  const result = yield call(apiGetRecive, e.payload);
+  yield put(getReciveSuccess(result));
 }
 
 /* 接受分享课件 */
 function* coursewareRecive(e) {
-
+  const result = yield call(apiCoursewareReceive, e.payload);
+  if (result.error_code === 0) {
+    message.success('接收成功');
+    yield call(getRecive, { index: 0, pagesize: 99 });
+    yield call(refresh);
+  } else if (result.error_code === 4112) {
+    message.error('电脑端已处理此课件');
+  } else if (result.error_code === 4510) {
+    message.error('云空间不足，课件接收失败');
+  } else {
+    message.error('网络异常，操作失败');
+  }
 }
 
 /* 忽略课件 */
 function* coursewareIgnore(e) {
-
+  const result = yield call(apiCoursewareIgnore, e.payload);
+  if (result.error_code === 0) {
+    message.success('忽略成功');
+    yield call(getRecive, { index: 0, pagesize: 99 });
+  } else if (result.error_code === 4112) {
+    message.error('电脑端已处理此课件');
+  } else if (result.error_code === 4510) {
+    message.error('云空间不足，课件接收失败');
+  } else {
+    message.error('网络异常，操作失败');
+  }
 }
+
+/* 课件重命名 */
+function* coursewareRename(e) {
+  const result = yield call(apiCoursewareRename, e.payload);
+  if (result.error_code === 0) {
+    message.success('成功');
+    yield call(refresh);
+  } else {
+    message.error('网络异常，操作失败');
+  }
+}
+
 /******************************************************************************/
 /******************************* WATCHERS *************************************/
 /******************************************************************************/
@@ -332,9 +359,9 @@ function* watchGetCourseware() {
   yield takeEvery(ActionType.COURSEWARE_DELETE, deleteCourseware);
   yield takeEvery(ActionType.COPY_NEW, copyNew);
   yield takeEvery(ActionType.GET_RECIVE, getRecive);
-  yield takeEvery(ActionType.COURESWARE_RECEIVE, coursewareRecive);
+  yield takeEvery(ActionType.COURSEWARE_RECEIVE, coursewareRecive);
   yield takeEvery(ActionType.COURSEWARE_IGNORE, coursewareIgnore);
-
+  yield takeEvery(ActionType.COURSEWARE_RENAME, coursewareRename);
 }
 
 // // CREATE_USER

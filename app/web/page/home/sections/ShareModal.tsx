@@ -15,9 +15,11 @@ function ShareModal(props) {
   const shareType = props.shareType;
   const handleChange = value => {
     shareType.expiredDay = value.key;
+    props.changeShareType(shareType);
   };
   const handleChange2 = value => {
     shareType.type = value.key;
+    props.changeShareType(shareType);
   };
   const copyUrl = () => {
     try {
@@ -74,18 +76,6 @@ function ShareModal(props) {
             <Option value="0">公开</Option>
             <Option value="1">加密</Option>
           </Select>
-        </Col>
-        <Col span={4}>
-          <Button
-            icon="plus"
-            loading={iconLoading}
-            onClick={() => {
-              props.changeShareType(shareType);
-            }}
-            className="btnLink"
-          >
-            创建新链接
-          </Button>
         </Col>
       </Row>
       <Row>

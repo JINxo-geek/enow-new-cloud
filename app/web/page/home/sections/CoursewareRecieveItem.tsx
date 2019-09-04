@@ -1,24 +1,33 @@
 import React from 'react';
 import { List, Avatar, Icon, Button } from 'antd';
 import './CoursewareRecieveList.less';
+import { parseFileSize } from '../../../helpers/util';
+import { timeBeauty } from '../../../helpers/timeBeauty';
+import { lchmod } from 'fs';
 const file = require('@images/file.png');
 
-function CoursewareRecieveList(props) {
-  const data = [
-    {
-      title: '测试勿动_胶囊回归测试课件-支持元素录制'
-    },
-    {
-      title: '测试勿动_胶囊回归测试课件-支持元素录制'
-    },
-    {
-      title: '测试勿动_胶囊回归测试课件-支持元素录制'
-    },
-    {
-      title: '测试勿动_胶囊回归测试课件-支持元素录制'
-    }
-  ];
+interface dataType {
+  author: string;
+  name: string;
+  updateTime: number;
+  size: number;
+  coursewareId: string;
+}
 
+function CoursewareRecieveList(props) {
+  const data: dataType[] = props.recivelist.data.content;
+
+  const coursewareIgnore = e => {
+    props.coursewareIgnore({ uid: e.uid });
+  };
+  const coursewareReceive = e => {
+    // 暂时未知客户端版本，使用测试版本"NativeTest web 0.0.1"
+    props.coursewareReceive({
+      uid: e.uid,
+      client_version: 'NativeTest web 0.0.1',
+      create_time: new Date().getTime()
+    });
+  };
   return (
     <List
       bordered={true}
@@ -27,15 +36,35 @@ function CoursewareRecieveList(props) {
       dataSource={data}
       renderItem={item => (
         <List.Item
+          className="item"
           actions={[
-            <a key="list-loadmore-edit">接受</a>,
-            <a key="list-loadmore-more">忽略</a>
+            <Button
+              onClick={() => {
+                coursewareReceive(item);
+              }}
+              type="link"
+              key="list-loadmore-edit"
+            >
+              接受
+            </Button>,
+            <Button
+              onClick={() => {
+                coursewareIgnore(item);
+              }}
+              type="link"
+              className="ignorebtn"
+              key="list-loadmore-more"
+            >
+              忽略
+            </Button>
           ]}
         >
           <List.Item.Meta
             avatar={<Avatar src={file} />}
-            title={<a href="https://ant.design">{item.title}</a>}
-            description="作者 | 日期 文件大小"
+            title={<p className="title">{item.name}</p>}
+            description={`${item.author} |  ${timeBeauty(
+              item.updateTime
+            )} ${parseFileSize(item.size)}`}
           />
         </List.Item>
       )}
