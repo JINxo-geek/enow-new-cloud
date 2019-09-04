@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input } from 'antd';
+import { Input, message } from 'antd';
 const { Search } = Input;
 
 export interface SearchBarProps {
@@ -19,7 +19,13 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     return (
       <Search
         placeholder="搜索文档"
-        onSearch={value => searchFile(value)}
+        onSearch={value => {
+          if (value === '') {
+            message.error('搜索条件不能为空');
+            return;
+          }
+          searchFile(value);
+        }}
         className="search"
       />
     );
