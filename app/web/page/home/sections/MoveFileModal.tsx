@@ -47,9 +47,6 @@ function MoveFileModal(props) {
       visible={props.onVisibleChange}
       onCancel={props.handleCancel}
       footer={[
-        <Button className="newFbtn" icon="plus" type="link">
-          新建文件夹
-        </Button>,
         <Button key="newfolderok" onClick={props.handleCancel}>
           取消
         </Button>,
@@ -66,7 +63,12 @@ function MoveFileModal(props) {
     >
       <div className="funcname">移动到</div>
       <div className="mytitle">我的文档</div>
-      <Tree showIcon onSelect={onSelect} switcherIcon={<Icon type="down" />}>
+      <Tree
+        className="scroll"
+        showIcon
+        onSelect={onSelect}
+        switcherIcon={<Icon type="down" />}
+      >
         {renderTreeNodes(dataArray)}
       </Tree>
     </Modal>

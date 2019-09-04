@@ -113,6 +113,72 @@ npm run build
 
 react 组件分为四种，最上层的是 sections 组件，主要用来组织页面布局，被顶级路由调用。第二层是 containers 组件，被 sections 组件组件调用，并调用第三层 sections 组件。第三层是主要负责业务逻辑，并调用第四层 component 组件，第四层主要是通用的 UI 组件，本项目大多数通用 UI 组件是 antd 的组件，所以这部分较少，有待抽离。
 
+## 7.待解决问题
+
+1. 用户信息目前获取不到，所以点击用户头像显示的信息为假数据。在 home/containers/Header。
+2. 新建副本接口存在问题，虽然返回了新文件的名称与 id，但是新增文件不知道存在哪里。接口：/api/v3/courseware/copy/new
+3. 历史版本接口存在问题，无法使用。接口：/api/v1/courseware/history
+4. app/web/page/home/sections/CoursewareRecieveItem.tsx 中，调用 coursewareReceive 函数中，不知道现在客户端版本是什么，用 `client_version: 'NativeTest web 0.0.1'`临时使用，之后请使用获取到的客户端版本。
+
+## 8.snippets
+
+为了方便开发，提供了创建 redux 相关代码的 vscode 代码片段。
+
+```json
+	"constant": {
+		"prefix": "constant",
+		"body": [
+			"export const ${1:name} = '${1:name}' ",
+			"export const ${1:name}_SUCCESS ='${1:name}_SUCCESS'",
+			"export const ${1:name}_FAILURE = '${1:name}_FAILURE'",
+		],
+		"description": "常量定义"
+	},
+	"createAction": {
+		"prefix": "createAction",
+		"body": [
+			"import { createAction } from \"redux-actions\";",
+			"import * as type from \"../constants/actionType\";",
+			"export const ${1:name} = createAction(type.${2:cname}, mount => mount);",
+			"export const ${1:name}Success = createAction(type.${2:cname}_SUCCESS, mount => mount);",
+			"export const ${1:name}Failure = createAction(type.${2:cname}_FAILURE, mount => mount);",
+		],
+		"description": "createAction"
+	},
+	"handleActions": {
+		"prefix": "handleActions",
+		"body": [
+			"import { handleActions } from \"redux-actions\";",
+			"import {${1:cname},${1:cname}_SUCCESS,${1:cname}_FAILURE} from \"../constants/actionType\";",
+			"const reducers = handleActions(",
+			"{",
+			"[${1:cname}]:(state,action)=>{",
+			"console.log('${1:cname}',state,'action',action)",
+			"return {",
+			"x: action.payload.x",
+			"};",
+			"},",
+			"[${1:cname}_SUCCESS]:(state,action)=>{",
+			"console.log('${1:cname}_SUCCESS',state,'action',action)",
+			"return {",
+			"x: action.payload.x",
+			"};",
+			"},",
+			"[${1:cname}_FAILURE]:(state,action)=>{",
+			"console.log('${1:cname}_FAILURE',state,'action',action)",
+			"return {",
+			"x: action.payload.x",
+			"};",
+			"}},",
+			"{})",
+			"export default reducers;"
+		],
+		"description": "handleActions"
+	},
+
+
+```
+
 ## License
 
 [MIT](LICENSE)
