@@ -1,5 +1,5 @@
 # egg-react-typescript-boilerplate
-
+![](https://raw.githubusercontent.com/JINxo-geek/picpepo/master/enowCloud.gif)
 基于 Egg + React + TypeScript + Webpack 同构工程骨架
 
 ## 1. 版本
